@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class ViewController: UIViewController {
-
+    let testApi = "https://api.github.com/users/mistdon/following"
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        Alamofire.request(testApi).response { response in
+            print(response)
+        }
     }
 
 

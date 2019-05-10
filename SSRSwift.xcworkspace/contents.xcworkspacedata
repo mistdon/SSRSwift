@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SSRRxSwift.playground">
+   </FileRef>
+   <FileRef
+      location = "group:SSRSwiftJSON.playground">
+   </FileRef>
+   <FileRef
+      location = "group:SSRBaseData.playground">
+   </FileRef>
+   <FileRef
+      location = "group:SSRHTTP.playground">
+   </FileRef>
+   <FileRef
       location = "group:SSRSwiftPlayground.playground">
    </FileRef>
    <FileRef

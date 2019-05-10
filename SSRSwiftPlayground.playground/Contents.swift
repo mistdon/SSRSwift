@@ -4,10 +4,29 @@ import SwiftyJSON
 var str = "Hello, playground"
 print(str)
 
-let messageDict: [String: Any] = ["code":0, "message":"success"]
-let jsonData = try JSONSerialization.data(withJSONObject: messageDict, options: .prettyPrinted)
-let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)
-print(jsonString as? String)
+struct SSRMessage{
+    var code: Int?
+    var message: String?
+    public init(dict: [String: Any]){
+        code = dict["code"] as? Int
+        message = dict["message"] as? String
+    }
+}
 
-let json = try? JSON(data: jsonData)
-print(json?["message"].stringValue)
+let messageDict: [String: Any] = ["code":404, "message":"success"]
+
+let json = JSON(messageDict)
+print(json)
+
+let msg = SSRMessage(dict: messageDict)
+
+print(msg.message as Any)
+
+
+let name = ""
+if name.count == 0{
+    print("You're anonymous")
+}
+if name.isEmpty{
+    print("You're anonymous")
+}
