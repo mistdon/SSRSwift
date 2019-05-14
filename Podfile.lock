@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - HandyJSON (4.2.1)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - HandyJSON (~> 4.2.0)
   - RxCocoa (~> 4.5.0)
   - RxSwift (~> 4.5.0)
   - SDWebImage
@@ -18,6 +20,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - HandyJSON
     - RxCocoa
     - RxSwift
     - SDWebImage
@@ -25,11 +28,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 2a820b923c0666b2e550995c72f3996ccca60b2f
+PODFILE CHECKSUM: 5e7038a9a84fdb5e51b30fb6dcf06c0fc15a56c1
 
 COCOAPODS: 1.5.3

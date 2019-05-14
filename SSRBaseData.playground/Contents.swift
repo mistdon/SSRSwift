@@ -4,10 +4,13 @@ import RxCocoa
 
 var str = "Hello, playground"
 
-class Person: NSObject{
-    var name: String = ""
+public struct SectionModel<Section, ItemType>{
+    public var model: Section
+    public var items: [ItemType]
+    public init(model: Section, items: [ItemType]){
+        self.model = model
+        self.items = items
+    }
 }
-let p = Person()
-p.name = "ss"
 
 

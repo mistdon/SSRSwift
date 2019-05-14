@@ -7,6 +7,10 @@ target 'SSRSwift' do
 
   # Pods for SSRSwift
   pod 'SwiftyJSON'
+  # JSON to Model
+#  pod 'ObjectMapper', '~> 3.4'
+  pod 'HandyJSON', '~> 4.2.0'
+  # 网络请求
   pod 'Alamofire'
   # 图片加载
   pod 'SDWebImage'
@@ -14,7 +18,7 @@ target 'SSRSwift' do
   # Rx
   pod 'RxSwift', '~> 4.5.0'
   pod 'RxCocoa', '~> 4.5.0'
-  
+  # 测试
   target 'SSRSwiftTests' do
     inherit! :search_paths
     # Pods for testing

@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import HandyJSON
 
-struct SSRGithubFollower {
+struct SSRGithubFollower: HandyJSON {
+    init() {
+        
+    }
+    
     var login : String?
     var id : Double?
     var avatar_url: String?

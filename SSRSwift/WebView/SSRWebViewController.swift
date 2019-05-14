@@ -18,21 +18,24 @@ class SSRWebViewController: UIViewController {
     open var url: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "SSRWebVC"
         view.backgroundColor = UIColor.white
         loadWebView()
         // load url from url
-//        url = URL(string: "https://www.hackingwithswift.com")
+//                url = URL(string: "https://www.hackingwithswift.com")
         // or load source from local html file
-        self.title = "SSRWebVC"
+        
         url = Bundle.main.url(forResource: "index", withExtension: "html")
-        if let url = url {
-            webView.load(URLRequest(url: url))
-        }
+        loadUrl(url: url ?? URL(string: "about:blank")!)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
     deinit {
+        progressView.removeFromSuperview()
+        progressView = nil
+        webView.scrollView.delegate = nil
         webView.navigationDelegate = nil
         webView.uiDelegate = nil
         print("WebView is dealloc")
@@ -46,6 +49,8 @@ class SSRWebViewController: UIViewController {
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
         configuration.userContentController = WKUserContentController()
+        // 这里添加messageHander的name,和JS的代码对应
+        // window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
         configuration.userContentController.add(self, name: "SSRSwift")
         
         webView = WKWebView(frame: self.view.frame, configuration: configuration)
@@ -83,6 +88,10 @@ class SSRWebViewController: UIViewController {
             self!.progressView.progress = Float(progess)
             self!.progressView.isHidden = (progess == 1)
         }).disposed(by: disposeBag)
+    }
+    fileprivate func loadUrl(url: URL){
+        let request = URLRequest(url: url)
+        self.webView.load(request)
     }
 }
 extension SSRWebViewController: WKNavigationDelegate{

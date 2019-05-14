@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7D22891D7A00D93243 /* GithubAPI.swift */; };
+		3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7F228928E900D93243 /* SSRNetwork.swift */; };
+		3B59EB8222892C5800D93243 /* Memo.md in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB8122892C5800D93243 /* Memo.md */; };
+		3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EB8422894F0E00D93243 /* SwiftKeyword.md */; };
 		3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */; };
 		3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */; };
 		3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */; };
@@ -49,6 +53,11 @@
 		1756092EFC720042CED29EC8 /* Pods_SSRSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSRSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C88DA76559005D587812E65 /* Pods-SSRSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift.release.xcconfig"; sourceTree = "<group>"; };
 		2CCEFE443BC8A18EE382F9E6 /* Pods-SSRSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftUITests/Pods-SSRSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B59EB7C228913E500D93243 /* iOS代码规范.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "iOS代码规范.md"; sourceTree = "<group>"; };
+		3B59EB7D22891D7A00D93243 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		3B59EB7F228928E900D93243 /* SSRNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRNetwork.swift; sourceTree = "<group>"; };
+		3B59EB8122892C5800D93243 /* Memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Memo.md; sourceTree = "<group>"; };
+		3B59EB8422894F0E00D93243 /* SwiftKeyword.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SwiftKeyword.md; sourceTree = "<group>"; };
 		3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHTTPViewController.swift; sourceTree = "<group>"; };
 		3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRootTableViewController.swift; sourceTree = "<group>"; };
 		3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRGithubFollowerCell.swift; sourceTree = "<group>"; };
@@ -107,9 +116,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B59EB7B228913BC00D93243 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				3B59EB7C228913E500D93243 /* iOS代码规范.md */,
+				3B59EB8122892C5800D93243 /* Memo.md */,
+				3B59EB8422894F0E00D93243 /* SwiftKeyword.md */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		3B59EB8322892E4E00D93243 /* SSRNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				3B59EB7F228928E900D93243 /* SSRNetwork.swift */,
+			);
+			path = SSRNetwork;
+			sourceTree = "<group>";
+		};
 		3B5AD2EC227EE1BD00F04BFB /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				3B59EB8322892E4E00D93243 /* SSRNetwork */,
 				3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */,
 				3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */,
 				3B7CCBC92281820E007FEE9C /* SSRGithubFollowerCell.xib */,
@@ -130,6 +158,7 @@
 		3B7E2D9622781EA2006AAE68 = {
 			isa = PBXGroup;
 			children = (
+				3B59EB7B228913BC00D93243 /* Docs */,
 				3B7E2DA122781EA2006AAE68 /* SSRSwift */,
 				3B7E2DB622781EA5006AAE68 /* SSRSwiftTests */,
 				3B7E2DC122781EA5006AAE68 /* SSRSwiftUITests */,
@@ -158,6 +187,7 @@
 				3B5AD2EC227EE1BD00F04BFB /* HTTP */,
 				3B7E2DA222781EA2006AAE68 /* AppDelegate.swift */,
 				3B7E2DA422781EA2006AAE68 /* ViewController.swift */,
+				3B59EB7D22891D7A00D93243 /* GithubAPI.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
 				3B7E2DA622781EA2006AAE68 /* Main.storyboard */,
 				3B7E2DA922781EA4006AAE68 /* Assets.xcassets */,
@@ -336,6 +366,7 @@
 				3B7E2DAA22781EA4006AAE68 /* Assets.xcassets in Resources */,
 				3B7E2DA822781EA2006AAE68 /* Main.storyboard in Resources */,
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
+				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
 				3B7CCBE82284076E007FEE9C /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +442,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -421,6 +453,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -461,10 +494,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
+				3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
 				3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */,
 				3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */,
 				3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */,
+				3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */,
+				3B59EB8222892C5800D93243 /* Memo.md in Sources */,
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
 				3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */,
 				3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */,

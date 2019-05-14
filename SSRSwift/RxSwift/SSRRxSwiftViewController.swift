@@ -12,31 +12,34 @@ import RxCocoa
 // http://www.hangge.com/blog/cache/detail_1941.html
 class SSRRxSwiftViewController: UIViewController {
     var label = UILabel()
+    var firstName = UITextField()
+    var lastName  = UITextField()
+    var button    = UIButton()
     let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view!.backgroundColor = .white
-        print("Hi!")
+        view!.backgroundColor = .gray
+        print("Hai!")
         label.frame = CGRect(x: 10, y: 100, width: 200, height: 44)
+        firstName.frame = CGRect(x: 10, y: 200, width: 200, height: 44)
+        firstName.placeholder = "fistname"
+        lastName.frame = CGRect(x: 10, y: 250, width: 200, height: 44)
+        lastName.placeholder = "lastname"
+        button.frame = CGRect(x: 10, y: 300, width: 200, height: 44)
+        button.backgroundColor = .red
         view.addSubview(label)
+        view.addSubview(firstName)
+        view.addSubview(lastName)
+        view.addSubview(button)
         
-        let observer: AnyObserver<String> = AnyObserver { (event) in
-            switch event{
-            case .next(let data):
-                print(data)
-                self.label.text = data
-            case .error(let error):
-                print(error)
-            case .completed:
-                print("completed.")
-            }
-        }
-        let observable = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
-        observable.map {"current Index : \($0)"}
-            .bind(to: observer)
-            .disposed(by: disposeBag)
+        let firstnameValid = firstName.rx.text.orEmpty.map{$0.count > 5}
+        .share(replay: 1)
+        let lastnameValid  = lastName.rx.text.orEmpty.map{$0.count > 5}.share(replay: 1)
+        Observable.combineLatest(firstnameValid, lastnameValid){$0 && $1}.bind(to: button.rx.isEnabled).disposed(by: disposeBag)
     }
     deinit {
         print("deinit")
+        
     }
 }

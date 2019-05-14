@@ -21,7 +21,7 @@ class SSRHTTPViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "SSRGithubFollowerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        // Do any additional setup after loading the view.
+        print(testApi)
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -47,7 +47,9 @@ class SSRHTTPViewController: UIViewController {
                 if let arr = arr{
                     for dict in arr{
                         let follower: SSRGithubFollower = SSRGithubFollower(with: dict as? [String : Any])
-                        self.followers.append(follower)
+                        let follower2: SSRGithubFollower = SSRGithubFollower.deserialize(from: dict as? [String : Any])!
+//                        self.followers.append(follower)
+                        self.followers.append(follower2)
                     }
                     print(self.followers)
                     self.tableView.reloadData()
