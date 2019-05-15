@@ -11,11 +11,17 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 
+let API_URL = "https://api.github.com/search/repositories?q=ss"
+
+let testApi = "https://api.github.com/users/mistdon/following"
+
+let switchCaseOpen = false
+
 class SSRHTTPViewController: UIViewController {
     let cellIdentifier = "reuseIdentifier"
-    let testApi = "https://api.github.com/users/mistdon/following"
     let myButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     var followers = [SSRGithubFollower]()
+    var repositories = [GithubRepository]()
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -31,31 +37,50 @@ class SSRHTTPViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func startRequest(_ sender: Any) {
-        Alamofire.request(testApi).response { (dataResponse) in
-            if let json = try? JSON(data: dataResponse.data!){
-                let arr = json.arrayObject
-                if let arr = arr{
-                    for dict in arr{
-                        let follower: SSRGithubFollower = SSRGithubFollower(with: dict as? [String : Any])
-                        let follower2: SSRGithubFollower = SSRGithubFollower.deserialize(from: dict as? [String : Any])!
-//                        self.followers.append(follower)
-                        self.followers.append(follower2)
-                    }
-                    print(self.followers)
+        if switchCaseOpen {
+            Alamofire.request(API_URL).responseString { response in
+                switch(response.result){
+                case .success(let responseString):
+                    print(responseString)
+                    let response  = GithubRepositoryResponse(JSONString: responseString)
+                    print(response)
                     self.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }else{
+            Alamofire.request(testApi).responseString { response in
+                switch(response.result){
+                case .success(let responseString):
+                    print(responseString)
+                    if let followers = [SSRGithubFollower].deserialize(from: responseString){
+                        print(followers)
+                    }
+                    
+                case .failure(let error):
+                    print(error)
                 }
             }
         }
+        
+        
+//        Alamofire.request(API_URL).response { (dataResponse) in
+//            if let json = try? JSON(data: dataResponse.data!){
+//                let arr = json.arrayObject
+//                if let arr = arr{
+//                    for dict in arr{
+//                        let follower: SSRGithubFollower = SSRGithubFollower(with: dict as? [String : Any])
+////                        let follower2: SSRGithubFollower = SSRGithubFollower.deserialize(from: dict as? [String : Any])!
+//                        self.followers.append(follower)
+////                        self.followers.append(follower2)
+//                    }
+//                    print(self.followers)
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
     @objc func tappedButton(_ sender: UIButton?){
         print("Tapped button")

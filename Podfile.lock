@@ -1,6 +1,18 @@
 PODS:
   - Alamofire (4.8.1)
-  - HandyJSON (4.2.1)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - HandyJSON (5.0.0)
+  - ObjectMapper (3.4.2)
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
@@ -11,7 +23,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - HandyJSON (~> 4.2.0)
+  - AlamofireImage
+  - HandyJSON (~> 5.0.0)
+  - ObjectMapper (~> 3.4)
+  - PromiseKit
   - RxCocoa (~> 4.5.0)
   - RxSwift (~> 4.5.0)
   - SDWebImage
@@ -20,7 +35,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - HandyJSON
+    - ObjectMapper
+    - PromiseKit
     - RxCocoa
     - RxSwift
     - SDWebImage
@@ -28,12 +46,15 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 5e7038a9a84fdb5e51b30fb6dcf06c0fc15a56c1
+PODFILE CHECKSUM: 972f7fd775ccc655f48726e628e41fa63ea7e73b
 
 COCOAPODS: 1.5.3

@@ -9,11 +9,10 @@
 import Foundation
 import HandyJSON
 
-struct SSRGithubFollower: HandyJSON {
-    init() {
+class SSRGithubFollower: HandyJSON {
+    required init() {
         
     }
-    
     var login : String?
     var id : Double?
     var avatar_url: String?

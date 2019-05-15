@@ -28,6 +28,7 @@
 		3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */; };
 		3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */; };
 		A1F4B6CA983ED97879FF10AF /* Pods_SSRSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFECEEF199E184447689383 /* Pods_SSRSwiftUITests.framework */; };
+		A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */; };
 		B3DDF81651451705350A5812 /* Pods_SSRSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756092EFC720042CED29EC8 /* Pods_SSRSwift.framework */; };
 		F6918D685DA9CB0C4AD14FD5 /* Pods_SSRSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRViewControllerProtocol.swift; sourceTree = "<group>"; };
 		5DE7D3678DCB18D268C67FAA /* Pods-SSRSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E7ABA1D7AD1D6DF3FA2EAC9 /* Pods-SSRSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftUITests/Pods-SSRSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryResponse.swift; sourceTree = "<group>"; };
 		B47E46477C22C3D59F6310E2 /* Pods-SSRSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF0509B5C1DB1B679BB6FA34 /* Pods-SSRSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSRSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 			children = (
 				3B59EB8322892E4E00D93243 /* SSRNetwork */,
 				3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */,
+				A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */,
 				3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */,
 				3B7CCBC92281820E007FEE9C /* SSRGithubFollowerCell.xib */,
 				3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */,
@@ -393,15 +396,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SSRSwiftTests-checkManifestLockResult.txt",
 			);
@@ -415,15 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SSRSwiftUITests-checkManifestLockResult.txt",
 			);
@@ -437,23 +432,25 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -469,15 +466,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SSRSwift-checkManifestLockResult.txt",
 			);
@@ -496,6 +489,7 @@
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
 				3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
+				A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */,
 				3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */,
 				3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */,
 				3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */,
