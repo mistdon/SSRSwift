@@ -15,17 +15,20 @@ class SSRWebViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
     let disposeBag = DisposeBag()
+    var localSource = true
+    
     open var url: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "SSRWebVC"
         view.backgroundColor = UIColor.white
         loadWebView()
-        // load url from url
-//                url = URL(string: "https://www.hackingwithswift.com")
-        // or load source from local html file
-        
-        url = Bundle.main.url(forResource: "index", withExtension: "html")
+        if localSource {
+            url = Bundle.main.url(forResource: "index", withExtension: "html")
+//            let buttonItem =  (title: "Add", style: <#T##UIBarButtonItem.Style#>, target: <#T##Any?#>, action: <#T##Selector?#>)
+        }else{
+            url = URL(string: "https://www.hackingwithswift.com")
+        }
         loadUrl(url: url ?? URL(string: "about:blank")!)
     }
     override func viewDidLayoutSubviews() {
@@ -93,6 +96,11 @@ class SSRWebViewController: UIViewController {
         let request = URLRequest(url: url)
         self.webView.load(request)
     }
+    fileprivate func showAlert(message: String){
+        let alertVC = UIAlertController(title: "Attention Please", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
 }
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -104,9 +112,7 @@ extension SSRWebViewController: WKNavigationDelegate{
 extension SSRWebViewController: WKUIDelegate{
     // 响应JS中的 alert() 方法
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        let alertVC = UIAlertController(title: "Attention Please", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alertVC, animated: true, completion: nil)
+        showAlert(message: message)
         completionHandler()
     }
 }

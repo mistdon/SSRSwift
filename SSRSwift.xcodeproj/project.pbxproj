@@ -25,6 +25,9 @@
 		3B7E2DB822781EA5006AAE68 /* SSRSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E2DB722781EA5006AAE68 /* SSRSwiftTests.swift */; };
 		3B7E2DC322781EA5006AAE68 /* SSRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E2DC222781EA5006AAE68 /* SSRSwiftUITests.swift */; };
 		3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */; };
+		3BC983972294F4C000387BB9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC983962294F4C000387BB9 /* ViewExtension.swift */; };
+		3BC983992294F76700387BB9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC983982294F76700387BB9 /* ColorExtension.swift */; };
+		3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */ = {isa = PBXBuildFile; fileRef = 3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */; };
 		3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */; };
 		3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */; };
 		A1F4B6CA983ED97879FF10AF /* Pods_SSRSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFECEEF199E184447689383 /* Pods_SSRSwiftUITests.framework */; };
@@ -79,6 +82,9 @@
 		3B7E2DC222781EA5006AAE68 /* SSRSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRSwiftUITests.swift; sourceTree = "<group>"; };
 		3B7E2DC422781EA5006AAE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRGithubFollower.swift; sourceTree = "<group>"; };
+		3BC983962294F4C000387BB9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		3BC983982294F76700387BB9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Structs和Classes的选择.md"; sourceTree = "<group>"; };
 		3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRxSwiftViewController.swift; sourceTree = "<group>"; };
 		3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRViewControllerProtocol.swift; sourceTree = "<group>"; };
 		5DE7D3678DCB18D268C67FAA /* Pods-SSRSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3B59EB7C228913E500D93243 /* iOS代码规范.md */,
+				3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */,
 				3B59EB8122892C5800D93243 /* Memo.md */,
 				3B59EB8422894F0E00D93243 /* SwiftKeyword.md */,
 			);
@@ -184,6 +191,7 @@
 		3B7E2DA122781EA2006AAE68 /* SSRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3BC983952294F48800387BB9 /* Extension */,
 				3BF81C3922854B2F000B40EE /* Protocol */,
 				3BF81C3622854498000B40EE /* RxSwift */,
 				3B7CCBE42283D852007FEE9C /* WebView */,
@@ -216,6 +224,15 @@
 				3B7E2DC422781EA5006AAE68 /* Info.plist */,
 			);
 			path = SSRSwiftUITests;
+			sourceTree = "<group>";
+		};
+		3BC983952294F48800387BB9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3BC983962294F4C000387BB9 /* ViewExtension.swift */,
+				3BC983982294F76700387BB9 /* ColorExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		3BF81C3622854498000B40EE /* RxSwift */ = {
@@ -371,6 +388,7 @@
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
 				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
 				3B7CCBE82284076E007FEE9C /* index.html in Resources */,
+				3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +513,9 @@
 				3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */,
 				3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */,
 				3B59EB8222892C5800D93243 /* Memo.md in Sources */,
+				3BC983992294F76700387BB9 /* ColorExtension.swift in Sources */,
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
+				3BC983972294F4C000387BB9 /* ViewExtension.swift in Sources */,
 				3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */,
 				3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */,
 				3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */,

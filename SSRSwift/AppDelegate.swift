@@ -15,9 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var wkWebView = WKWebView()
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        let vc = UIViewController()
+//        vc.view.backgroundColor = .red
+//        window.frame = UIScreen.main.bounds
+//        window.rootViewController = vc
+//        window.makeKeyAndVisible()
         setupInjectionIII()
         setupConfigurationWKWebView()
         return true

@@ -2,13 +2,30 @@
 <html>
 <head>
 	<title>SSRWebView Test Html</title>
+	<style type="text/css">
+		p{
+			color: red;
+            font-size: 60px;
+			text-align: center;
+        }
+		button{
+			color: black;
+			padding: 15px 32px;
+			display: block; 
+			margin: 0 auto;
+			text-align: center;
+			font-size: 40px;
+			border-radius: 15px;
+		}
+	</style>
 </head>
 <body>
-<span id="name">姓名</span>   
-
-
-<button onclick="showAlert()">Show Alert</button>
-<button onclick="responseSwift()">Refactor Swift </button>
+<p id="name">姓名</p>
+<div style="text-align: center;">
+	<button onclick="showAlert()">Show Alert</button>
+	<br>
+	<button onclick="responseSwift()">Response To Native </button>
+</div>
 <script type="text/javascript">
 	function showAlert(){
 		alert("Hello, native")
@@ -17,16 +34,14 @@
 	   document.getElementById("name").innerHTML = name
 	   return "SSR you too"   
 	}
+	function changeName(name){
+	 	var obj = document.getElementById("name");   
+	 	obj.innerHTML = name;
+	}
 	function responseSwift(){
-		window.webkit.messageHandlers.SSRSwift.postMessage("WebView 发送 给 Native")
+		window.webkit.messageHandlers.SSRSwift.postMessage("WebView send message to Native!")
 	}
 </script>
-
-<style type="text/css">
-	.button{
-		color: red
-	}
-</style>
 
 </body>
 </html>

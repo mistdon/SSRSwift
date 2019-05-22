@@ -22,7 +22,7 @@ class SSRRootTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(#file)
         choicesArray = [
             SSRNaviChoic(title: "HTTP", subTitle: "Request", vcClass: nil),
             SSRNaviChoic(title: "WebView", subTitle: "WebView request and handle",vcClass:nil),

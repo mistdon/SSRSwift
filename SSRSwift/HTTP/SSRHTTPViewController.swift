@@ -28,6 +28,14 @@ class SSRHTTPViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "SSRGithubFollowerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         print(testApi)
+    
+        let button = UIButton(frame: CGRect(x: 10, y: 200, width: 100, height: 50))
+        button.backgroundColor = .red
+        button.addTarget(self, action: #selector(tappedButton(_:)), for: .touchUpInside)
+        view.addSubview(button)
+    }
+    @objc func keyboardWillShow() {
+        print(#function)
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -57,6 +65,7 @@ class SSRHTTPViewController: UIViewController {
                     print(responseString)
                     if let followers = [SSRGithubFollower].deserialize(from: responseString){
                         print(followers)
+                        
                     }
                     
                 case .failure(let error):
@@ -83,9 +92,13 @@ class SSRHTTPViewController: UIViewController {
 //        }
     }
     @objc func tappedButton(_ sender: UIButton?){
+        sender?.width += 10
+        sender?.centerY += 10;
         print("Tapped button")
+        let color = UIColor.colorWithHex(rgb: 0x1A1B1C, alpha: 2)
+        sender?.backgroundColor = color
+    
     }
-
 }
 extension SSRHTTPViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

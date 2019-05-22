@@ -18,7 +18,5 @@ class ViewController: UIViewController {
             print(response)
         }
     }
-
-
 }
 
