@@ -13,17 +13,11 @@ import WebKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var wkWebView = WKWebView()
+    var wkWebView : WKWebView?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        let vc = UIViewController()
-//        vc.view.backgroundColor = .red
-//        window.frame = UIScreen.main.bounds
-//        window.rootViewController = vc
-//        window.makeKeyAndVisible()
-        setupInjectionIII()
+//        setupInjectionIII()
         setupConfigurationWKWebView()
         return true
     }
@@ -64,11 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     // 注册WKWbeVieww的ua
     func setupConfigurationWKWebView(){
-        wkWebView.evaluateJavaScript("navigator.userAgent") { (result, error) in
-            let oldAgent = result as! String
+        wkWebView = WKWebView();
+        wkWebView?.evaluateJavaScript("navigator.userAgent") { (result, error) in
+            let resultValue = result as? String
+            guard let oldAgent = resultValue else{
+                return
+            }
             let newAgent = oldAgent + "/SSRSwiftiOS"
             let dict = ["UserAgent":newAgent]
             UserDefaults.standard.register(defaults: dict)
+            self.wkWebView!.customUserAgent = newAgent
+            self.wkWebView = nil
         }
     }
 }

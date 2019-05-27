@@ -52,7 +52,7 @@ class SSRHTTPViewController: UIViewController {
                 case .success(let responseString):
                     print(responseString)
                     let response  = GithubRepositoryResponse(JSONString: responseString)
-                    print(response)
+                    print(response as Any)
                     self.tableView.reloadData()
                 case .failure(let error):
                     print(error)

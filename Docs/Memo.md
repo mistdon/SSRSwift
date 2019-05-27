@@ -8,3 +8,5 @@ ObjectMapper和HandyJSON
 不同点：
 HandyJSON不需要对每个属性单独赋值
 ObjectMapper需要在map里指定每个属性的对应关系
+
+结论: HandyJSON比ObjectMapper更有优势

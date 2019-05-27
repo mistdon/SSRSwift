@@ -5,6 +5,14 @@
 //  Created by shendong on 2019/5/9.
 //  Copyright © 2019年 shendong. All rights reserved.
 //
+/*
+     加载HTTP请求，需要在info.plist中添加
+     <key>NSAppTransportSecurity</key>
+     <dict>
+        <key>NSAllowsArbitraryLoadsInWebContent</key>
+        <true/>
+     </dict>
+*/
 
 import UIKit
 import WebKit
@@ -15,7 +23,7 @@ class SSRWebViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
     let disposeBag = DisposeBag()
-    var localSource = true
+    var localSource = false
     
     open var url: URL?
     override func viewDidLoad() {
@@ -25,9 +33,8 @@ class SSRWebViewController: UIViewController {
         loadWebView()
         if localSource {
             url = Bundle.main.url(forResource: "index", withExtension: "html")
-//            let buttonItem =  (title: "Add", style: <#T##UIBarButtonItem.Style#>, target: <#T##Any?#>, action: <#T##Selector?#>)
         }else{
-            url = URL(string: "https://www.hackingwithswift.com")
+            url = URL(string: "https://www.baidu.com")
         }
         loadUrl(url: url ?? URL(string: "about:blank")!)
     }
@@ -105,7 +112,9 @@ class SSRWebViewController: UIViewController {
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.evaluateJavaScript("sayHello('WebView!')") { (result, error) in
-            print(result, error)
+            if error != nil{
+                print(result as Any)
+            }
         }
     }
 }
