@@ -1,9 +1,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
-var str = "Hello, playground"
-
 //public struct SectionModel<Section, ItemType>{
 //    public var model: Section
 //    public var items: [ItemType]
@@ -24,18 +21,17 @@ var str = "Hello, playground"
 //let letters = queryvalue.addingPercentEncoding(withAllowedCharacters: .letters)
 //let hostAllowed = queryvalue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
 //let queryAllowed = queryvalue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-var arr = [String]()
-arr.append("a")
-arr.append("a")
-var sets = Set<String>()
-sets.insert("a")
-sets.insert("a")
-print(sets)
-var newsets: Set<String> = ["a", "b", "c"]
-newsets.insert("b")
-newsets.insert("b")
-
-var names = [Int: String]()
-names[14] = "six"
-print(names[14]!)
-names[14] = "sss"
+//let str = "SSRSwift://openDebug"
+//let url = URL(string: str)
+//url?.host
+//url?.scheme
+protocol BinaryInteger {
+    func squared() -> Self
+}
+extension Int : BinaryInteger{
+    func squared() -> Int {
+        return self * self
+    }
+}
+let a = 10
+a.squared()

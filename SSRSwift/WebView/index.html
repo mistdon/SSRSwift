@@ -24,7 +24,11 @@
 <div style="text-align: center;">
 	<button onclick="showAlert()">Show Alert</button>
 	<br>
-	<button onclick="responseSwift()">Response To Native </button>
+	<button onclick="sendMessageToNative()">Send Message To Native </button>
+    <br>
+    <button onclick="callNativeFunc()">Call Native Func </button>
+    <br>
+    <button onclick="callNativeFunc()">Call Native Func </button>
 </div>
 <script type="text/javascript">
 	function showAlert(){
@@ -38,9 +42,19 @@
 	 	var obj = document.getElementById("name");   
 	 	obj.innerHTML = name;
 	}
-	function responseSwift(){
+	function sendMessageToNative(){
 		window.webkit.messageHandlers.SSRSwift.postMessage("WebView send message to Native!")
 	}
+    function callNativeFunc(){
+        // window.webkit.messageHandlers.SSRSwift.postMessage()
+        console.info("callNativeFunc")
+    	loadURL("SSRSwift://openDebug")
+    }
+    function addPerson(name, age){
+        var res = 'Name: '+ name + 'Age: ' + age
+    	console.log(res)
+        alert(res)
+    }
 </script>
 
 </body>

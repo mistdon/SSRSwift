@@ -5,25 +5,19 @@
 //  Created by shendong on 2019/5/9.
 //  Copyright © 2019年 shendong. All rights reserved.
 //
-/*
-     加载HTTP请求，需要在info.plist中添加
-     <key>NSAppTransportSecurity</key>
-     <dict>
-        <key>NSAllowsArbitraryLoadsInWebContent</key>
-        <true/>
-     </dict>
-*/
 
 import UIKit
 import WebKit
 import RxSwift
 import RxCocoa
 
+let SSRWebViewModuleName = "SSRSwift"
+
 class SSRWebViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
     let disposeBag = DisposeBag()
-    var localSource = false
+    var localSource = true
     
     open var url: URL?
     override func viewDidLoad() {
@@ -32,11 +26,20 @@ class SSRWebViewController: UIViewController {
         view.backgroundColor = UIColor.white
         loadWebView()
         if localSource {
-            url = Bundle.main.url(forResource: "index", withExtension: "html")
+            let bundleURL = Bundle.main.resourceURL!.absoluteURL
+            let url = bundleURL.appendingPathComponent("index.html")
+            webView.loadFileURL(url, allowingReadAccessTo: bundleURL)
         }else{
             url = URL(string: "https://www.baidu.com")
+            loadUrl(url: url ?? URL(string: "about:blank")!)
         }
-        loadUrl(url: url ?? URL(string: "about:blank")!)
+        
+        let buttonItem = UIBarButtonItem(title: "Try!", style: .done, target: nil, action: nil)
+        buttonItem.rx.tap.subscribe(onNext: { [weak self] in
+            self?.sendToJavaScript(name: "Don", age: 25)
+        }).disposed(by: disposeBag)
+        self.navigationItem.rightBarButtonItem = buttonItem
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -61,7 +64,7 @@ class SSRWebViewController: UIViewController {
         configuration.userContentController = WKUserContentController()
         // 这里添加messageHander的name,和JS的代码对应
         // window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
-        configuration.userContentController.add(self, name: "SSRSwift")
+        configuration.userContentController.add(self, name: SSRWebViewModuleName)
         
         webView = WKWebView(frame: self.view.frame, configuration: configuration)
         webView.uiDelegate = self
@@ -108,6 +111,9 @@ class SSRWebViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
+    fileprivate func sendToJavaScript(name: String, age: Int){
+        webView.evaluateJavaScript("addPerson('\(name),\(age)')", completionHandler: nil)
+    }
 }
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -117,16 +123,77 @@ extension SSRWebViewController: WKNavigationDelegate{
             }
         }
     }
+    // 根据不同的请求，区分是否允许跳转。比如要对某个host进行限制，则选择 .cancel, 或者我们要对某些actionUrl进行自定义操作，也要拦截
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let request = navigationAction.request
+        let headers = request.allHTTPHeaderFields
+        print(headers as Any)
+        if request.url?.host == SSRWebViewModuleName {
+            let vc = UIViewController()
+            vc.view.backgroundColor = .white
+            self.navigationController?.show(vc, sender: nil)
+            decisionHandler(.cancel)
+        }else{
+            decisionHandler(.allow)
+        }
+        
+    }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        
+    }
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+    }
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        
+    }
+//    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+//        
+//    }
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        // WebView 被意外中断，比如白屏, 这里可以做一些过度操作，或者重试操作
+    }
 }
 extension SSRWebViewController: WKUIDelegate{
+//    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+//
+//    }
+    func webViewDidClose(_ webView: WKWebView) {
+        
+    }
     // 响应JS中的 alert() 方法
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         showAlert(message: message)
         completionHandler()
     }
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+        
+    }
+    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+        
+    }
+    func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
+        return false
+    }
+    func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
+        return self
+    }
+    func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController) {
+        
+    }
 }
 extension SSRWebViewController: WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print(message.body)
+        guard let response = message.body as? String else { return }
+        print(response)
     }
 }

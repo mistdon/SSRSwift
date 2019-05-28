@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let oldAgent = resultValue else{
                 return
             }
-            let newAgent = oldAgent + "/SSRSwiftiOS"
+            let newAgent = oldAgent + "/SSRSwiftiOS" // 这里添加自定义的UA
             let dict = ["UserAgent":newAgent]
             UserDefaults.standard.register(defaults: dict)
             self.wkWebView!.customUserAgent = newAgent

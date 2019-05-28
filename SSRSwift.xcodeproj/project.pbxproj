@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B00B6A3229D1848003AA07A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6A2229D1848003AA07A /* README.md */; };
+		3B00B6A5229D2428003AA07A /* SwiftTips.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6A4229D2428003AA07A /* SwiftTips.md */; };
 		3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7D22891D7A00D93243 /* GithubAPI.swift */; };
 		3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7F228928E900D93243 /* SSRNetwork.swift */; };
 		3B59EB8222892C5800D93243 /* Memo.md in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB8122892C5800D93243 /* Memo.md */; };
@@ -28,6 +30,7 @@
 		3BC983972294F4C000387BB9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC983962294F4C000387BB9 /* ViewExtension.swift */; };
 		3BC983992294F76700387BB9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC983982294F76700387BB9 /* ColorExtension.swift */; };
 		3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */ = {isa = PBXBuildFile; fileRef = 3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */; };
+		3BF3E27E229CDB1400BDE5C9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3BF3E27D229CDB1400BDE5C9 /* README.md */; };
 		3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */; };
 		3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */; };
 		A1F4B6CA983ED97879FF10AF /* Pods_SSRSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFECEEF199E184447689383 /* Pods_SSRSwiftUITests.framework */; };
@@ -57,6 +60,8 @@
 		1756092EFC720042CED29EC8 /* Pods_SSRSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSRSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C88DA76559005D587812E65 /* Pods-SSRSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift.release.xcconfig"; sourceTree = "<group>"; };
 		2CCEFE443BC8A18EE382F9E6 /* Pods-SSRSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftUITests/Pods-SSRSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B00B6A2229D1848003AA07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3B00B6A4229D2428003AA07A /* SwiftTips.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SwiftTips.md; sourceTree = "<group>"; };
 		3B59EB7C228913E500D93243 /* iOS代码规范.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "iOS代码规范.md"; sourceTree = "<group>"; };
 		3B59EB7D22891D7A00D93243 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		3B59EB7F228928E900D93243 /* SSRNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRNetwork.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		3BC983962294F4C000387BB9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		3BC983982294F76700387BB9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Structs和Classes的选择.md"; sourceTree = "<group>"; };
+		3BF3E27D229CDB1400BDE5C9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRxSwiftViewController.swift; sourceTree = "<group>"; };
 		3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRViewControllerProtocol.swift; sourceTree = "<group>"; };
 		5DE7D3678DCB18D268C67FAA /* Pods-SSRSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 		3B59EB7B228913BC00D93243 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
+				3B00B6A4229D2428003AA07A /* SwiftTips.md */,
 				3B59EB7C228913E500D93243 /* iOS代码规范.md */,
 				3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */,
 				3B59EB8122892C5800D93243 /* Memo.md */,
@@ -160,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				3B7CCBE52283D872007FEE9C /* SSRWebViewController.swift */,
+				3BF3E27D229CDB1400BDE5C9 /* README.md */,
 				3B7CCBE72284076D007FEE9C /* index.html */,
 			);
 			path = WebView;
@@ -238,6 +246,7 @@
 		3BF81C3622854498000B40EE /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3B00B6A2229D1848003AA07A /* README.md */,
 				3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */,
 			);
 			path = RxSwift;
@@ -392,6 +401,9 @@
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
 				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
 				3B7CCBE82284076E007FEE9C /* index.html in Resources */,
+				3B00B6A3229D1848003AA07A /* README.md in Resources */,
+				3BF3E27E229CDB1400BDE5C9 /* README.md in Resources */,
+				3B00B6A5229D2428003AA07A /* SwiftTips.md in Resources */,
 				3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
