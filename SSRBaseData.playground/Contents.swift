@@ -25,13 +25,13 @@ import RxCocoa
 //let url = URL(string: str)
 //url?.host
 //url?.scheme
-protocol BinaryInteger {
-    func squared() -> Self
-}
-extension Int : BinaryInteger{
-    func squared() -> Int {
-        return self * self
-    }
-}
-let a = 10
-a.squared()
+//protocol BinaryInteger {
+//    func squared() -> Self
+//}
+//extension Int : BinaryInteger{
+//    func squared() -> Int {
+//        return self * self
+//    }
+//}
+
+

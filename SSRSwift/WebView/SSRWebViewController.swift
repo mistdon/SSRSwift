@@ -11,8 +11,6 @@ import WebKit
 import RxSwift
 import RxCocoa
 
-let SSRWebViewModuleName = "SSRSwift"
-
 class SSRWebViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
@@ -64,7 +62,7 @@ class SSRWebViewController: UIViewController {
         configuration.userContentController = WKUserContentController()
         // 这里添加messageHander的name,和JS的代码对应
         // window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
-        configuration.userContentController.add(self, name: SSRWebViewModuleName)
+        configuration.userContentController.add(self, name: SSRAppModuleName)
         
         webView = WKWebView(frame: self.view.frame, configuration: configuration)
         webView.uiDelegate = self
@@ -128,7 +126,7 @@ extension SSRWebViewController: WKNavigationDelegate{
         let request = navigationAction.request
         let headers = request.allHTTPHeaderFields
         print(headers as Any)
-        if request.url?.host == SSRWebViewModuleName {
+        if request.url?.host == SSRAppModuleName {
             let vc = UIViewController()
             vc.view.backgroundColor = .white
             self.navigationController?.show(vc, sender: nil)

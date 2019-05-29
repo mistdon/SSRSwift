@@ -16,3 +16,8 @@
      
      Links: [Self vs self - what's the difference?](https://www.hackingwithswift.com/example-code/language/self-vs-self---whats-the-difference)
 
+2.  Swift中如何实现一个类方法？
+  ```swift
+  class func openCustomeURLScheme(_ urlScheme: String)
+  static func openCustomeURLScheme(_ urlScheme: String)
+  ```
