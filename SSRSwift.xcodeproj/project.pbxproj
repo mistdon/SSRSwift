@@ -13,6 +13,7 @@
 		3B00B6B3229E7103003AA07A /* SSRRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00B6B2229E7103003AA07A /* SSRRouterViewController.swift */; };
 		3B00B6B5229E710D003AA07A /* SSRRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00B6B4229E710D003AA07A /* SSRRouter.swift */; };
 		3B00B6B7229E715F003AA07A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6B6229E715F003AA07A /* README.md */; };
+		3B32FA0B22A54AD000FCAE61 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32FA0A22A54AD000FCAE61 /* Singleton.swift */; };
 		3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7D22891D7A00D93243 /* GithubAPI.swift */; };
 		3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7F228928E900D93243 /* SSRNetwork.swift */; };
 		3B59EB8222892C5800D93243 /* Memo.md in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB8122892C5800D93243 /* Memo.md */; };
@@ -72,6 +73,7 @@
 		3B00B6B2229E7103003AA07A /* SSRRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRouterViewController.swift; sourceTree = "<group>"; };
 		3B00B6B4229E710D003AA07A /* SSRRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRouter.swift; sourceTree = "<group>"; };
 		3B00B6B6229E715F003AA07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3B32FA0A22A54AD000FCAE61 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3B59EB7C228913E500D93243 /* iOS代码规范.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "iOS代码规范.md"; sourceTree = "<group>"; };
 		3B59EB7D22891D7A00D93243 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		3B59EB7F228928E900D93243 /* SSRNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRNetwork.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		3B32FA0922A54A9700FCAE61 /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				3B32FA0A22A54AD000FCAE61 /* Singleton.swift */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
 		3B59EB7B228913BC00D93243 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 		3B7E2DA122781EA2006AAE68 /* SSRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3B32FA0922A54A9700FCAE61 /* DesignPattern */,
 				3B00B6B1229E70EF003AA07A /* Router */,
 				3BC983952294F48800387BB9 /* Extension */,
 				3BF81C3922854B2F000B40EE /* Protocol */,
@@ -590,6 +601,7 @@
 				3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */,
 				3B59EB8222892C5800D93243 /* Memo.md in Sources */,
 				3BC983992294F76700387BB9 /* ColorExtension.swift in Sources */,
+				3B32FA0B22A54AD000FCAE61 /* Singleton.swift in Sources */,
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
 				3BC983972294F4C000387BB9 /* ViewExtension.swift in Sources */,
 				3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */,
