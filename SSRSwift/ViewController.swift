@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         Alamofire.request(testApi).response { response in
             print(response)
         }
+        
     }
 }
 

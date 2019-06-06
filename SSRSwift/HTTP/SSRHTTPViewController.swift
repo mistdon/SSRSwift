@@ -33,6 +33,9 @@ class SSRHTTPViewController: UIViewController {
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(tappedButton(_:)), for: .touchUpInside)
         view.addSubview(button)
+        
+        
+        
     }
     @objc func keyboardWillShow() {
         print(#function)
@@ -92,12 +95,20 @@ class SSRHTTPViewController: UIViewController {
 //        }
     }
     @objc func tappedButton(_ sender: UIButton?){
-        sender?.width += 10
-        sender?.centerY += 10;
-        print("Tapped button")
-        let color = UIColor.colorWithHex(rgb: 0x1A1B1C, alpha: 2)
-        sender?.backgroundColor = color
-    
+//        sender?.width += 10
+//        sender?.centerY += 10;
+//        print("Tapped button")
+//        let color = UIColor.colorWithHex(rgb: 0x1A1B1C, alpha: 2)
+//        sender?.backgroundColor = color
+        
+        SSRNetwork.shared.requestData(method: .get, url: testApi, parameters: ["q" : "SSR" as AnyObject], headers: [:], success: { (result, response) in
+            print(result)
+            print("======")
+            print(response)
+        }) { error in
+            print(error)
+        }
+        
     }
 }
 extension SSRHTTPViewController : UITableViewDelegate, UITableViewDataSource{

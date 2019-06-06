@@ -11,3 +11,11 @@ let searchApi = "https://api.github.com/search/repositories?q=ss"
 Alamofire.request(searchApi).responseJSON {dataResponse in
     print(dataResponse)
 }
+class SSRNetwork : NSObject{
+    static let shared: SSRNetwork = SSRNetwork()
+    private init(){}
+    
+    func request() {
+        
+    }
+}

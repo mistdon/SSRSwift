@@ -37,7 +37,7 @@ class SSRRootTableViewController: UITableViewController {
         let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(goToNextVC(at:)), for: .touchUpInside)
         
-//        view.rx.observe(CGRect.self, "frame").sub
+        print(App.appName)
     }
 
     // MARK: - Table view data source

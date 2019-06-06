@@ -39,3 +39,15 @@ target 'SSRSwift' do
   end
 
 end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'DD_LEGACY_MACROS=1']
+            config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
+            config.build_settings['RUN_CLANG_STATIC_ANALYZER'] = 'NO'
+            config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'NO'
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+        end
+    end
+end
