@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import ProgressHUD
 
 let API_URL = "https://api.github.com/search/repositories?q=ss"
 
@@ -29,13 +30,11 @@ class SSRHTTPViewController: UIViewController {
         tableView.register(UINib(nibName: "SSRGithubFollowerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         print(testApi)
     
-        let button = UIButton(frame: CGRect(x: 10, y: 200, width: 100, height: 50))
+        let button = UIButton(frame: CGRect(x: 10, y: 200, width: 200, height: 50))
+        button.setTitle("Touch me", for: .normal)
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(tappedButton(_:)), for: .touchUpInside)
         view.addSubview(button)
-        
-        
-        
     }
     @objc func keyboardWillShow() {
         print(#function)
@@ -47,6 +46,9 @@ class SSRHTTPViewController: UIViewController {
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    deinit {
+        print("http deinit")
     }
     @IBAction func startRequest(_ sender: Any) {
         if switchCaseOpen {
@@ -95,20 +97,33 @@ class SSRHTTPViewController: UIViewController {
 //        }
     }
     @objc func tappedButton(_ sender: UIButton?){
-//        sender?.width += 10
-//        sender?.centerY += 10;
-//        print("Tapped button")
-//        let color = UIColor.colorWithHex(rgb: 0x1A1B1C, alpha: 2)
-//        sender?.backgroundColor = color
-        
-        SSRNetwork.shared.requestData(method: .get, url: testApi, parameters: ["q" : "SSR" as AnyObject], headers: [:], success: { (result, response) in
-            print(result)
-            print("======")
-            print(response)
+        // 1.
+        SSRGithubFollower().requestMyFollowings(success: { (data) in
+            if let data = data as? [SSRGithubFollower]{
+                self.followers = data
+                self.tableView.reloadData()
+            }
         }) { error in
-            print(error)
+            if let error = error{
+                ProgressHUD.showError(error.localizedDescription)
+            }
         }
-        
+        // 2.
+        SSRGithubFollower().requestISFollowing("relatedcode", success: { (data) in
+
+        }) { (error) in
+            if let error = error{
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
+        SSRGithubRepository().searchRepository("SSR", success: { data in
+            let data = data as? SSRGithubRepositoryTotal
+            print(data?.total_count as Any)
+        }) { error in
+            if let error = error{
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 }
 extension SSRHTTPViewController : UITableViewDelegate, UITableViewDataSource{

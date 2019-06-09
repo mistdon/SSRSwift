@@ -7,5 +7,5 @@
 //
 
 import Foundation
-// let searchApi = "https://api.github.com/search/repositories?q=ss"
-let baseDomain = "https://api.github.com"
+
+

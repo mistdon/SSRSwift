@@ -44,6 +44,12 @@
 		3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */; };
 		A1F4B6CA983ED97879FF10AF /* Pods_SSRSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFECEEF199E184447689383 /* Pods_SSRSwiftUITests.framework */; };
 		A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */; };
+		A2BE21F722ABB4C00096217F /* SSRUrlHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE21F622ABB4C00096217F /* SSRUrlHost.swift */; };
+		A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE21F822ABB6620096217F /* SSRDataword.swift */; };
+		A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */; };
+		A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221322ACAC490096217F /* SSRResponse.swift */; };
+		A2BE221722ACAE9C0096217F /* SSRUrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221622ACAE9C0096217F /* SSRUrlPath.swift */; };
+		A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221A22ACEE210096217F /* GithubRepository.swift */; };
 		B3DDF81651451705350A5812 /* Pods_SSRSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756092EFC720042CED29EC8 /* Pods_SSRSwift.framework */; };
 		F6918D685DA9CB0C4AD14FD5 /* Pods_SSRSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -114,6 +120,12 @@
 		5DE7D3678DCB18D268C67FAA /* Pods-SSRSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E7ABA1D7AD1D6DF3FA2EAC9 /* Pods-SSRSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftUITests/Pods-SSRSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryResponse.swift; sourceTree = "<group>"; };
+		A2BE21F622ABB4C00096217F /* SSRUrlHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRUrlHost.swift; sourceTree = "<group>"; };
+		A2BE21F822ABB6620096217F /* SSRDataword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRDataword.swift; sourceTree = "<group>"; };
+		A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRUserDefaults.swift; sourceTree = "<group>"; };
+		A2BE221322ACAC490096217F /* SSRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRResponse.swift; sourceTree = "<group>"; };
+		A2BE221622ACAE9C0096217F /* SSRUrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRUrlPath.swift; sourceTree = "<group>"; };
+		A2BE221A22ACEE210096217F /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
 		B47E46477C22C3D59F6310E2 /* Pods-SSRSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF0509B5C1DB1B679BB6FA34 /* Pods-SSRSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSRSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +196,7 @@
 			children = (
 				3B59EB7F228928E900D93243 /* SSRNetwork.swift */,
 				3B88920122A7EFB500592EBF /* SSRRequest.swift */,
+				A2BE221322ACAC490096217F /* SSRResponse.swift */,
 			);
 			path = SSRNetwork;
 			sourceTree = "<group>";
@@ -191,12 +204,12 @@
 		3B5AD2EC227EE1BD00F04BFB /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				A2BE221522ACADAF0096217F /* Github */,
 				3B59EB8322892E4E00D93243 /* SSRNetwork */,
 				3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */,
 				A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */,
 				3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */,
 				3B7CCBC92281820E007FEE9C /* SSRGithubFollowerCell.xib */,
-				3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -248,6 +261,8 @@
 				3B00B6AF229E7078003AA07A /* AppConstant.swift */,
 				3B7E2DA422781EA2006AAE68 /* ViewController.swift */,
 				3B59EB7D22891D7A00D93243 /* GithubAPI.swift */,
+				A2BE21F822ABB6620096217F /* SSRDataword.swift */,
+				A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
 				3B7E2DA622781EA2006AAE68 /* Main.storyboard */,
 				3B7E2DA922781EA4006AAE68 /* Assets.xcassets */,
@@ -322,6 +337,17 @@
 				2CCEFE443BC8A18EE382F9E6 /* Pods-SSRSwiftUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2BE221522ACADAF0096217F /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				A2BE21F622ABB4C00096217F /* SSRUrlHost.swift */,
+				A2BE221622ACAE9C0096217F /* SSRUrlPath.swift */,
+				3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */,
+				A2BE221A22ACEE210096217F /* GithubRepository.swift */,
+			);
+			path = Github;
 			sourceTree = "<group>";
 		};
 		C876D9880317E72C8EEF4711 /* Frameworks */ = {
@@ -403,7 +429,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = shendong;
+				ORGANIZATIONNAME = Don.shen;
 				TargetAttributes = {
 					3B7E2D9E22781EA2006AAE68 = {
 						CreatedOnToolsVersion = 10.1;
@@ -501,11 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -543,6 +565,7 @@
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -550,14 +573,13 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -598,12 +620,17 @@
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
 				3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
+				A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */,
 				A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */,
 				3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */,
 				3B00B6B3229E7103003AA07A /* SSRRouterViewController.swift in Sources */,
+				A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */,
 				3B6E7B4B22A9139A001A311E /* String+Extension.swift in Sources */,
 				3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */,
 				3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */,
+				A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */,
+				A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */,
+				A2BE21F722ABB4C00096217F /* SSRUrlHost.swift in Sources */,
 				3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */,
 				3B00B6B0229E7079003AA07A /* AppConstant.swift in Sources */,
 				3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */,
@@ -616,6 +643,7 @@
 				3B6E7B4522A9119C001A311E /* AppAbout.swift in Sources */,
 				3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */,
 				3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */,
+				A2BE221722ACAE9C0096217F /* SSRUrlPath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

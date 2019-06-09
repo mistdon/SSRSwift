@@ -21,7 +21,7 @@ public class SSRNetwork{
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         alamofireManager = Alamofire.SessionManager(configuration: configuration)
     }
-    public func requestData(method: Alamofire.HTTPMethod,
+    func requestData(method: Alamofire.HTTPMethod,
                              url: String,
                              parameters: [String: AnyObject]?,
                              headers: [String: String],
@@ -38,5 +38,10 @@ public class SSRNetwork{
             }
         })
        return request
+    }
+}
+private extension SSRNetwork{
+    private func parseResponse(value: Any?){
+//        if let response = 
     }
 }

@@ -27,6 +27,7 @@ target 'SSRSwift' do
   # 注意，这里FLEX不要升级到3.0.0，里面使用了部分的私有API，会影响送审
   pod 'SwiftLint', :configurations => ['Debug']
 
+  pod 'ProgressHUD'
   # 测试
   target 'SSRSwiftTests' do
     inherit! :search_paths

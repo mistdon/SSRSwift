@@ -5,6 +5,7 @@ PODS:
   - FLEX (2.4.0)
   - HandyJSON (5.0.0)
   - ObjectMapper (3.4.2)
+  - ProgressHUD (2.60)
   - PromiseKit (6.8.4):
     - PromiseKit/CorePromise (= 6.8.4)
     - PromiseKit/Foundation (= 6.8.4)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - FLEX (~> 2.0)
   - HandyJSON (~> 5.0.0)
   - ObjectMapper (~> 3.4)
+  - ProgressHUD
   - PromiseKit
   - RxCocoa (~> 4.5.0)
   - RxSwift (~> 4.5.0)
@@ -43,6 +45,7 @@ SPEC REPOS:
     - FLEX
     - HandyJSON
     - ObjectMapper
+    - ProgressHUD
     - PromiseKit
     - RxCocoa
     - RxSwift
@@ -56,6 +59,7 @@ SPEC CHECKSUMS:
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 511425112b6db3241447f34b9728a6a220c075e2
+PODFILE CHECKSUM: e47c132ca555e02efe8af81c76dae2cd85a100c5
 
 COCOAPODS: 1.5.3
