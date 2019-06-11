@@ -51,6 +51,7 @@
 		A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221322ACAC490096217F /* SSRResponse.swift */; };
 		A2BE221722ACAE9C0096217F /* SSRUrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221622ACAE9C0096217F /* SSRUrlPath.swift */; };
 		A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221A22ACEE210096217F /* GithubRepository.swift */; };
+		A2BE223222AFCCEE0096217F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE223122AFCCEE0096217F /* BaseViewController.swift */; };
 		B3DDF81651451705350A5812 /* Pods_SSRSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756092EFC720042CED29EC8 /* Pods_SSRSwift.framework */; };
 		F6918D685DA9CB0C4AD14FD5 /* Pods_SSRSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		A2BE221322ACAC490096217F /* SSRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRResponse.swift; sourceTree = "<group>"; };
 		A2BE221622ACAE9C0096217F /* SSRUrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRUrlPath.swift; sourceTree = "<group>"; };
 		A2BE221A22ACEE210096217F /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
+		A2BE223122AFCCEE0096217F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B47E46477C22C3D59F6310E2 /* Pods-SSRSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF0509B5C1DB1B679BB6FA34 /* Pods-SSRSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSRSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,7 @@
 				3B7E2DA422781EA2006AAE68 /* ViewController.swift */,
 				3B59EB7D22891D7A00D93243 /* GithubAPI.swift */,
 				A2BE21F822ABB6620096217F /* SSRDataword.swift */,
+				A2BE223122AFCCEE0096217F /* BaseViewController.swift */,
 				A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
 				3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */,
@@ -624,6 +627,7 @@
 				3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */,
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
 				3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */,
+				A2BE223222AFCCEE0096217F /* BaseViewController.swift in Sources */,
 				3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
 				A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import SnapKit
 
 let API_URL = "https://api.github.com/search/repositories?q=ss"
 
@@ -17,26 +18,29 @@ let testApi = "https://api.github.com/users/mistdon/following"
 
 let switchCaseOpen = false
 
-class SSRHTTPViewController: UIViewController {
+class SSRHTTPViewController: BaseViewController {
     let cellIdentifier = "reuseIdentifier"
     let myButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     var followers = [SSRGithubFollower]()
     var repositories = [GithubRepository]()
     
-    @IBOutlet weak var tableView: UITableView!
+    var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView = UITableView(frame: .zero, style: .plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
         tableView.register(UINib(nibName: "SSRGithubFollowerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        print(testApi)
-    
-        let button = UIButton(frame: CGRect(x: 10, y: 200, width: 200, height: 50))
-        button.setTitle("Touch me", for: .normal)
-        button.backgroundColor = .red
-        button.addTarget(self, action: #selector(tappedButton(_:)), for: .touchUpInside)
-        view.addSubview(button)
-    }
-    @objc func keyboardWillShow() {
-        print(#function)
+        
+        let button1 = UIBarButtonItem(title: "Request", style: .done, target: self, action: #selector(startRequest(_:)))
+        let button2 = UIBarButtonItem(title: "Alamofire", style: .done, target: self, action: #selector(tappedButton(_:)))
+        self.navigationItem.rightBarButtonItems = [button1, button2]
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -77,23 +81,6 @@ class SSRHTTPViewController: UIViewController {
                 }
             }
         }
-        
-        
-//        Alamofire.request(API_URL).response { (dataResponse) in
-//            if let json = try? JSON(data: dataResponse.data!){
-//                let arr = json.arrayObject
-//                if let arr = arr{
-//                    for dict in arr{
-//                        let follower: SSRGithubFollower = SSRGithubFollower(with: dict as? [String : Any])
-////                        let follower2: SSRGithubFollower = SSRGithubFollower.deserialize(from: dict as? [String : Any])!
-//                        self.followers.append(follower)
-////                        self.followers.append(follower2)
-//                    }
-//                    print(self.followers)
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
     }
     @objc func tappedButton(_ sender: UIButton?){
         // 1.

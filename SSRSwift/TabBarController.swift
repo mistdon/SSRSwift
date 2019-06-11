@@ -12,7 +12,7 @@ import RTRootNavigationController
 class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        edgesForExtendedLayout = []
         let homeNavi = RTContainerNavigationController(rootViewController: SSRRootTableViewController())
         homeNavi.tabBarItem = UITabBarItem(title: "首页", image: nil, selectedImage: nil)
         let mineNavi = RTContainerNavigationController(rootViewController: MineViewController())
