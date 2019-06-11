@@ -2,10 +2,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol SSRProtocol{
-    var headers: [String: String]? {get}
-}
-extension SSRProtocol{
-    h
-}
+let mainQueue = DispatchQueue.main
 
+let globalQueue = DispatchQueue.global(qos: .background)

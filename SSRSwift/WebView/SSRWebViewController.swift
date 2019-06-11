@@ -10,9 +10,10 @@ import UIKit
 import WebKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 class SSRWebViewController: UIViewController {
-    var webView: WKWebView!
+    weak var wkWebView: WKWebView!
     var progressView: UIProgressView!
     let disposeBag = DisposeBag()
     var localSource = true
@@ -26,7 +27,7 @@ class SSRWebViewController: UIViewController {
         if localSource {
             let bundleURL = Bundle.main.resourceURL!.absoluteURL
             let url = bundleURL.appendingPathComponent("index.html")
-            webView.loadFileURL(url, allowingReadAccessTo: bundleURL)
+            wkWebView.loadFileURL(url, allowingReadAccessTo: bundleURL)
         }else{
             url = URL(string: "https://www.baidu.com")
             loadUrl(url: url ?? URL(string: "about:blank")!)
@@ -39,17 +40,24 @@ class SSRWebViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = buttonItem
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // 下面两行解决 configuration.userContentController.add(self, name: SSRAppModuleName) 导致的循环引用
+        wkWebView.configuration.userContentController.removeScriptMessageHandler(forName:SSRAppModuleName)
+        wkWebView.configuration.userContentController.removeAllUserScripts()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-    
     deinit {
         progressView.removeFromSuperview()
         progressView = nil
-        webView.scrollView.delegate = nil
-        webView.navigationDelegate = nil
-        webView.uiDelegate = nil
-        print("WebView is dealloc")
+        wkWebView.scrollView.delegate = nil
+        wkWebView.navigationDelegate = nil
+        wkWebView.uiDelegate = nil
+        wkWebView.removeFromSuperview()
+        wkWebView = nil
+        print("WebView deinit")
     }
     // MARK: 初始化
     fileprivate func loadWebView(){
@@ -63,17 +71,28 @@ class SSRWebViewController: UIViewController {
         // 这里添加messageHander的name,和JS的代码对应
         // window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
         configuration.userContentController.add(self, name: SSRAppModuleName)
-        
-        webView = WKWebView(frame: self.view.frame, configuration: configuration)
+        let webView = WKWebView(frame: .zero, configuration: configuration)
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = true // 打开后，用户可在webview内左滑返回上一级
-        view = webView
-//        if #available(iOS 11.0, *){
-//            webView.scrollView.contentInsetAdjustmentBehavior = .never
-//        }else{
-//            automaticallyAdjustsScrollViewInsets = false
-//        }
+        view.addSubview(webView)
+        webView.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(self.view)
+        }
+        wkWebView = webView
+        
+        let subview  =  UIView()
+        subview.backgroundColor = .blue
+        view.addSubview(subview)
+        subview.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.width.height.equalTo(100)
+        }
+        if #available(iOS 11.0, *){
+            webView.scrollView.contentInsetAdjustmentBehavior = .never
+        }else{
+            automaticallyAdjustsScrollViewInsets = false
+        }
         // 加载ProgressView
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
@@ -89,20 +108,20 @@ class SSRWebViewController: UIViewController {
     }
     fileprivate func bindActions(){
         // 处理title
-        webView.rx.observe(String.self, #keyPath(WKWebView.title)).subscribe(onNext: { [weak self]  (value) in
+        wkWebView.rx.observe(String.self, #keyPath(WKWebView.title)).subscribe(onNext: { [weak self]  (value) in
             guard let title = value else {return}
             self?.title = title
         }).disposed(by: disposeBag)
         // 处理进度条
-        webView.rx.observe(Double.self, #keyPath(WKWebView.estimatedProgress)).subscribe(onNext: {[weak self] (value) in
+        wkWebView.rx.observe(Double.self, #keyPath(WKWebView.estimatedProgress)).subscribe(onNext: {[weak self] (value) in
             guard let progess = value else {return}
-            self!.progressView.progress = Float(progess)
-            self!.progressView.isHidden = (progess == 1)
+            self?.progressView.progress = Float(progess)
+            self?.progressView.isHidden = (progess == 1)
         }).disposed(by: disposeBag)
     }
     fileprivate func loadUrl(url: URL){
         let request = URLRequest(url: url)
-        self.webView.load(request)
+        self.wkWebView.load(request)
     }
     fileprivate func showAlert(message: String){
         let alertVC = UIAlertController(title: "Attention Please", message: message, preferredStyle: .alert)
@@ -110,7 +129,7 @@ class SSRWebViewController: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     fileprivate func sendToJavaScript(name: String, age: Int){
-        webView.evaluateJavaScript("addPerson('\(name),\(age)')", completionHandler: nil)
+        wkWebView.evaluateJavaScript("addPerson('\(name),\(age)')", completionHandler: nil)
     }
 }
 extension SSRWebViewController: WKNavigationDelegate{
@@ -182,9 +201,9 @@ extension SSRWebViewController: WKUIDelegate{
     func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
         return false
     }
-    func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
-        return self
-    }
+//    func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
+//        return self
+//    }
     func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController) {
         
     }

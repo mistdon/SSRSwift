@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 注册WKWbeVieww的ua
     func setupConfigurationWKWebView(){
         wkWebView = WKWebView();
-        wkWebView?.evaluateJavaScript("navigator.userAgent") { (result, error) in
+        wkWebView?.evaluateJavaScript("navigator.userAgent") { [weak self](result, error) in
             let resultValue = result as? String
             guard let oldAgent = resultValue else{
                 return
@@ -67,8 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let newAgent = oldAgent + "/SSRSwiftiOS" // 这里添加自定义的UA
             let dict = ["UserAgent":newAgent]
             UserDefaults.standard.register(defaults: dict)
-            self.wkWebView!.customUserAgent = newAgent
-            self.wkWebView = nil
+            self?.wkWebView!.customUserAgent = newAgent
+            self?.wkWebView = nil
         }
     }
 }

@@ -3,7 +3,8 @@ Swift项目示例集锦
 
 包含以下内容：
 
-1、 常用基础组件
+1、 常用内容
+  - Swift中GCD的使用，有一篇详尽的教程[Swift GCD](https://github.com/pmtao/DispatchQueueTest), 里面有html版和PDF版，很有帮助
 
 2、常用第三方库的使用和DEMO
      [SwiftLint](https://github.com/realm/SwiftLint)

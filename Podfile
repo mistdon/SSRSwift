@@ -22,6 +22,7 @@ target 'SSRSwift' do
   pod 'RxCocoa', '~> 4.5.0'
   pod 'PromiseKit'
   pod 'AlamofireImage'
+  pod 'SnapKit', '~> 4.2.0'
   # 工具类
   pod 'FLEX', '~> 2.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
   # 注意，这里FLEX不要升级到3.0.0，里面使用了部分的私有API，会影响送审
