@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '9.0'
 
 inhibit_all_warnings!
 
@@ -23,12 +23,13 @@ target 'SSRSwift' do
   pod 'PromiseKit'
   pod 'AlamofireImage'
   pod 'SnapKit', '~> 4.2.0'
+  pod 'RTRootNavigationController'
   # 工具类
   pod 'FLEX', '~> 2.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
   # 注意，这里FLEX不要升级到3.0.0，里面使用了部分的私有API，会影响送审
   pod 'SwiftLint', :configurations => ['Debug']
 
-  pod 'ProgressHUD'
+#  pod 'ProgressHUD'
   # 测试
   target 'SSRSwiftTests' do
     inherit! :search_paths

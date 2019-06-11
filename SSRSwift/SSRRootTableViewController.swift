@@ -28,6 +28,7 @@ class SSRRootTableViewController: UITableViewController {
             SSRNaviChoic(title: "WebView", subTitle: "WebView request and handle",vcClass:nil),
             SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:nil)
         ]
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

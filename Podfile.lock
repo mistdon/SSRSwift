@@ -5,7 +5,6 @@ PODS:
   - FLEX (2.4.0)
   - HandyJSON (5.0.0)
   - ObjectMapper (3.4.2)
-  - ProgressHUD (2.60)
   - PromiseKit (6.8.4):
     - PromiseKit/CorePromise (= 6.8.4)
     - PromiseKit/Foundation (= 6.8.4)
@@ -15,6 +14,9 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
+  - RTRootNavigationController (0.7.1):
+    - RTRootNavigationController/Core (= 0.7.1)
+  - RTRootNavigationController/Core (0.7.1)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
@@ -31,8 +33,8 @@ DEPENDENCIES:
   - FLEX (~> 2.0)
   - HandyJSON (~> 5.0.0)
   - ObjectMapper (~> 3.4)
-  - ProgressHUD
   - PromiseKit
+  - RTRootNavigationController
   - RxCocoa (~> 4.5.0)
   - RxSwift (~> 4.5.0)
   - SDWebImage
@@ -47,8 +49,8 @@ SPEC REPOS:
     - FLEX
     - HandyJSON
     - ObjectMapper
-    - ProgressHUD
     - PromiseKit
+    - RTRootNavigationController
     - RxCocoa
     - RxSwift
     - SDWebImage
@@ -62,8 +64,8 @@ SPEC CHECKSUMS:
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
-  ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
@@ -71,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 12065f18c4cb483a52f38751fed78b3160175bd5
+PODFILE CHECKSUM: fe39fa865d8a4207599275630d2520f15345b955
 
 COCOAPODS: 1.5.3

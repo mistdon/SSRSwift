@@ -60,14 +60,14 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>ProgressHUD.xcscheme</key>
+		<key>PromiseKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>PromiseKit.xcscheme</key>
+		<key>RTRootNavigationController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

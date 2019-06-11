@@ -30,7 +30,6 @@
 		3B7CCBE82284076E007FEE9C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B7CCBE72284076D007FEE9C /* index.html */; };
 		3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E2DA222781EA2006AAE68 /* AppDelegate.swift */; };
 		3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E2DA422781EA2006AAE68 /* ViewController.swift */; };
-		3B7E2DA822781EA2006AAE68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7E2DA622781EA2006AAE68 /* Main.storyboard */; };
 		3B7E2DAA22781EA4006AAE68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B7E2DA922781EA4006AAE68 /* Assets.xcassets */; };
 		3B7E2DAD22781EA4006AAE68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7E2DAB22781EA4006AAE68 /* LaunchScreen.storyboard */; };
 		3B7E2DB822781EA5006AAE68 /* SSRSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E2DB722781EA5006AAE68 /* SSRSwiftTests.swift */; };
@@ -38,6 +37,8 @@
 		3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */; };
 		3B88920222A7EFB500592EBF /* SSRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88920122A7EFB500592EBF /* SSRRequest.swift */; };
 		3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCF3942229E742E0073D61C /* urlSchemes.png */; };
+		3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */; };
+		3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */; };
 		3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */ = {isa = PBXBuildFile; fileRef = 3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */; };
 		3BF3E27E229CDB1400BDE5C9 /* WebREADME.md in Resources */ = {isa = PBXBuildFile; fileRef = 3BF3E27D229CDB1400BDE5C9 /* WebREADME.md */; };
 		3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */; };
@@ -100,7 +101,6 @@
 		3B7E2D9F22781EA2006AAE68 /* SSRSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSRSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7E2DA222781EA2006AAE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B7E2DA422781EA2006AAE68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3B7E2DA722781EA2006AAE68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B7E2DA922781EA4006AAE68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B7E2DAC22781EA4006AAE68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B7E2DAE22781EA4006AAE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +113,8 @@
 		3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRGithubFollower.swift; sourceTree = "<group>"; };
 		3B88920122A7EFB500592EBF /* SSRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRequest.swift; sourceTree = "<group>"; };
 		3BCF3942229E742E0073D61C /* urlSchemes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urlSchemes.png; sourceTree = "<group>"; };
+		3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Structs和Classes的选择.md"; sourceTree = "<group>"; };
 		3BF3E27D229CDB1400BDE5C9 /* WebREADME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = WebREADME.md; sourceTree = "<group>"; };
 		3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRxSwiftViewController.swift; sourceTree = "<group>"; };
@@ -264,7 +266,8 @@
 				A2BE21F822ABB6620096217F /* SSRDataword.swift */,
 				A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
-				3B7E2DA622781EA2006AAE68 /* Main.storyboard */,
+				3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */,
+				3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */,
 				3B7E2DA922781EA4006AAE68 /* Assets.xcassets */,
 				3B7E2DAB22781EA4006AAE68 /* LaunchScreen.storyboard */,
 				3B7E2DAE22781EA4006AAE68 /* Info.plist */,
@@ -475,7 +478,6 @@
 				3B7E2DAD22781EA4006AAE68 /* LaunchScreen.storyboard in Resources */,
 				3B00B6B7229E715F003AA07A /* RouterREADME.md in Resources */,
 				3B7E2DAA22781EA4006AAE68 /* Assets.xcassets in Resources */,
-				3B7E2DA822781EA2006AAE68 /* Main.storyboard in Resources */,
 				3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */,
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
 				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
@@ -565,8 +567,8 @@
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -580,8 +582,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -619,7 +621,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B88920222A7EFB500592EBF /* SSRRequest.swift in Sources */,
+				3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */,
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
+				3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */,
 				3B59EB7E22891D7A00D93243 /* GithubAPI.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
 				A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */,
@@ -681,14 +685,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3B7E2DA622781EA2006AAE68 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B7E2DA722781EA2006AAE68 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3B7E2DAB22781EA4006AAE68 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -821,10 +817,11 @@
 			baseConfigurationReference = BF0509B5C1DB1B679BB6FA34 /* Pods-SSRSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S8238R3HUC;
 				INFOPLIST_FILE = SSRSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,10 +839,11 @@
 			baseConfigurationReference = 1C88DA76559005D587812E65 /* Pods-SSRSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S8238R3HUC;
 				INFOPLIST_FILE = SSRSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

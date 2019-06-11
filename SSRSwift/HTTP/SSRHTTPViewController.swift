@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
-import ProgressHUD
 
 let API_URL = "https://api.github.com/search/repositories?q=ss"
 
@@ -105,7 +104,7 @@ class SSRHTTPViewController: UIViewController {
             }
         }) { error in
             if let error = error{
-                ProgressHUD.showError(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
         // 2.
@@ -113,7 +112,7 @@ class SSRHTTPViewController: UIViewController {
 
         }) { (error) in
             if let error = error{
-                ProgressHUD.showError(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
         SSRGithubRepository().searchRepository("SSR", success: { data in
@@ -121,7 +120,7 @@ class SSRHTTPViewController: UIViewController {
             print(data?.total_count as Any)
         }) { error in
             if let error = error{
-                ProgressHUD.showError(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
     }
