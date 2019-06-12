@@ -1,21 +1,23 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
-var str = "Hello, playground"
-
-let testApi = "https://api.github.com/users/mistdon/following"
-
-let searchApi = "https://api.github.com/search/repositories?q=ss"
-
-Alamofire.request(searchApi).responseJSON {dataResponse in
-    print(dataResponse)
+public enum BaseUrl: String{
+    case development = "https://api.github.com"
+    case production = "https://testApi.github.com"
 }
-class SSRNetwork : NSObject{
-    static let shared: SSRNetwork = SSRNetwork()
-    private init(){}
-    
-    func request() {
-        
+
+public enum API: String{
+    case following = "/users/mistdon/following"
+    case isFollowing = "/user/following/"
+    static func testapi(){
+        print(API.following.url())
+        print(API.isFollowing.url())
     }
 }
+extension API{
+    func url() -> String {
+        return BaseUrl.development.rawValue + self.rawValue
+    }
+}
+API.testapi()
+

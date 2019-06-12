@@ -13,8 +13,24 @@ import Foundation
  let testApi = "https://api.github.com/users/mistdon/following"
  */
 
+public enum BaseUrl: String{
+    case development = "https://api.github.com"
+    case production = "https://testApi.github.com"
+}
 
-
+public enum API: String{
+    case following = "/users/mistdon/following"
+    case isFollowing = "/user/following/"
+    static func testapi(){
+        print(API.following.url())
+        print(API.isFollowing.url())
+    }
+}
+extension API{
+    func url() -> String {
+        return BaseUrl.development.rawValue + self.rawValue
+    }
+}
 struct SSRUrlPath {
     // 查看我关注的人员列表
     static func following() -> String {
