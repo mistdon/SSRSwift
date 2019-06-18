@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class SSRWebViewController: UIViewController {
+class SSRWebViewController: BaseViewController {
     weak var wkWebView: WKWebView!
     var progressView: UIProgressView!
     let disposeBag = DisposeBag()

@@ -15,13 +15,12 @@ class MineViewController: UIViewController {
     var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Mine"
         let button = UIButton(type: .custom)
-        button.backgroundColor = .blue
+        button.backgroundColor = UIColor(hex6: "#62CCB0")
         button.setTitle("Push Next", for: .normal)
         button.rx.tap.subscribe(onNext: { [weak self] in
-            let vc = UIViewController()
-            vc.view.backgroundColor = .white
+            let vc = BaseViewController()
             self?.navigationController?.show(vc, sender: nil)
         }).disposed(by: disposeBag)
         view.addSubview(button)

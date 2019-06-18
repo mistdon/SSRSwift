@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 // http://www.hangge.com/blog/cache/detail_1941.html
-class SSRRxSwiftViewController: UIViewController {
+class SSRRxSwiftViewController: BaseViewController {
     var label = UILabel()
     var firstName = UITextField()
     var lastName  = UITextField()

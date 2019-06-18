@@ -27,6 +27,7 @@ import UIKit
 
 protocol SSRViewControllBaseProtocol {
     func setBaseViewControllerConfiguration()
+   
 }
 //extension UIViewController: SSRViewControllBaseProtocol{
 //    func setBaseViewControllerConfiguration() {

@@ -18,12 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
 //        setupInjectionIII()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navi = RTRootNavigationController(rootViewController: TabBarController())
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
+        
+        Appearance.configureNavigationBarAppearance()
         
         setupConfigurationWKWebView()
         return true

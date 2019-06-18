@@ -28,7 +28,8 @@ target 'SSRSwift' do
   pod 'FLEX', '~> 2.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
   # 注意，这里FLEX不要升级到3.0.0，里面使用了部分的私有API，会影响送审
   pod 'SwiftLint', :configurations => ['Debug']
-
+  
+  pod 'SVGKit' # 加载SVG的图片
 #  pod 'ProgressHUD'
   # 测试
   target 'SSRSwiftTests' do

@@ -12,7 +12,7 @@ protocol SSRRouteOpenCustomURLSchemeProtocl {
     static func openCustomeURLScheme(_ customURLScheme: String)
 }
 
-class SSRRouterViewController: UIViewController  {
+class SSRRouterViewController: BaseViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

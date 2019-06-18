@@ -26,7 +26,8 @@ class SSRRootTableViewController: UITableViewController {
         choicesArray = [
             SSRNaviChoic(title: "HTTP", subTitle: "Request", vcClass: nil),
             SSRNaviChoic(title: "WebView", subTitle: "WebView request and handle",vcClass:nil),
-            SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:nil)
+            SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:nil),
+            SSRNaviChoic(title: "Route", subTitle: "Router",vcClass:nil)
         ]
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
@@ -54,6 +55,12 @@ class SSRRootTableViewController: UITableViewController {
         return 0
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("start....")
+        print(self.name)
+        self.name = "shen"
+        print(self.name)
+        print("end....")
+        return
         goToNextVC(at: indexPath)
     }
     @objc func goToNextVC(at indexPath: IndexPath){
@@ -67,9 +74,25 @@ class SSRRootTableViewController: UITableViewController {
         case 2:
             let webVC = SSRRxSwiftViewController()
             self.navigationController?.show(webVC, sender: nil)
+        case 3:
+            let webVC = SSRRouterViewController()
+            self.navigationController?.show(webVC, sender: nil)
         default:
             print("No match viewController.")
         }
     }
 
+}
+extension UIViewController{
+    private struct AssociateKeys{
+        static var nameKey = "nameKey"
+    }
+    var name: String?{
+        set{
+            objc_setAssociatedObject(self, &AssociateKeys.nameKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+        }
+        get{
+            return objc_getAssociatedObject(self, &AssociateKeys.nameKey) as? String
+        }
+    }
 }
