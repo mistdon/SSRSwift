@@ -95,13 +95,8 @@ class SSRWebViewController: BaseViewController {
         }
         // 加载ProgressView
         progressView = UIProgressView(progressViewStyle: .default)
+        progressView.frame = CGRect(x: 0, y: 0, width: App.screenWidth, height: 0.5)
         progressView.sizeToFit()
-        if let naviVC = self.navigationController {
-            var rect = progressView.frame
-            rect.origin.y = naviVC.navigationBar.frame.size.height + UIApplication.shared.statusBarFrame.size.height
-            rect.size.width = UIScreen.main.bounds.size.width
-            progressView.frame = rect
-        }
         view.addSubview(progressView)
         // 绑定事件
         bindActions()

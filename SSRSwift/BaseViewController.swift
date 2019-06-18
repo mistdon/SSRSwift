@@ -60,7 +60,7 @@ class BaseViewController: UIViewController {
             }
         }).disposed(by: base_disposeBag)
         let closeItem = UIBarButtonItem.init(customView: closeButton)
-        self.navigationItem.leftBarButtonItem = closeItem
+        self.navigationItem.leftBarButtonItems = [createLeftNegativeSpacerItem(), closeItem]
     }
     fileprivate func setLeftBackButton(closure: @escaping () -> Void){
         let closeButton = UIButton.init(type: .custom)
@@ -71,6 +71,16 @@ class BaseViewController: UIViewController {
             closure()
         }).disposed(by: base_disposeBag)
         let closeItem = UIBarButtonItem.init(customView: closeButton)
-        self.navigationItem.leftBarButtonItem = closeItem
+        self.navigationItem.leftBarButtonItems = [createLeftNegativeSpacerItem(), closeItem]
+    }
+    fileprivate func createLeftNegativeSpacerItem() -> UIBarButtonItem{
+        let spacerItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacerItem.width = -80
+        return spacerItem
+    }
+    fileprivate func createRightNegativeSpacerItem() -> UIBarButtonItem{
+        let spacerItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacerItem.width = 40
+        return spacerItem
     }
 }
