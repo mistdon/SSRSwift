@@ -35,12 +35,11 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
-        if (self.navigationController?.viewControllers.count)! > 0 {
+        if let navi = self.navigationController, navi.viewControllers.count > 1{
             setLeftBackButton { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
         }
-        
     }
     fileprivate func loadNavigationBar(){
         guard self.navigationItem.leftBarButtonItem != nil else {

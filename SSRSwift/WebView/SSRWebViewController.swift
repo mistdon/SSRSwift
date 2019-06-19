@@ -80,7 +80,8 @@ class SSRWebViewController: BaseViewController {
             make.edges.equalTo(self.view)
         }
         wkWebView = webView
-        
+        webView.customUserAgent = SSRUserDefaults.string(key: UD_WKUserAgent)
+        print("Custom User Agent = \(webView.customUserAgent ?? "")")
         let subview  =  UIView()
         subview.backgroundColor = .blue
         view.addSubview(subview)
@@ -126,6 +127,23 @@ class SSRWebViewController: BaseViewController {
     fileprivate func sendToJavaScript(name: String, age: Int){
         wkWebView.evaluateJavaScript("addPerson('\(name),\(age)')", completionHandler: nil)
     }
+    /*
+    // 另外一种设置UA的方法，利用UIWebView的同步性，webView.customUserAgent = SSRWebViewController.wkWebViewUserAgent。但是这样会造成第一次加载WebView的卡顿，所以还是选择异步
+    //
+    static var wkWebViewUserAgent: String = {
+        let uiWebView = UIWebView()
+        guard let oldAgent = uiWebView.stringByEvaluatingJavaScript(from: "navigator.userAgent") else{
+            return ""
+        }
+        var versionCode = App.appShortVersion
+        var upgradeCodeStr = String(App.upgradeCode)
+        //test
+        versionCode = "4.0.0"
+        upgradeCodeStr = "40000"
+        let newAgent = "\(oldAgent)/ECYReaderiOS/\(versionCode)/\(upgradeCodeStr)/ECYReaderAppstore"
+        return newAgent
+    }()
+     */
 }
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

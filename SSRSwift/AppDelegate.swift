@@ -75,8 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             let newAgent = oldAgent + "/SSRSwiftiOS" // 这里添加自定义的UA
-            let dict = ["UserAgent":newAgent]
+            let dict = [UD_WKUserAgent:newAgent]
             UserDefaults.standard.register(defaults: dict)
+            print(SSRUserDefaults.objct(key: UD_WKUserAgent) as Any)
             self?.wkWebView!.customUserAgent = newAgent
             self?.wkWebView = nil
         }

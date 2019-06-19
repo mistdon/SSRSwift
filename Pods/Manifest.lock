@@ -5,6 +5,7 @@ PODS:
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
   - CocoaLumberjack/Core (3.5.3)
+  - FDFullscreenPopGesture (1.1)
   - FLEX (2.4.0)
   - HandyJSON (5.0.0)
   - ObjectMapper (3.4.2)
@@ -35,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - FDFullscreenPopGesture
   - FLEX (~> 2.0)
   - HandyJSON (~> 5.0.0)
   - ObjectMapper (~> 3.4)
@@ -53,6 +55,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - CocoaLumberjack
+    - FDFullscreenPopGesture
     - FLEX
     - HandyJSON
     - ObjectMapper
@@ -70,6 +73,7 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 77593576a0e6f4ed3a5685d503ca1c6c72214f10
+PODFILE CHECKSUM: d53eb0f81ab674a9f43aebd676b131228fd1f7b0
 
 COCOAPODS: 1.5.3
