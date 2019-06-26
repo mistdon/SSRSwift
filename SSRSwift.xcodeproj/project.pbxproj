@@ -40,6 +40,9 @@
 		3B7E2DC322781EA5006AAE68 /* SSRSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E2DC222781EA5006AAE68 /* SSRSwiftUITests.swift */; };
 		3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */; };
 		3B88920222A7EFB500592EBF /* SSRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88920122A7EFB500592EBF /* SSRRequest.swift */; };
+		3BA515DD22C38E8100436A1D /* NSAttributeString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515DC22C38E8100436A1D /* NSAttributeString+Extension.swift */; };
+		3BA515DF22C3943400436A1D /* AdaptorUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515DE22C3943400436A1D /* AdaptorUIViewController.swift */; };
+		3BA515E122C39AB200436A1D /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515E022C39AB200436A1D /* UITextView+Extension.swift */; };
 		3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCF3942229E742E0073D61C /* urlSchemes.png */; };
 		3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */; };
 		3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */; };
@@ -120,6 +123,9 @@
 		3B7E2DC422781EA5006AAE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B827A8E227F065100CADC52 /* SSRGithubFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRGithubFollower.swift; sourceTree = "<group>"; };
 		3B88920122A7EFB500592EBF /* SSRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRequest.swift; sourceTree = "<group>"; };
+		3BA515DC22C38E8100436A1D /* NSAttributeString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributeString+Extension.swift"; sourceTree = "<group>"; };
+		3BA515DE22C3943400436A1D /* AdaptorUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptorUIViewController.swift; sourceTree = "<group>"; };
+		3BA515E022C39AB200436A1D /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		3BCF3942229E742E0073D61C /* urlSchemes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urlSchemes.png; sourceTree = "<group>"; };
 		3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				3B71921D22B8E2180035CEE4 /* Appearance.swift */,
+				3BA515DE22C3943400436A1D /* AdaptorUIViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -333,8 +340,10 @@
 			children = (
 				3B6E7B4422A9119C001A311E /* AppAbout.swift */,
 				3B6E7B4622A91357001A311E /* UIView+Extension.swift */,
+				3BA515E022C39AB200436A1D /* UITextView+Extension.swift */,
 				3B6E7B4822A9137C001A311E /* UIColor+Extension.swift */,
 				3B6E7B4A22A9139A001A311E /* String+Extension.swift */,
+				3BA515DC22C38E8100436A1D /* NSAttributeString+Extension.swift */,
 				3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */,
 				3B71921F22B8E5220035CEE4 /* UIImage+Extension.swift */,
 			);
@@ -677,13 +686,16 @@
 				A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */,
 				3B6E7B4B22A9139A001A311E /* String+Extension.swift in Sources */,
 				3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */,
+				3BA515DD22C38E8100436A1D /* NSAttributeString+Extension.swift in Sources */,
 				3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */,
 				A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */,
 				A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */,
 				3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */,
 				3B71921B22B8DA490035CEE4 /* CustomNaviBarController.swift in Sources */,
 				3B00B6B0229E7079003AA07A /* AppConstant.swift in Sources */,
+				3BA515DF22C3943400436A1D /* AdaptorUIViewController.swift in Sources */,
 				3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */,
+				3BA515E122C39AB200436A1D /* UITextView+Extension.swift in Sources */,
 				3B59EB8222892C5800D93243 /* Memo.md in Sources */,
 				3B2C8B5B22B12A2C000474B5 /* UserDefaults+Extension.swift in Sources */,
 				3B6E7B4922A9137C001A311E /* UIColor+Extension.swift in Sources */,

@@ -12,7 +12,7 @@ import RxSwift
 struct SSRNaviChoic {
     var title: String?
     var subTitle: String?
-    var vcClass: UIViewController?
+    var vcClass: UIViewController.Type
 }
 
 
@@ -24,21 +24,15 @@ class SSRRootTableViewController: UITableViewController {
         super.viewDidLoad()
         print(#file)
         choicesArray = [
-            SSRNaviChoic(title: "HTTP", subTitle: "Request", vcClass: nil),
-            SSRNaviChoic(title: "WebView", subTitle: "WebView request and handle",vcClass:nil),
-            SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:nil),
-            SSRNaviChoic(title: "Route", subTitle: "Router",vcClass:nil)
+            SSRNaviChoic(title: "HTTP", subTitle: "Request", vcClass: SSRHTTPViewController.self),
+            SSRNaviChoic(title: "WebView", subTitle: "WebView request and handle",vcClass:SSRWebViewController.self),
+            SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:SSRRxSwiftViewController.self),
+            SSRNaviChoic(title: "Route", subTitle: "Router",vcClass:SSRRouterViewController.self),
+            SSRNaviChoic(title: "Adaptor", subTitle: "Adaptor各种适配",vcClass:AdaptorUIViewController.self)
         ]
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         tableView.reloadData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        let button = UIButton(type: .custom)
-        button.addTarget(self, action: #selector(goToNextVC(at:)), for: .touchUpInside)
     }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,37 +45,13 @@ class SSRRootTableViewController: UITableViewController {
         cell.detailTextLabel?.text = choice.subTitle
         return cell
     }
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
+    // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("start....")
-        print(self.name)
-        self.name = "shen"
-        print(self.name)
-        print("end....")
-        return
-        goToNextVC(at: indexPath)
+        let navi = choicesArray[indexPath.row]
+        let controller = navi.vcClass
+        let vc = controller.init()
+        self.navigationController?.show(vc, sender: nil)
     }
-    @objc func goToNextVC(at indexPath: IndexPath){
-        switch indexPath.row {
-        case 0:
-            let httpVC = SSRHTTPViewController()
-            self.navigationController?.show(httpVC, sender: nil)
-        case 1:
-            let webVC = SSRWebViewController()
-            self.navigationController?.show(webVC, sender: nil)
-        case 2:
-            let webVC = SSRRxSwiftViewController()
-            self.navigationController?.show(webVC, sender: nil)
-        case 3:
-            let webVC = SSRRouterViewController()
-            self.navigationController?.show(webVC, sender: nil)
-        default:
-            print("No match viewController.")
-        }
-    }
-
 }
 extension UIViewController{
     private struct AssociateKeys{
@@ -96,3 +66,4 @@ extension UIViewController{
         }
     }
 }
+

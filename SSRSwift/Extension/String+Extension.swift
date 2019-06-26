@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 /*
  检查String是否是Empty,
  - 如果只是定义 nil、"" 为空的话，直接用isEmpty;
