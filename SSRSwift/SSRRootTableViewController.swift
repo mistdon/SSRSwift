@@ -22,10 +22,11 @@ class SSRRootTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#file)
+        self.title = "SSRSwift"
+        VLog(#file)
         choicesArray = [
-            SSRNaviChoic(title: "HTTP", subTitle: "Request", vcClass: SSRHTTPViewController.self),
-            SSRNaviChoic(title: "WebView", subTitle: "WebView request and handle",vcClass:SSRWebViewController.self),
+            SSRNaviChoic(title: "HTTP网络库", subTitle: "Request", vcClass: SSRHTTPViewController.self),
+            SSRNaviChoic(title: "WebView封装和实战", subTitle: "WebView request and handle",vcClass:SSRWebViewController.self),
             SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:SSRRxSwiftViewController.self),
             SSRNaviChoic(title: "Route", subTitle: "Router",vcClass:SSRRouterViewController.self),
             SSRNaviChoic(title: "Adaptor", subTitle: "Adaptor各种适配",vcClass:AdaptorUIViewController.self)

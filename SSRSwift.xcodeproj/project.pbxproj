@@ -20,6 +20,7 @@
 		3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EB8422894F0E00D93243 /* SwiftKeyword.md */; };
 		3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */; };
 		3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */; };
+		3B642FF9239608FE00530137 /* SSRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B642FF8239608FE00530137 /* SSRHelper.swift */; };
 		3B6E7B4522A9119C001A311E /* AppAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4422A9119C001A311E /* AppAbout.swift */; };
 		3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4622A91357001A311E /* UIView+Extension.swift */; };
 		3B6E7B4922A9137C001A311E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4822A9137C001A311E /* UIColor+Extension.swift */; };
@@ -43,6 +44,7 @@
 		3BA515DD22C38E8100436A1D /* NSAttributeString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515DC22C38E8100436A1D /* NSAttributeString+Extension.swift */; };
 		3BA515DF22C3943400436A1D /* AdaptorUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515DE22C3943400436A1D /* AdaptorUIViewController.swift */; };
 		3BA515E122C39AB200436A1D /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515E022C39AB200436A1D /* UITextView+Extension.swift */; };
+		3BB7344022C5C0C30081B8AB /* SSRTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7343F22C5C0C30081B8AB /* SSRTheme.swift */; };
 		3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCF3942229E742E0073D61C /* urlSchemes.png */; };
 		3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */; };
 		3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */; };
@@ -97,6 +99,7 @@
 		3B59EB8422894F0E00D93243 /* SwiftKeyword.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SwiftKeyword.md; sourceTree = "<group>"; };
 		3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHTTPViewController.swift; sourceTree = "<group>"; };
 		3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRootTableViewController.swift; sourceTree = "<group>"; };
+		3B642FF8239608FE00530137 /* SSRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHelper.swift; sourceTree = "<group>"; };
 		3B6E7B4422A9119C001A311E /* AppAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAbout.swift; sourceTree = "<group>"; };
 		3B6E7B4622A91357001A311E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3B6E7B4822A9137C001A311E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		3BA515DC22C38E8100436A1D /* NSAttributeString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributeString+Extension.swift"; sourceTree = "<group>"; };
 		3BA515DE22C3943400436A1D /* AdaptorUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptorUIViewController.swift; sourceTree = "<group>"; };
 		3BA515E022C39AB200436A1D /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		3BB7343F22C5C0C30081B8AB /* SSRTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRTheme.swift; sourceTree = "<group>"; };
 		3BCF3942229E742E0073D61C /* urlSchemes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urlSchemes.png; sourceTree = "<group>"; };
 		3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,14 @@
 			path = HTTP;
 			sourceTree = "<group>";
 		};
+		3B642FF62396087E00530137 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				3B642FF8239608FE00530137 /* SSRHelper.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		3B71921C22B8E1F90035CEE4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +303,8 @@
 		3B7E2DA122781EA2006AAE68 /* SSRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3B642FF62396087E00530137 /* Component */,
+				3BB7343E22C5C0AF0081B8AB /* Theme */,
 				3B71923622B8FDB70035CEE4 /* sources */,
 				3B71921C22B8E1F90035CEE4 /* UI */,
 				3B32FA0922A54A9700FCAE61 /* DesignPattern */,
@@ -333,6 +347,14 @@
 				3B7E2DC422781EA5006AAE68 /* Info.plist */,
 			);
 			path = SSRSwiftUITests;
+			sourceTree = "<group>";
+		};
+		3BB7343E22C5C0AF0081B8AB /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3BB7343F22C5C0C30081B8AB /* SSRTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		3BC983952294F48800387BB9 /* Extension */ = {
@@ -622,6 +644,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -640,6 +663,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,8 +698,10 @@
 			files = (
 				3B88920222A7EFB500592EBF /* SSRRequest.swift in Sources */,
 				3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */,
+				3B642FF9239608FE00530137 /* SSRHelper.swift in Sources */,
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
 				3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */,
+				3BB7344022C5C0C30081B8AB /* SSRTheme.swift in Sources */,
 				A2BE223222AFCCEE0096217F /* BaseViewController.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
 				A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */,

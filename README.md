@@ -32,6 +32,7 @@ Swift项目示例集锦
   let color = UIColor(hex6: "#62CCB0")
   let color = UIColor(hex8: "#F0F8FFFF")
   ```
+- - [WKWebView的使用和封装](https://github.com/mistdon/SSRSwift/blob/master/SSRSwift/WebView/WebREADME.md)
 
 #### component
 

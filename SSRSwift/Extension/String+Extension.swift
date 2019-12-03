@@ -19,6 +19,9 @@ extension String{
     var isBlank: Bool{
         return allSatisfy({$0.isWhitespace})
     }
+    var isInt: Bool {
+        return Int(self) != nil
+    }
 }
 extension Optional where Wrapped == String{
     var isBlank : Bool{

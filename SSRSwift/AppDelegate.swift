@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupInjectionIII()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navi = RTRootNavigationController(rootViewController: TabBarController())
+        let navi = RTRootNavigationController(rootViewController: SSRRootTableViewController())
+//        let navi = UINavigationController(rootViewController: SSRRootTableViewController())
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
         

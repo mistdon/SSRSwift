@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 import SnapKit
+import FDFullscreenPopGesture
 
 let API_URL = "https://api.github.com/search/repositories?q=ss"
 
@@ -42,6 +43,11 @@ class SSRHTTPViewController: BaseViewController {
         let button2 = UIBarButtonItem(title: "Alamofire", style: .done, target: self, action: #selector(tappedButton(_:)))
         self.navigationItem.rightBarButtonItems = [button1, button2]
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.fd_interactivePopDisabled = true
+    }
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         let action = #selector(SSRHTTPViewController.tappedButton(_:))

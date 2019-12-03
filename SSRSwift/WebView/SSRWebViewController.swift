@@ -17,13 +17,29 @@ class SSRWebViewController: BaseViewController {
     var progressView: UIProgressView!
     let disposeBag = DisposeBag()
     var localSource = true
+
+    lazy var consoleView : UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = .black
+        textView.textColor = .white
+        return textView
+    }()
+//    fileprivate var jsBridge: SwiftWebViewBridge!
     
     open var url: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "SSRWebVC"
+        
         view.backgroundColor = UIColor.white
+        
         loadWebView()
+        
+        createUI()
+        // 绑定事件
+        bindActions()
+        
         if localSource {
             let bundleURL = Bundle.main.resourceURL!.absoluteURL
             let url = bundleURL.appendingPathComponent("index.html")
@@ -32,13 +48,22 @@ class SSRWebViewController: BaseViewController {
             url = URL(string: "https://www.baidu.com")
             loadUrl(url: url ?? URL(string: "about:blank")!)
         }
-        
-        let buttonItem = UIBarButtonItem(title: "Try!", style: .done, target: nil, action: nil)
-        buttonItem.rx.tap.subscribe(onNext: { [weak self] in
-            self?.sendToJavaScript(name: "Don", age: 25)
-        }).disposed(by: disposeBag)
-        self.navigationItem.rightBarButtonItem = buttonItem
-        
+        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: App.screenWidth, height: 60))
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.axis = .horizontal
+        stackView.backgroundColor = .lightGray
+        let buttonCount : Int = 8
+        for index in 0..<buttonCount{
+            let button = UIButton(type: .custom)
+            button.frame = CGRect(x: 0, y: 0, width: App.screenWidth / CGFloat(buttonCount) / 2.0, height: 60.0)
+            button.tag = index
+            button.backgroundColor = (index % 2 == 0) ? .red : .green
+            button.addTarget(self, action: #selector(tapNativeButton(sender:)), for: .touchUpInside)
+            button.setAttributedTitle(NSAttributedString(string: String(describing: index), attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]), for: .normal)
+            stackView.addArrangedSubview(button)
+        }
+        self.view.addSubview(stackView)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -57,7 +82,7 @@ class SSRWebViewController: BaseViewController {
         wkWebView.uiDelegate = nil
         wkWebView.removeFromSuperview()
         wkWebView = nil
-        print("WebView deinit")
+        VLog("WebView deinit")
     }
     // MARK: 初始化
     fileprivate func loadWebView(){
@@ -77,30 +102,33 @@ class SSRWebViewController: BaseViewController {
         webView.allowsBackForwardNavigationGestures = true // 打开后，用户可在webview内左滑返回上一级
         view.addSubview(webView)
         webView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(self.view)
+            make.top.equalTo(self.view).offset(60)
+            make.leading.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view).offset(-(self.view.height / 3.0))
         }
         wkWebView = webView
         webView.customUserAgent = SSRUserDefaults.string(key: UD_WKUserAgent)
-        print("Custom User Agent = \(webView.customUserAgent ?? "")")
-        let subview  =  UIView()
-        subview.backgroundColor = .blue
-        view.addSubview(subview)
-        subview.snp.makeConstraints { (make) in
-            make.center.equalTo(self.view)
-            make.width.height.equalTo(100)
-        }
+        WKLog("Custom User Agent = \(webView.customUserAgent ?? "")")
         if #available(iOS 11.0, *){
             webView.scrollView.contentInsetAdjustmentBehavior = .never
         }else{
             automaticallyAdjustsScrollViewInsets = false
         }
+//        self.jsBridge = SwiftWebViewBridge.bridge(<#T##webView: UIWebView##UIWebView#>, defaultHandler: <#T##SWVBHandler?##SWVBHandler?##(AnyObject, @escaping SWVBResponseCallBack) -> Void#>)
+    }
+    fileprivate func createUI(){
         // 加载ProgressView
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.frame = CGRect(x: 0, y: 0, width: App.screenWidth, height: 0.5)
         progressView.sizeToFit()
         view.addSubview(progressView)
-        // 绑定事件
-        bindActions()
+        // add consoleView
+        self.view.addSubview(self.consoleView)
+        self.consoleView.snp_makeConstraints { make in
+            make.leading.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view.snp_bottom)
+            make.height.equalTo(self.view.height / 3.0)
+        }
     }
     fileprivate func bindActions(){
         // 处理title
@@ -115,17 +143,34 @@ class SSRWebViewController: BaseViewController {
             self?.progressView.isHidden = (progess == 1)
         }).disposed(by: disposeBag)
     }
+    @objc fileprivate func tapNativeButton(sender: UIButton){
+        switch sender.tag {
+        case 0:
+            WKLog("Try to add Person... ")
+            self.sendToJavaScript(name: "Don", age: 25)
+        case 1:
+            WKLog("Try to change name... ")
+            self.wkWebView.evaluateJavaScript("sayHello('Name changed')", completionHandler: nil)
+        default:
+            WKLog("nothing")
+        }
+    }
     fileprivate func loadUrl(url: URL){
         let request = URLRequest(url: url)
         self.wkWebView.load(request)
     }
     fileprivate func showAlert(message: String){
+        self.WKLog("Native show alert")
         let alertVC = UIAlertController(title: "Attention Please", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
     fileprivate func sendToJavaScript(name: String, age: Int){
         wkWebView.evaluateJavaScript("addPerson('\(name),\(age)')", completionHandler: nil)
+    }
+    fileprivate func WKLog(_ txt: String){
+        self.consoleView.text.append(txt)
+        self.consoleView.text.append("\n")
     }
     /*
     // 另外一种设置UA的方法，利用UIWebView的同步性，webView.customUserAgent = SSRWebViewController.wkWebViewUserAgent。但是这样会造成第一次加载WebView的卡顿，所以还是选择异步
@@ -147,9 +192,9 @@ class SSRWebViewController: BaseViewController {
 }
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("sayHello('WebView!')") { (result, error) in
+        webView.evaluateJavaScript("sayHello('WebView!')") { [weak self] (result, error) in
             if error != nil{
-                print(result as Any)
+                self?.WKLog(result as! String)
             }
         }
     }
@@ -191,6 +236,7 @@ extension SSRWebViewController: WKNavigationDelegate{
 //    }
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         // WebView 被意外中断，比如白屏, 这里可以做一些过度操作，或者重试操作
+        webView.reload()
     }
 }
 extension SSRWebViewController: WKUIDelegate{
@@ -202,7 +248,7 @@ extension SSRWebViewController: WKUIDelegate{
     }
     // 响应JS中的 alert() 方法
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        showAlert(message: message)
+        WKLog("ReceivedJS: \(message)")
         completionHandler()
     }
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
@@ -224,6 +270,6 @@ extension SSRWebViewController: WKUIDelegate{
 extension SSRWebViewController: WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let response = message.body as? String else { return }
-        print(response)
+        self.WKLog(response)
     }
 }
