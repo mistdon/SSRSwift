@@ -9,28 +9,31 @@
 import UIKit
 import RxSwift
 
-struct SSRNaviChoic {
+struct SSRTestStruct {
     var title: String?
     var subTitle: String?
-    var vcClass: UIViewController.Type
+    var closure: () -> Void
 }
-
-
 class SSRRootTableViewController: UITableViewController {
-    
-    var choicesArray = [SSRNaviChoic]()
-    
+    var choicesArray = [SSRTestStruct]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "SSRSwift"
-        VLog(#file)
-        choicesArray = [
-            SSRNaviChoic(title: "HTTP网络库", subTitle: "Request", vcClass: SSRHTTPViewController.self),
-            SSRNaviChoic(title: "WebView封装和实战", subTitle: "WebView request and handle",vcClass:SSRWebViewController.self),
-            SSRNaviChoic(title: "RxSwift", subTitle: "RxSwift & RxCocoa",vcClass:SSRRxSwiftViewController.self),
-            SSRNaviChoic(title: "Route", subTitle: "Router",vcClass:SSRRouterViewController.self),
-            SSRNaviChoic(title: "Adaptor", subTitle: "Adaptor各种适配",vcClass:AdaptorUIViewController.self)
-        ]
+        choicesArray = [SSRTestStruct(title: "Network", subTitle: nil, closure: { [weak self] in
+            self?.navigationController?.show(SSRHTTPViewController(), sender: nil)
+        }), SSRTestStruct(title: "WKWebView", subTitle: "combine", closure: { [weak self] in
+            let webVC = SSRWebViewController(url: "https://m.huamengxiaoshuo.com")
+            self?.navigationController?.show(webVC, sender: nil)
+        }), SSRTestStruct(title: "WKWebViewTest", subTitle: nil, closure: { [weak self] in
+            let webVC = SSRWebViewController(url: "https://m.huamengxiaoshuo.com")
+            self?.navigationController?.show(webVC, sender: nil)
+        }), SSRTestStruct(title: "RxSwift", subTitle: nil, closure: { [weak self] in
+            self?.navigationController?.show(SSRRxSwiftViewController(), sender: nil)
+        }), SSRTestStruct(title: "Router", subTitle: nil, closure: { [weak self] in
+            self?.navigationController?.show(SSRRouterViewController(), sender: nil)
+        }), SSRTestStruct(title: "Adapor", subTitle: nil, closure: { [weak self] in
+            self?.navigationController?.show(AdaptorUIViewController(), sender: nil)
+        })]
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         tableView.reloadData()
@@ -41,17 +44,15 @@ class SSRRootTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let choice: SSRNaviChoic = choicesArray[indexPath.row]
+        let choice: SSRTestStruct = choicesArray[indexPath.row]
         cell.textLabel?.text = choice.title
         cell.detailTextLabel?.text = choice.subTitle
         return cell
     }
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let navi = choicesArray[indexPath.row]
-        let controller = navi.vcClass
-        let vc = controller.init()
-        self.navigationController?.show(vc, sender: nil)
+        let test = choicesArray[indexPath.row]
+        test.closure()
     }
 }
 extension UIViewController{
@@ -68,3 +69,16 @@ extension UIViewController{
     }
 }
 
+/*
+ 
+ if localSource {
+     let bundleURL = Bundle.main.resourceURL!.absoluteURL
+     let url = bundleURL.appendingPathComponent("index.html")
+     wkWebView?.loadFileURL(url, allowingReadAccessTo: bundleURL)
+ }else{
+     url = URL(string: "https://www.baidu.com")
+     loadUrl(url: url ?? URL(string: "about:blank")!)
+ }
+ 
+ 
+ */

@@ -13,75 +13,44 @@ import RxCocoa
 import SnapKit
 
 class SSRWebViewController: BaseViewController {
-    weak var wkWebView: WKWebView!
-    var progressView: UIProgressView!
-    let disposeBag = DisposeBag()
-    var localSource = true
-
-    lazy var consoleView : UITextView = {
-        let textView = UITextView()
-        textView.backgroundColor = .black
-        textView.textColor = .white
-        return textView
+    weak var wkWebView: WKWebView?
+    private var progressView: UIProgressView?
+    private let disposeBag = DisposeBag()
+    open var urlString: String?
+    lazy var cookiesMapArray: [String] = {
+        let cookiesMapArray = ["app=SSRSwift","channel=appStore"]
+        return cookiesMapArray
     }()
-//    fileprivate var jsBridge: SwiftWebViewBridge!
-    
-    open var url: URL?
+    convenience init(url: String?) {
+        self.init()
+        self.urlString = url
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "SSRWebVC"
-        
-        view.backgroundColor = UIColor.white
-        
+        self.title = "Loading..."
         loadWebView()
-        
         createUI()
-        // 绑定事件
         bindActions()
-        
-        if localSource {
-            let bundleURL = Bundle.main.resourceURL!.absoluteURL
-            let url = bundleURL.appendingPathComponent("index.html")
-            wkWebView.loadFileURL(url, allowingReadAccessTo: bundleURL)
-        }else{
-            url = URL(string: "https://www.baidu.com")
-            loadUrl(url: url ?? URL(string: "about:blank")!)
+        guard let str = urlString, let url = URL(string: str) else{
+            return
         }
-        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: App.screenWidth, height: 60))
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .lightGray
-        let buttonCount : Int = 8
-        for index in 0..<buttonCount{
-            let button = UIButton(type: .custom)
-            button.frame = CGRect(x: 0, y: 0, width: App.screenWidth / CGFloat(buttonCount) / 2.0, height: 60.0)
-            button.tag = index
-            button.backgroundColor = (index % 2 == 0) ? .red : .green
-            button.addTarget(self, action: #selector(tapNativeButton(sender:)), for: .touchUpInside)
-            button.setAttributedTitle(NSAttributedString(string: String(describing: index), attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]), for: .normal)
-            stackView.addArrangedSubview(button)
-        }
-        self.view.addSubview(stackView)
+        loadUrl(url: url)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // 下面两行解决 configuration.userContentController.add(self, name: SSRAppModuleName) 导致的循环引用
-        wkWebView.configuration.userContentController.removeScriptMessageHandler(forName:SSRAppModuleName)
-        wkWebView.configuration.userContentController.removeAllUserScripts()
+        wkWebView?.configuration.userContentController.removeScriptMessageHandler(forName:SSRAppModuleName)
+        wkWebView?.configuration.userContentController.removeAllUserScripts()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     deinit {
-        progressView.removeFromSuperview()
-        progressView = nil
-        wkWebView.scrollView.delegate = nil
-        wkWebView.navigationDelegate = nil
-        wkWebView.uiDelegate = nil
-        wkWebView.removeFromSuperview()
-        wkWebView = nil
+        progressView?.removeFromSuperview()
+        wkWebView?.scrollView.delegate = nil
+        wkWebView?.navigationDelegate = nil
+        wkWebView?.uiDelegate = nil
+        wkWebView?.removeFromSuperview()
         VLog("WebView deinit")
     }
     // MARK: 初始化
@@ -102,101 +71,72 @@ class SSRWebViewController: BaseViewController {
         webView.allowsBackForwardNavigationGestures = true // 打开后，用户可在webview内左滑返回上一级
         view.addSubview(webView)
         webView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(self.view).offset(60)
-            make.leading.trailing.equalTo(self.view)
-            make.bottom.equalTo(self.view).offset(-(self.view.height / 3.0))
+            make.edges.equalTo(self.view)
         }
         wkWebView = webView
         webView.customUserAgent = SSRUserDefaults.string(key: UD_WKUserAgent)
-        WKLog("Custom User Agent = \(webView.customUserAgent ?? "")")
         if #available(iOS 11.0, *){
             webView.scrollView.contentInsetAdjustmentBehavior = .never
         }else{
             automaticallyAdjustsScrollViewInsets = false
         }
-//        self.jsBridge = SwiftWebViewBridge.bridge(<#T##webView: UIWebView##UIWebView#>, defaultHandler: <#T##SWVBHandler?##SWVBHandler?##(AnyObject, @escaping SWVBResponseCallBack) -> Void#>)
     }
-    fileprivate func createUI(){
+    func createUI(){
         // 加载ProgressView
         progressView = UIProgressView(progressViewStyle: .default)
-        progressView.frame = CGRect(x: 0, y: 0, width: App.screenWidth, height: 0.5)
-        progressView.sizeToFit()
-        view.addSubview(progressView)
-        // add consoleView
-        self.view.addSubview(self.consoleView)
-        self.consoleView.snp_makeConstraints { make in
-            make.leading.trailing.equalTo(self.view)
-            make.bottom.equalTo(self.view.snp_bottom)
-            make.height.equalTo(self.view.height / 3.0)
-        }
+        progressView?.frame = CGRect(x: 0, y: 0, width: App.screenWidth, height: 0.5)
+        progressView?.sizeToFit()
+        view.addSubview(progressView!)
+      
     }
     fileprivate func bindActions(){
         // 处理title
-        wkWebView.rx.observe(String.self, #keyPath(WKWebView.title)).subscribe(onNext: { [weak self]  (value) in
+        wkWebView?.rx.observe(String.self, #keyPath(WKWebView.title)).subscribe(onNext: { [weak self]  (value) in
             guard let title = value else {return}
             self?.title = title
         }).disposed(by: disposeBag)
         // 处理进度条
-        wkWebView.rx.observe(Double.self, #keyPath(WKWebView.estimatedProgress)).subscribe(onNext: {[weak self] (value) in
+        wkWebView?.rx.observe(Double.self, #keyPath(WKWebView.estimatedProgress)).subscribe(onNext: {[weak self] (value) in
             guard let progess = value else {return}
-            self?.progressView.progress = Float(progess)
-            self?.progressView.isHidden = (progess == 1)
+            self?.progressView?.progress = Float(progess)
+            self?.progressView?.isHidden = (progess == 1)
         }).disposed(by: disposeBag)
-    }
-    @objc fileprivate func tapNativeButton(sender: UIButton){
-        switch sender.tag {
-        case 0:
-            WKLog("Try to add Person... ")
-            self.sendToJavaScript(name: "Don", age: 25)
-        case 1:
-            WKLog("Try to change name... ")
-            self.wkWebView.evaluateJavaScript("sayHello('Name changed')", completionHandler: nil)
-        default:
-            WKLog("nothing")
-        }
     }
     fileprivate func loadUrl(url: URL){
         let request = URLRequest(url: url)
-        self.wkWebView.load(request)
+        self.wkWebView?.load(request)
     }
-    fileprivate func showAlert(message: String){
-        self.WKLog("Native show alert")
-        let alertVC = UIAlertController(title: "Attention Please", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-    fileprivate func sendToJavaScript(name: String, age: Int){
-        wkWebView.evaluateJavaScript("addPerson('\(name),\(age)')", completionHandler: nil)
-    }
-    fileprivate func WKLog(_ txt: String){
-        self.consoleView.text.append(txt)
-        self.consoleView.text.append("\n")
-    }
-    /*
-    // 另外一种设置UA的方法，利用UIWebView的同步性，webView.customUserAgent = SSRWebViewController.wkWebViewUserAgent。但是这样会造成第一次加载WebView的卡顿，所以还是选择异步
-    //
-    static var wkWebViewUserAgent: String = {
-        let uiWebView = UIWebView()
-        guard let oldAgent = uiWebView.stringByEvaluatingJavaScript(from: "navigator.userAgent") else{
-            return ""
+    fileprivate func reinjectCookie(){
+        var injectCookieArray = [String]()
+        
+        cookiesMapArray.forEach { cookieKeyValue in
+            let injectCookie = "document.cookie='\(cookieKeyValue);path=/;'"
+            injectCookieArray.append(injectCookie)
         }
-        var versionCode = App.appShortVersion
-        var upgradeCodeStr = String(App.upgradeCode)
-        //test
-        versionCode = "4.0.0"
-        upgradeCodeStr = "40000"
-        let newAgent = "\(oldAgent)/ECYReaderiOS/\(versionCode)/\(upgradeCodeStr)/ECYReaderAppstore"
-        return newAgent
-    }()
-     */
+        let res = injectCookieArray.joined(separator: ",")
+        self.wkWebView?.configuration.userContentController.removeAllUserScripts()
+        let cookieScript = WKUserScript(source: res, injectionTime: .atDocumentStart, forMainFrameOnly: false)
+        self.wkWebView?.configuration.userContentController.addUserScript(cookieScript)
+        self.reloadWebView()
+    }
+    fileprivate func appendCookies(request: NSMutableURLRequest) {
+        let cookieString = self.cookiesMapArray.joined(separator: ",")
+        request.setValue(cookieString, forHTTPHeaderField: "Cookie")
+    }
+    fileprivate func reloadWebView(){
+        guard let url = self.wkWebView?.url else{
+            return
+        }
+        let request = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20.0)
+        appendCookies(request: request)
+        self.wkWebView?.load(request as URLRequest)
+    }
 }
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("sayHello('WebView!')") { [weak self] (result, error) in
-            if error != nil{
-                self?.WKLog(result as! String)
-            }
-        }
+        self.wkWebView?.evaluateJavaScript("document.cookie", completionHandler: { (cookie, error) in
+            VLog("document.cookie = \(String(describing: cookie))")
+        })
     }
     // 根据不同的请求，区分是否允许跳转。比如要对某个host进行限制，则选择 .cancel, 或者我们要对某些actionUrl进行自定义操作，也要拦截
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -248,7 +188,6 @@ extension SSRWebViewController: WKUIDelegate{
     }
     // 响应JS中的 alert() 方法
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        WKLog("ReceivedJS: \(message)")
         completionHandler()
     }
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
@@ -270,6 +209,7 @@ extension SSRWebViewController: WKUIDelegate{
 extension SSRWebViewController: WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let response = message.body as? String else { return }
-        self.WKLog(response)
+        VLog(response)
     }
 }
+

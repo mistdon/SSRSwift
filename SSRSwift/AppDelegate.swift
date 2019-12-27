@@ -18,18 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        setupInjectionIII()
-        
+        configureApplication(applicaiton: application, launchOptions: launchOptions)
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navi = RTRootNavigationController(rootViewController: SSRRootTableViewController())
-//        let navi = UINavigationController(rootViewController: SSRRootTableViewController())
+        let navi = RTRootNavigationController(rootViewController: TabBarController())
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
-        
-        Appearance.configureNavigationBarAppearance()
-        
-        setupConfigurationWKWebView()
         return true
     }
 
@@ -53,35 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    func setupInjectionIII(){
-        // Injections.source = "https://github.com/johnno1962/InjectionIII"
-        /*
-         ObjC:
-         #if TARGET_IPHONE_SIMULATOR
-         [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection10.bundle"] load];
-         #endif
-         */
-//        #if DEBUG
-        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection10.bundle")?.load()
-//        #endif
-    }
-    // 注册WKWbeVieww的ua
-    func setupConfigurationWKWebView(){
-        wkWebView = WKWebView();
-        wkWebView?.evaluateJavaScript("navigator.userAgent") { [weak self](result, error) in
-            let resultValue = result as? String
-            guard let oldAgent = resultValue else{
-                return
-            }
-            let newAgent = oldAgent + "/SSRSwiftiOS" // 这里添加自定义的UA
-            let dict = [UD_WKUserAgent:newAgent]
-            UserDefaults.standard.register(defaults: dict)
-            print(SSRUserDefaults.objct(key: UD_WKUserAgent) as Any)
-            self?.wkWebView!.customUserAgent = newAgent
-            self?.wkWebView = nil
-        }
     }
 }
 

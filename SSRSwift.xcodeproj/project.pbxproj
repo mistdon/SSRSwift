@@ -10,7 +10,6 @@
 		3B00B6A3229D1848003AA07A /* RxREADME.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6A2229D1848003AA07A /* RxREADME.md */; };
 		3B00B6A5229D2428003AA07A /* SwiftTips.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6A4229D2428003AA07A /* SwiftTips.md */; };
 		3B00B6B0229E7079003AA07A /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00B6AF229E7078003AA07A /* AppConstant.swift */; };
-		3B00B6B3229E7103003AA07A /* SSRRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00B6B2229E7103003AA07A /* SSRRouterViewController.swift */; };
 		3B00B6B5229E710D003AA07A /* SSRRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00B6B4229E710D003AA07A /* SSRRouter.swift */; };
 		3B00B6B7229E715F003AA07A /* RouterREADME.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6B6229E715F003AA07A /* RouterREADME.md */; };
 		3B2C8B5B22B12A2C000474B5 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */; };
@@ -21,7 +20,6 @@
 		3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */; };
 		3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */; };
 		3B642FF9239608FE00530137 /* SSRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B642FF8239608FE00530137 /* SSRHelper.swift */; };
-		3B6E7B4522A9119C001A311E /* AppAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4422A9119C001A311E /* AppAbout.swift */; };
 		3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4622A91357001A311E /* UIView+Extension.swift */; };
 		3B6E7B4922A9137C001A311E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4822A9137C001A311E /* UIColor+Extension.swift */; };
 		3B6E7B4B22A9139A001A311E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7B4A22A9139A001A311E /* String+Extension.swift */; };
@@ -46,6 +44,11 @@
 		3BA515E122C39AB200436A1D /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA515E022C39AB200436A1D /* UITextView+Extension.swift */; };
 		3BB7344022C5C0C30081B8AB /* SSRTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7343F22C5C0C30081B8AB /* SSRTheme.swift */; };
 		3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCF3942229E742E0073D61C /* urlSchemes.png */; };
+		3BD5EC4423B608FC00CDC11E /* AppAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5EC4323B608FC00CDC11E /* AppAbout.swift */; };
+		3BD5EC4623B6092F00CDC11E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5EC4523B6092F00CDC11E /* NotificationManager.swift */; };
+		3BD5EC4823B60D5600CDC11E /* SSRRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5EC4723B60D5600CDC11E /* SSRRouterViewController.swift */; };
+		3BD5EC4A23B610F200CDC11E /* SSRWebViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5EC4923B610F200CDC11E /* SSRWebViewTestViewController.swift */; };
+		3BD5EC4C23B614F300CDC11E /* Appdelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5EC4B23B614F300CDC11E /* Appdelegate+Extension.swift */; };
 		3BE9C91922AF9D3100FC4F68 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */; };
 		3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */; };
 		3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */ = {isa = PBXBuildFile; fileRef = 3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */; };
@@ -88,7 +91,6 @@
 		3B00B6A2229D1848003AA07A /* RxREADME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RxREADME.md; sourceTree = "<group>"; };
 		3B00B6A4229D2428003AA07A /* SwiftTips.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SwiftTips.md; sourceTree = "<group>"; };
 		3B00B6AF229E7078003AA07A /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
-		3B00B6B2229E7103003AA07A /* SSRRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRouterViewController.swift; sourceTree = "<group>"; };
 		3B00B6B4229E710D003AA07A /* SSRRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRouter.swift; sourceTree = "<group>"; };
 		3B00B6B6229E715F003AA07A /* RouterREADME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RouterREADME.md; sourceTree = "<group>"; };
 		3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -100,7 +102,6 @@
 		3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHTTPViewController.swift; sourceTree = "<group>"; };
 		3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRootTableViewController.swift; sourceTree = "<group>"; };
 		3B642FF8239608FE00530137 /* SSRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHelper.swift; sourceTree = "<group>"; };
-		3B6E7B4422A9119C001A311E /* AppAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAbout.swift; sourceTree = "<group>"; };
 		3B6E7B4622A91357001A311E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3B6E7B4822A9137C001A311E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3B6E7B4A22A9139A001A311E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -131,6 +132,11 @@
 		3BA515E022C39AB200436A1D /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		3BB7343F22C5C0C30081B8AB /* SSRTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRTheme.swift; sourceTree = "<group>"; };
 		3BCF3942229E742E0073D61C /* urlSchemes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urlSchemes.png; sourceTree = "<group>"; };
+		3BD5EC4323B608FC00CDC11E /* AppAbout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAbout.swift; sourceTree = "<group>"; };
+		3BD5EC4523B6092F00CDC11E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		3BD5EC4723B60D5600CDC11E /* SSRRouterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRRouterViewController.swift; sourceTree = "<group>"; };
+		3BD5EC4923B610F200CDC11E /* SSRWebViewTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRWebViewTestViewController.swift; sourceTree = "<group>"; };
+		3BD5EC4B23B614F300CDC11E /* Appdelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+Extension.swift"; sourceTree = "<group>"; };
 		3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Structs和Classes的选择.md"; sourceTree = "<group>"; };
@@ -183,9 +189,9 @@
 		3B00B6B1229E70EF003AA07A /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				3BD5EC4723B60D5600CDC11E /* SSRRouterViewController.swift */,
 				3BCF3941229E742E0073D61C /* sources */,
 				3B00B6B6229E715F003AA07A /* RouterREADME.md */,
-				3B00B6B2229E7103003AA07A /* SSRRouterViewController.swift */,
 				3B00B6B4229E710D003AA07A /* SSRRouter.swift */,
 			);
 			path = Router;
@@ -237,6 +243,7 @@
 		3B642FF62396087E00530137 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3B00B6B1229E70EF003AA07A /* Router */,
 				3B642FF8239608FE00530137 /* SSRHelper.swift */,
 			);
 			path = Component;
@@ -271,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				3B7CCBE52283D872007FEE9C /* SSRWebViewController.swift */,
+				3BD5EC4923B610F200CDC11E /* SSRWebViewTestViewController.swift */,
 				3BF3E27D229CDB1400BDE5C9 /* WebREADME.md */,
 				3B7CCBE72284076D007FEE9C /* index.html */,
 			);
@@ -303,12 +311,12 @@
 		3B7E2DA122781EA2006AAE68 /* SSRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3BD5EC4223B608C100CDC11E /* App */,
 				3B642FF62396087E00530137 /* Component */,
 				3BB7343E22C5C0AF0081B8AB /* Theme */,
 				3B71923622B8FDB70035CEE4 /* sources */,
 				3B71921C22B8E1F90035CEE4 /* UI */,
 				3B32FA0922A54A9700FCAE61 /* DesignPattern */,
-				3B00B6B1229E70EF003AA07A /* Router */,
 				3BC983952294F48800387BB9 /* Extension */,
 				3BF81C3922854B2F000B40EE /* Protocol */,
 				3BF81C3622854498000B40EE /* RxSwift */,
@@ -317,7 +325,6 @@
 				3B7E2DA222781EA2006AAE68 /* AppDelegate.swift */,
 				3B00B6AF229E7078003AA07A /* AppConstant.swift */,
 				3B7E2DA422781EA2006AAE68 /* ViewController.swift */,
-				A2BE21F822ABB6620096217F /* SSRDataword.swift */,
 				A2BE223122AFCCEE0096217F /* BaseViewController.swift */,
 				A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
@@ -360,7 +367,6 @@
 		3BC983952294F48800387BB9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3B6E7B4422A9119C001A311E /* AppAbout.swift */,
 				3B6E7B4622A91357001A311E /* UIView+Extension.swift */,
 				3BA515E022C39AB200436A1D /* UITextView+Extension.swift */,
 				3B6E7B4822A9137C001A311E /* UIColor+Extension.swift */,
@@ -368,6 +374,7 @@
 				3BA515DC22C38E8100436A1D /* NSAttributeString+Extension.swift */,
 				3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */,
 				3B71921F22B8E5220035CEE4 /* UIImage+Extension.swift */,
+				3BD5EC4B23B614F300CDC11E /* Appdelegate+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -378,6 +385,16 @@
 				3BCF3942229E742E0073D61C /* urlSchemes.png */,
 			);
 			path = sources;
+			sourceTree = "<group>";
+		};
+		3BD5EC4223B608C100CDC11E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3BD5EC4323B608FC00CDC11E /* AppAbout.swift */,
+				A2BE21F822ABB6620096217F /* SSRDataword.swift */,
+				3BD5EC4523B6092F00CDC11E /* NotificationManager.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		3BF81C3622854498000B40EE /* RxSwift */ = {
@@ -702,14 +719,16 @@
 				3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */,
 				3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */,
 				3BB7344022C5C0C30081B8AB /* SSRTheme.swift in Sources */,
+				3BD5EC4623B6092F00CDC11E /* NotificationManager.swift in Sources */,
 				A2BE223222AFCCEE0096217F /* BaseViewController.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
+				3BD5EC4A23B610F200CDC11E /* SSRWebViewTestViewController.swift in Sources */,
 				A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */,
 				A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */,
 				3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */,
 				3B71922022B8E5220035CEE4 /* UIImage+Extension.swift in Sources */,
-				3B00B6B3229E7103003AA07A /* SSRRouterViewController.swift in Sources */,
 				A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */,
+				3BD5EC4823B60D5600CDC11E /* SSRRouterViewController.swift in Sources */,
 				3B6E7B4B22A9139A001A311E /* String+Extension.swift in Sources */,
 				3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */,
 				3BA515DD22C38E8100436A1D /* NSAttributeString+Extension.swift in Sources */,
@@ -717,6 +736,7 @@
 				A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */,
 				A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */,
 				3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */,
+				3BD5EC4C23B614F300CDC11E /* Appdelegate+Extension.swift in Sources */,
 				3B71921B22B8DA490035CEE4 /* CustomNaviBarController.swift in Sources */,
 				3B00B6B0229E7079003AA07A /* AppConstant.swift in Sources */,
 				3BA515DF22C3943400436A1D /* AdaptorUIViewController.swift in Sources */,
@@ -729,8 +749,8 @@
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
 				3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */,
 				3B00B6B5229E710D003AA07A /* SSRRouter.swift in Sources */,
+				3BD5EC4423B608FC00CDC11E /* AppAbout.swift in Sources */,
 				3B71921E22B8E2180035CEE4 /* Appearance.swift in Sources */,
-				3B6E7B4522A9119C001A311E /* AppAbout.swift in Sources */,
 				3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */,
 				3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */,
 				A2BE221722ACAE9C0096217F /* SSRAPI.swift in Sources */,
