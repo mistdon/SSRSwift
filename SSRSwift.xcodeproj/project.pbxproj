@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,16 @@
 		3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7F228928E900D93243 /* SSRNetwork.swift */; };
 		3B59EB8222892C5800D93243 /* Memo.md in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB8122892C5800D93243 /* Memo.md */; };
 		3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EB8422894F0E00D93243 /* SwiftKeyword.md */; };
+		3B5AA00B23BB29BA0040B538 /* SSRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA00A23BB29BA0040B538 /* SSRUser.swift */; };
+		3B5AA00E23BB2C210040B538 /* HandyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AA00D23BB2C210040B538 /* HandyJSON */; };
+		3B5AA01223BB2F370040B538 /* SSRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01123BB2F370040B538 /* SSRLoginViewController.swift */; };
+		3B5AA01423BB30A70040B538 /* SSRUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01323BB30A70040B538 /* SSRUserDefaults.swift */; };
+		3B5AA01723BB36060040B538 /* String.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B5AA01523BB36060040B538 /* String.md */; };
+		3B5AA01823BB36060040B538 /* PromisedSwift.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B5AA01623BB36060040B538 /* PromisedSwift.md */; };
+		3B5AA01E23BB402A0040B538 /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01A23BB402A0040B538 /* ToastWindow.swift */; };
+		3B5AA01F23BB402A0040B538 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01B23BB402A0040B538 /* ToastView.swift */; };
+		3B5AA02023BB402A0040B538 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01C23BB402A0040B538 /* Toast.swift */; };
+		3B5AA02123BB402A0040B538 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01D23BB402A0040B538 /* ToastCenter.swift */; };
 		3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */; };
 		3B5AD2F0227EE26000F04BFB /* SSRRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */; };
 		3B642FF9239608FE00530137 /* SSRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B642FF8239608FE00530137 /* SSRHelper.swift */; };
@@ -26,7 +36,6 @@
 		3B71921B22B8DA490035CEE4 /* CustomNaviBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71921A22B8DA490035CEE4 /* CustomNaviBarController.swift */; };
 		3B71921E22B8E2180035CEE4 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71921D22B8E2180035CEE4 /* Appearance.swift */; };
 		3B71922022B8E5220035CEE4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71921F22B8E5220035CEE4 /* UIImage+Extension.swift */; };
-		3B71923922B8FE480035CEE4 /* navi_back.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3B71923822B8FE480035CEE4 /* navi_back.svg */; };
 		3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */; };
 		3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7CCBC92281820E007FEE9C /* SSRGithubFollowerCell.xib */; };
 		3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7CCBE52283D872007FEE9C /* SSRWebViewController.swift */; };
@@ -58,7 +67,6 @@
 		A1F4B6CA983ED97879FF10AF /* Pods_SSRSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFECEEF199E184447689383 /* Pods_SSRSwiftUITests.framework */; };
 		A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */; };
 		A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE21F822ABB6620096217F /* SSRDataword.swift */; };
-		A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */; };
 		A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221322ACAC490096217F /* SSRResponse.swift */; };
 		A2BE221722ACAE9C0096217F /* SSRAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221622ACAE9C0096217F /* SSRAPI.swift */; };
 		A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221A22ACEE210096217F /* GithubRepository.swift */; };
@@ -99,6 +107,15 @@
 		3B59EB7F228928E900D93243 /* SSRNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRNetwork.swift; sourceTree = "<group>"; };
 		3B59EB8122892C5800D93243 /* Memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Memo.md; sourceTree = "<group>"; };
 		3B59EB8422894F0E00D93243 /* SwiftKeyword.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SwiftKeyword.md; sourceTree = "<group>"; };
+		3B5AA00A23BB29BA0040B538 /* SSRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRUser.swift; sourceTree = "<group>"; };
+		3B5AA01123BB2F370040B538 /* SSRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRLoginViewController.swift; sourceTree = "<group>"; };
+		3B5AA01323BB30A70040B538 /* SSRUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRUserDefaults.swift; sourceTree = "<group>"; };
+		3B5AA01523BB36060040B538 /* String.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = String.md; sourceTree = "<group>"; };
+		3B5AA01623BB36060040B538 /* PromisedSwift.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PromisedSwift.md; sourceTree = "<group>"; };
+		3B5AA01A23BB402A0040B538 /* ToastWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastWindow.swift; sourceTree = "<group>"; };
+		3B5AA01B23BB402A0040B538 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		3B5AA01C23BB402A0040B538 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		3B5AA01D23BB402A0040B538 /* ToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
 		3B5AD2ED227EE1DB00F04BFB /* SSRHTTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHTTPViewController.swift; sourceTree = "<group>"; };
 		3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRootTableViewController.swift; sourceTree = "<group>"; };
 		3B642FF8239608FE00530137 /* SSRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRHelper.swift; sourceTree = "<group>"; };
@@ -108,7 +125,6 @@
 		3B71921A22B8DA490035CEE4 /* CustomNaviBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarController.swift; sourceTree = "<group>"; };
 		3B71921D22B8E2180035CEE4 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		3B71921F22B8E5220035CEE4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		3B71923822B8FE480035CEE4 /* navi_back.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = navi_back.svg; sourceTree = "<group>"; };
 		3B7CCBC82281820E007FEE9C /* SSRGithubFollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRGithubFollowerCell.swift; sourceTree = "<group>"; };
 		3B7CCBC92281820E007FEE9C /* SSRGithubFollowerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSRGithubFollowerCell.xib; sourceTree = "<group>"; };
 		3B7CCBE52283D872007FEE9C /* SSRWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRWebViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +163,6 @@
 		6E7ABA1D7AD1D6DF3FA2EAC9 /* Pods-SSRSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftUITests/Pods-SSRSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryResponse.swift; sourceTree = "<group>"; };
 		A2BE21F822ABB6620096217F /* SSRDataword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRDataword.swift; sourceTree = "<group>"; };
-		A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRUserDefaults.swift; sourceTree = "<group>"; };
 		A2BE221322ACAC490096217F /* SSRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRResponse.swift; sourceTree = "<group>"; };
 		A2BE221622ACAE9C0096217F /* SSRAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRAPI.swift; sourceTree = "<group>"; };
 		A2BE221A22ACEE210096217F /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
@@ -164,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3DDF81651451705350A5812 /* Pods_SSRSwift.framework in Frameworks */,
+				3B5AA00E23BB2C210040B538 /* HandyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +229,8 @@
 				3BEA7394228C0B7A00470FAD /* Structs和Classes的选择.md */,
 				3B59EB8122892C5800D93243 /* Memo.md */,
 				3B59EB8422894F0E00D93243 /* SwiftKeyword.md */,
+				3B5AA01623BB36060040B538 /* PromisedSwift.md */,
+				3B5AA01523BB36060040B538 /* String.md */,
 			);
 			path = Docs;
 			sourceTree = "<group>";
@@ -225,6 +243,41 @@
 				A2BE221322ACAC490096217F /* SSRResponse.swift */,
 			);
 			path = SSRNetwork;
+			sourceTree = "<group>";
+		};
+		3B5AA00923BB299E0040B538 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3B5AA00A23BB29BA0040B538 /* SSRUser.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		3B5AA00F23BB2F1B0040B538 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				3B5AA01023BB2F210040B538 /* Login */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		3B5AA01023BB2F210040B538 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3B5AA01123BB2F370040B538 /* SSRLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3B5AA01923BB402A0040B538 /* Toaster */ = {
+			isa = PBXGroup;
+			children = (
+				3B5AA01A23BB402A0040B538 /* ToastWindow.swift */,
+				3B5AA01B23BB402A0040B538 /* ToastView.swift */,
+				3B5AA01C23BB402A0040B538 /* Toast.swift */,
+				3B5AA01D23BB402A0040B538 /* ToastCenter.swift */,
+			);
+			path = Toaster;
 			sourceTree = "<group>";
 		};
 		3B5AD2EC227EE1BD00F04BFB /* HTTP */ = {
@@ -243,6 +296,8 @@
 		3B642FF62396087E00530137 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3B5AA01923BB402A0040B538 /* Toaster */,
+				3B5AA00923BB299E0040B538 /* User */,
 				3B00B6B1229E70EF003AA07A /* Router */,
 				3B642FF8239608FE00530137 /* SSRHelper.swift */,
 			);
@@ -261,17 +316,8 @@
 		3B71923622B8FDB70035CEE4 /* sources */ = {
 			isa = PBXGroup;
 			children = (
-				3B71923722B8FDBC0035CEE4 /* svg */,
 			);
 			path = sources;
-			sourceTree = "<group>";
-		};
-		3B71923722B8FDBC0035CEE4 /* svg */ = {
-			isa = PBXGroup;
-			children = (
-				3B71923822B8FE480035CEE4 /* navi_back.svg */,
-			);
-			path = svg;
 			sourceTree = "<group>";
 		};
 		3B7CCBE42283D852007FEE9C /* WebView */ = {
@@ -311,6 +357,7 @@
 		3B7E2DA122781EA2006AAE68 /* SSRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3B5AA00F23BB2F1B0040B538 /* classes */,
 				3BD5EC4223B608C100CDC11E /* App */,
 				3B642FF62396087E00530137 /* Component */,
 				3BB7343E22C5C0AF0081B8AB /* Theme */,
@@ -326,7 +373,6 @@
 				3B00B6AF229E7078003AA07A /* AppConstant.swift */,
 				3B7E2DA422781EA2006AAE68 /* ViewController.swift */,
 				A2BE223122AFCCEE0096217F /* BaseViewController.swift */,
-				A2BE21FA22ABBAE40096217F /* SSRUserDefaults.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
 				3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */,
 				3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */,
@@ -390,6 +436,7 @@
 		3BD5EC4223B608C100CDC11E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3B5AA01323BB30A70040B538 /* SSRUserDefaults.swift */,
 				3BD5EC4323B608FC00CDC11E /* AppAbout.swift */,
 				A2BE21F822ABB6620096217F /* SSRDataword.swift */,
 				3BD5EC4523B6092F00CDC11E /* NotificationManager.swift */,
@@ -466,6 +513,9 @@
 			dependencies = (
 			);
 			name = SSRSwift;
+			packageProductDependencies = (
+				3B5AA00D23BB2C210040B538 /* HandyJSON */,
+			);
 			productName = SSRSwift;
 			productReference = 3B7E2D9F22781EA2006AAE68 /* SSRSwift.app */;
 			productType = "com.apple.product-type.application";
@@ -543,6 +593,9 @@
 				Base,
 			);
 			mainGroup = 3B7E2D9622781EA2006AAE68;
+			packageReferences = (
+				3B5AA00C23BB2C210040B538 /* XCRemoteSwiftPackageReference "HandyJSON" */,
+			);
 			productRefGroup = 3B7E2DA022781EA2006AAE68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -564,13 +617,14 @@
 				3B7E2DAA22781EA4006AAE68 /* Assets.xcassets in Resources */,
 				3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */,
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
-				3B71923922B8FE480035CEE4 /* navi_back.svg in Resources */,
 				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
 				3B7CCBE82284076E007FEE9C /* index.html in Resources */,
 				3B00B6A3229D1848003AA07A /* RxREADME.md in Resources */,
 				3BF3E27E229CDB1400BDE5C9 /* WebREADME.md in Resources */,
 				3B00B6A5229D2428003AA07A /* SwiftTips.md in Resources */,
+				3B5AA01823BB36060040B538 /* PromisedSwift.md in Resources */,
 				3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */,
+				3B5AA01723BB36060040B538 /* String.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,10 +774,10 @@
 				3BE9C91B22AF9E0900FC4F68 /* TabBarController.swift in Sources */,
 				3BB7344022C5C0C30081B8AB /* SSRTheme.swift in Sources */,
 				3BD5EC4623B6092F00CDC11E /* NotificationManager.swift in Sources */,
+				3B5AA01E23BB402A0040B538 /* ToastWindow.swift in Sources */,
 				A2BE223222AFCCEE0096217F /* BaseViewController.swift in Sources */,
 				3B7E2DA522781EA2006AAE68 /* ViewController.swift in Sources */,
 				3BD5EC4A23B610F200CDC11E /* SSRWebViewTestViewController.swift in Sources */,
-				A2BE21FB22ABBAE40096217F /* SSRUserDefaults.swift in Sources */,
 				A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */,
 				3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */,
 				3B71922022B8E5220035CEE4 /* UIImage+Extension.swift in Sources */,
@@ -733,17 +787,23 @@
 				3B7CCBE62283D872007FEE9C /* SSRWebViewController.swift in Sources */,
 				3BA515DD22C38E8100436A1D /* NSAttributeString+Extension.swift in Sources */,
 				3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */,
+				3B5AA01423BB30A70040B538 /* SSRUserDefaults.swift in Sources */,
+				3B5AA02023BB402A0040B538 /* Toast.swift in Sources */,
 				A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */,
 				A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */,
 				3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */,
 				3BD5EC4C23B614F300CDC11E /* Appdelegate+Extension.swift in Sources */,
 				3B71921B22B8DA490035CEE4 /* CustomNaviBarController.swift in Sources */,
 				3B00B6B0229E7079003AA07A /* AppConstant.swift in Sources */,
+				3B5AA02123BB402A0040B538 /* ToastCenter.swift in Sources */,
+				3B5AA01223BB2F370040B538 /* SSRLoginViewController.swift in Sources */,
 				3BA515DF22C3943400436A1D /* AdaptorUIViewController.swift in Sources */,
 				3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */,
 				3BA515E122C39AB200436A1D /* UITextView+Extension.swift in Sources */,
 				3B59EB8222892C5800D93243 /* Memo.md in Sources */,
 				3B2C8B5B22B12A2C000474B5 /* UserDefaults+Extension.swift in Sources */,
+				3B5AA00B23BB29BA0040B538 /* SSRUser.swift in Sources */,
+				3B5AA01F23BB402A0040B538 /* ToastView.swift in Sources */,
 				3B6E7B4922A9137C001A311E /* UIColor+Extension.swift in Sources */,
 				3B32FA0B22A54AD000FCAE61 /* Singleton.swift in Sources */,
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
@@ -1082,6 +1142,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B5AA00C23BB2C210040B538 /* XCRemoteSwiftPackageReference "HandyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alibaba/HandyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B5AA00D23BB2C210040B538 /* HandyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B5AA00C23BB2C210040B538 /* XCRemoteSwiftPackageReference "HandyJSON" */;
+			productName = HandyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B7E2D9722781EA2006AAE68 /* Project object */;
 }

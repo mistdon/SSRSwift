@@ -15,7 +15,7 @@ extension AppDelegate{
     ///   - applicaiton: applicaiton description
     ///   - launchOptions: launchOptions description
     func configureApplication(applicaiton: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
-        setupInjectionIII()
+//        setupInjectionIII()
         setupConfigurationWKWebView()
         Appearance.configureNavigationBarAppearance()
     }

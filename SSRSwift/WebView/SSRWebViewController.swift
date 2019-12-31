@@ -58,10 +58,12 @@ class SSRWebViewController: BaseViewController {
         // 加载WebView
         let preferences = WKPreferences()
         preferences.javaScriptEnabled = true
-        
+        let userScript = WKUserScript(source: cookieString(), injectionTime: .atDocumentStart, forMainFrameOnly: false)
+        let userContentController = WKUserContentController()
+        userContentController.addUserScript(userScript)
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
-        configuration.userContentController = WKUserContentController()
+        configuration.userContentController = userContentController
         // 这里添加messageHander的name,和JS的代码对应
         // window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
         configuration.userContentController.add(self, name: SSRAppModuleName)
@@ -87,7 +89,6 @@ class SSRWebViewController: BaseViewController {
         progressView?.frame = CGRect(x: 0, y: 0, width: App.screenWidth, height: 0.5)
         progressView?.sizeToFit()
         view.addSubview(progressView!)
-      
     }
     fileprivate func bindActions(){
         // 处理title
@@ -101,12 +102,16 @@ class SSRWebViewController: BaseViewController {
             self?.progressView?.progress = Float(progess)
             self?.progressView?.isHidden = (progess == 1)
         }).disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(.didLogin).subscribe(onNext: { [weak self] notification in
+            self?.reChangeScriptCookie()
+        }).disposed(by: disposeBag)
     }
     fileprivate func loadUrl(url: URL){
-        let request = URLRequest(url: url)
-        self.wkWebView?.load(request)
+        let request = NSMutableURLRequest.init(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20.0)
+        setHeadersForRequest(request: request)
+        self.wkWebView?.load(request as URLRequest)
     }
-    fileprivate func reinjectCookie(){
+    fileprivate func reChangeScriptCookie(){
         var injectCookieArray = [String]()
         
         cookiesMapArray.forEach { cookieKeyValue in
@@ -132,6 +137,7 @@ class SSRWebViewController: BaseViewController {
         self.wkWebView?.load(request as URLRequest)
     }
 }
+//MARK:  WKNavigationDelegate
 extension SSRWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.wkWebView?.evaluateJavaScript("document.cookie", completionHandler: { (cookie, error) in
@@ -179,6 +185,7 @@ extension SSRWebViewController: WKNavigationDelegate{
         webView.reload()
     }
 }
+//MARK:  WKUIDelegate
 extension SSRWebViewController: WKUIDelegate{
 //    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
 //
@@ -210,6 +217,32 @@ extension SSRWebViewController: WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let response = message.body as? String else { return }
         VLog(response)
+    }
+}
+extension SSRWebViewController{
+    /// 设置请求头
+    /// - Parameter request: request description
+    fileprivate func setHeadersForRequest(request: NSMutableURLRequest){
+        var cookiesArray = [String]()
+        var cookiesMapping = [String:Bool]()
+        for cookie in HTTPCookieStorage.shared.cookies ?? [] {
+           if cookiesMapping[cookie.name] == nil {
+               cookiesArray.append("\(cookie.name)=\(cookie.value)")
+           }
+           cookiesMapping[cookie.name] = true
+        }
+        let cookiesString = cookiesArray.joined(separator: ";")
+        request.setValue(cookiesString, forHTTPHeaderField: "Cookie")
+        request.setValue("SSRWKWebView", forHTTPHeaderField: "referer")
+    }
+    /// 获取Cookie, 注入到WKWebView里，以便Ajax请求时携带kCookie
+    fileprivate func cookieString() -> String {
+        var cookiesArray = [String]()
+        for cookie in HTTPCookieStorage.shared.cookies ?? [] {
+            cookiesArray.append("document.cookie = '\(cookie.name)=\(cookie.value);path=/;domain=\(cookie.domain)'")
+        }
+        let cookiesString = cookiesArray.joined(separator: ";")
+        return cookiesString
     }
 }
 

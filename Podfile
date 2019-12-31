@@ -30,7 +30,7 @@ target 'SSRSwift' do
   pod 'SwiftLint', :configurations => ['Debug']
   pod 'FDFullscreenPopGesture'
   pod 'SVGKit' # 加载SVG的图片
-
+  pod 'Toaster'
   pod 'SwiftTheme'
 #  pod 'ProgressHUD'
   # 测试

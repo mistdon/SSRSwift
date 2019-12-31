@@ -47,6 +47,4 @@ override func viewWillDisappear(_ animated: Bool) {
 ### TODO：
  1. WKWebView的自动登录？
 
-- 如果你觉的部分代码对你有用，求Star😄
-- 如果你觉的代码有问题？请提issue，或者直接和我沟通🙏
 

@@ -9,6 +9,10 @@
 import Foundation
 import Alamofire
 
+typealias SSSNetworkSuccess = (_ data: SSRResponse?, _ dataResponse: DataResponse<Any>?) -> Void
+
+typealias SSRNetworkFailure = (_ error: NSError?) -> Void
+
 public class SSRNetwork{
     
     static let shared = SSRNetwork()
@@ -25,19 +29,22 @@ public class SSRNetwork{
                              url: String,
                              parameters: [String: AnyObject]?,
                              headers: [String: String],
-                             success: @escaping (_ data: Any?, _ dataResponse: DataResponse<Any>?) -> Void,
-                             fail: @escaping (_ error: NSError?) -> Void) -> DataRequest?
+                             success: @escaping SSSNetworkSuccess,
+                             fail: @escaping SSRNetworkFailure) -> DataRequest?
                              {
         let request = alamofireManager?.request(url, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         request?.responseJSON(completionHandler: { response in
             switch response.result{
             case .success:
-                success(response.result.value, response)
+                success(response.result.value as! SSRResponse, response)
             case .failure:
                 fail(response.error as NSError?)
             }
         })
        return request
+    }
+    func get(url: String, parameters: [String: AnyObject]?, headers: [String: String], success: @escaping SSSNetworkSuccess, failure: @escaping SSRNetworkFailure){
+        
     }
 }
 private extension SSRNetwork{

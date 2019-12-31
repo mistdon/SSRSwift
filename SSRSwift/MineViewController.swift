@@ -18,9 +18,9 @@ class MineViewController: BaseViewController {
         self.title = "Mine"
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor(hex6: "#62CCB0")
-        button.setTitle("Push Next", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.rx.tap.subscribe(onNext: { [weak self] in
-            let vc = BaseViewController()
+            let vc = SSRLoginViewController()
             self?.navigationController?.show(vc, sender: nil)
         }).disposed(by: disposeBag)
         view.addSubview(button)

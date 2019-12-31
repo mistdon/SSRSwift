@@ -9,7 +9,7 @@
 import Foundation
 import HandyJSON
 
-struct SSRResponse<T: HandyJSON>: HandyJSON {
+struct SSRResponse: HandyJSON {
     var code: Int = 0
     var message : String?
     var data: Any?

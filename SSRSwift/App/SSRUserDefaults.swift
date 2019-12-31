@@ -8,7 +8,10 @@
 
 import Foundation
 
-let UD_WKUserAgent = "wkWebView.userAgent.userdefaults"
+private let UDPrefix = "com.ssrswift."
+
+let UD_WKUserAgent     = UDPrefix + "wkWebView.userAgent"
+let UD_CurrentUserInfo = UDPrefix + "currentUserInfo"
 
 class SSRUserDefaults: NSObject {
     class func setObject(value: Any, key: String) {
