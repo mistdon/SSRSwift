@@ -44,8 +44,9 @@ class SSRLoginViewController: BaseViewController {
         logOutButton.backgroundColor = UIColor(hex6: "#62CCB0")
         logOutButton.setTitle("LogOut", for: .normal)
         logOutButton.rx.tap.subscribe(onNext: { [weak self] in
-            let vc = SSRLoginViewController()
-            self?.navigationController?.show(vc, sender: nil)
+            SSRUserManager.shared.logOut()
+            Toast(text: "Logout Success").show()
+            UIApplication.shared.openURL(URL(string: "https://app.huamengxiaoshuo.com/vnovel/test/")!)
         }).disposed(by: base_disposeBag)
         view.addSubview(logOutButton)
         logOutButton.snp.makeConstraints { [weak self] (make) -> Void in

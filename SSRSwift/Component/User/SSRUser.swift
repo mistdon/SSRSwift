@@ -67,6 +67,7 @@ extension SSRUserManager{
         }
     }
     func logOut(){
-        
+        SSRDataword.cleanCacheResponseObject()
+        SSRDataword.shared.resetCookies()
     }
 }

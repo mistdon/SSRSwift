@@ -7,20 +7,9 @@
 //
 
 import Foundation
-import HandyJSON
 
-struct SSRResponse: HandyJSON {
+struct SSRResponse {
     var code: Int = 0
-    var message : String?
+    var message : String = ""
     var data: Any?
-}
-struct SSRResponseError {
-    var id: String?
-    var code: String?
-    var message: String?
-}
-enum SSRErrorCode: String{
-    case OK = "0"
-    case Fail = "1"
-    
 }

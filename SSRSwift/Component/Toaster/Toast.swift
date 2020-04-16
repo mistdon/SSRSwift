@@ -106,21 +106,18 @@ open class Toast: Operation {
     ///   - text: text description
     ///   - type: Toast 类型 0 积极 1 中性 2 消极
     ///   - duration: duration description
-    @objc public init(text: String, darkModeOpen:Bool = false, type: Int, duration: TimeInterval = Delay.short){
+    @objc public init(text: String,  type: Int, duration: TimeInterval = Delay.short){
         self.delay = 0
         self.duration = duration
         super.init()
         self.textColor = .white
         self.text = text
         if type == 0{
-            self.image = UIImage(named: "emoji_positive")
             self.textColor = .black
             self.backgroundColor = UIColor(hex6: "#75FFC4")
         }else if type == 1{
-            self.image = UIImage(named: "emoji_avrage")
             self.backgroundColor = .black
         }else if type == 2{
-            self.image = UIImage(named: "emoji_negative")
             self.backgroundColor = .black
         }
     }

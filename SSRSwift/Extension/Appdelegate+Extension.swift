@@ -18,6 +18,7 @@ extension AppDelegate{
 //        setupInjectionIII()
         setupConfigurationWKWebView()
         Appearance.configureNavigationBarAppearance()
+        SSRDataword.shared.resetCookies()
     }
     func setupInjectionIII(){
         // Injections.source = "https://github.com/johnno1962/InjectionIII"
@@ -39,10 +40,9 @@ extension AppDelegate{
             guard let oldAgent = resultValue else{
                 return
             }
-            let newAgent = oldAgent + "/SSRSwiftiOS" // 这里添加自定义的UA
-            let dict = [UD_WKUserAgent:newAgent]
-            UserDefaults.standard.register(defaults: dict)
-            print(SSRUserDefaults.objct(key: UD_WKUserAgent) as Any)
+            let newAgent = oldAgent + "/SSRSwiftiOS/\(App.appShortVersion)/\(String(App.upgradeCode))/\(App.channel)" // 这里添加自定义的UA
+            SSRUserDefaults.setObject(value: newAgent, key: UD_WKUserAgent)
+            VLog("newUserAgent = \(newAgent)")
             self?.wkWebView!.customUserAgent = newAgent
             self?.wkWebView = nil
         }

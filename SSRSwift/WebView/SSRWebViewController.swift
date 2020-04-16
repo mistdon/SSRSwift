@@ -17,10 +17,6 @@ class SSRWebViewController: BaseViewController {
     private var progressView: UIProgressView?
     private let disposeBag = DisposeBag()
     open var urlString: String?
-    lazy var cookiesMapArray: [String] = {
-        let cookiesMapArray = ["app=SSRSwift","channel=appStore"]
-        return cookiesMapArray
-    }()
     convenience init(url: String?) {
         self.init()
         self.urlString = url
@@ -41,9 +37,6 @@ class SSRWebViewController: BaseViewController {
         // 下面两行解决 configuration.userContentController.add(self, name: SSRAppModuleName) 导致的循环引用
         wkWebView?.configuration.userContentController.removeScriptMessageHandler(forName:SSRAppModuleName)
         wkWebView?.configuration.userContentController.removeAllUserScripts()
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
     deinit {
         progressView?.removeFromSuperview()
@@ -112,28 +105,18 @@ class SSRWebViewController: BaseViewController {
         self.wkWebView?.load(request as URLRequest)
     }
     fileprivate func reChangeScriptCookie(){
-        var injectCookieArray = [String]()
-        
-        cookiesMapArray.forEach { cookieKeyValue in
-            let injectCookie = "document.cookie='\(cookieKeyValue);path=/;'"
-            injectCookieArray.append(injectCookie)
-        }
-        let res = injectCookieArray.joined(separator: ",")
         self.wkWebView?.configuration.userContentController.removeAllUserScripts()
-        let cookieScript = WKUserScript(source: res, injectionTime: .atDocumentStart, forMainFrameOnly: false)
+        let cookieScript = WKUserScript(source: cookieString(), injectionTime: .atDocumentStart, forMainFrameOnly: false)
         self.wkWebView?.configuration.userContentController.addUserScript(cookieScript)
         self.reloadWebView()
-    }
-    fileprivate func appendCookies(request: NSMutableURLRequest) {
-        let cookieString = self.cookiesMapArray.joined(separator: ",")
-        request.setValue(cookieString, forHTTPHeaderField: "Cookie")
     }
     fileprivate func reloadWebView(){
         guard let url = self.wkWebView?.url else{
             return
         }
         let request = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20.0)
-        appendCookies(request: request)
+        setHeadersForRequest(request: request)
+        request.setValue("SSRSwift", forHTTPHeaderField: "referer")
         self.wkWebView?.load(request as URLRequest)
     }
 }
@@ -157,7 +140,6 @@ extension SSRWebViewController: WKNavigationDelegate{
         }else{
             decisionHandler(.allow)
         }
-        
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         decisionHandler(.allow)
@@ -172,7 +154,7 @@ extension SSRWebViewController: WKNavigationDelegate{
         
     }
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        
+        Toast(text: "Load Failed, retry again!", type: 1).show()
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
@@ -182,6 +164,7 @@ extension SSRWebViewController: WKNavigationDelegate{
 //    }
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         // WebView 被意外中断，比如白屏, 这里可以做一些过度操作，或者重试操作
+        Toast(text: "Reloading....", type: 1).show()
         webView.reload()
     }
 }

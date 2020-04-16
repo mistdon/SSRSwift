@@ -8,8 +8,10 @@
 
 import Foundation
 import HandyJSON
+import Alamofire
 
-class SSRGithubRepository: HandyJSON, SSRRequest {
+class SSRGithubRepository: HandyJSON {
+
     var id : String?
     var name: String?
     var owner : SSRGithubFollower?
@@ -24,15 +26,9 @@ class SSRGithubRepositoryTotal: HandyJSON{
     required init() {
     }
 }
-extension SSRGithubRepository{
-    func searchRepository(_ query: String, success: @escaping SuccessHandler, fail: @escaping FailHandler){
-        self.request(url: SSRUrlPath.searchRepositories(), parameter: ["p": query as AnyObject], success: { (data) in
-            if let data = data as? [String: Any]{
-                let result = SSRGithubRepositoryTotal.deserialize(from: data)
-                success(result)
-            }
-        }) { (error) in
-            fail(error)
-        }
-    }
+extension SSRGithubRepository: SSRRequest{
+   @discardableResult
+   internal func request(url: URLConvertible, method: HTTPMethod, success: @escaping SuccessHandler, fail: @escaping FailHandler) -> DataRequest? {
+       return nil
+   }
 }

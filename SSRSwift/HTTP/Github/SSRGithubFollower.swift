@@ -8,35 +8,40 @@
 
 import Foundation
 import HandyJSON
+import Alamofire
+import PromiseKit
 
-class SSRGithubFollower: HandyJSON, SSRRequest {
-    
-    required init() {
-        
-    }
+class SSRGithubFollower: HandyJSON {
+    required init() {}
     var login : String?
     var id : Double?
     var avatar_url: String?
     var url: String?
-
 }
-extension SSRGithubFollower{
-    func requestMyFollowings(success: @escaping SuccessHandler, fail: @escaping FailHandler){
-        self.request(url: SSRUrlPath.following(), parameter: nil, success: { data in
-            if let data = data as? [[String: Any]]{
-                let resultArray = [SSRGithubFollower].deserialize(from: data)
-                success(resultArray)
+extension SSRGithubFollower: SSRRequest{
+    func getMyFollowings(result : @escaping ([SSRGithubFollower]) -> Void){
+        self.request(url: "https://api.github.com/users/mistdon/following", method: .get, parameter: nil, success: { (response) in
+            guard response.code == 0, let data = response.data as? [Any], let followings = [SSRGithubFollower].deserialize(from: data) else{
+                Toast(text: response.message, type: 2).show()
+                return
             }
-        }) { error in
-            fail(error)
+            result(followings.compactMap({$0}))
+        }) { (error) in
+            VLog(error?.localizedDescription)
         }
     }
-    func requestISFollowing(_ name: String, success: @escaping SuccessHandler, fail: @escaping FailHandler) {
-        self.request(url: SSRUrlPath.isFollowing(username: name), success: { (data) in
-            success(data)
-        }) { (error) in
-            fail(error)
+    func getMyFollowingsss() -> Promise<[SSRGithubFollower]>{
+        return Promise { (resovler) in
+            self.request(url: "https://api.github.com/users/mistdon/following", method: .get, parameter: nil, success: { (response) in
+                guard response.code == 0, let data = response.data as? [Any], let followings = [SSRGithubFollower].deserialize(from: data) else{
+                    resovler.reject(NSError(domain: "ssr", code: 10002, userInfo: nil))
+                    return
+                }
+                resovler.fulfill(followings.compactMap({ $0 }))
+            }) { (error) in
+                VLog(error?.localizedDescription)
+                resovler.reject(NSError(domain: "ssr", code: 10003, userInfo: nil))
+            }
         }
     }
 }
-

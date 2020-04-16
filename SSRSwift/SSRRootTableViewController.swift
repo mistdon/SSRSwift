@@ -24,8 +24,8 @@ class SSRRootTableViewController: UITableViewController {
         }), SSRTestStruct(title: "WKWebView", subTitle: "combine", closure: { [weak self] in
             let webVC = SSRWebViewController(url: "https://m.huamengxiaoshuo.com")
             self?.navigationController?.show(webVC, sender: nil)
-        }), SSRTestStruct(title: "WKWebViewTest", subTitle: nil, closure: { [weak self] in
-            let webVC = SSRWebViewController(url: "https://m.huamengxiaoshuo.com")
+        }), SSRTestStruct(title: "Web: shendong.store", subTitle: nil, closure: { [weak self] in
+            let webVC = SSRWebViewController(url: "http://shendong.store")
             self?.navigationController?.show(webVC, sender: nil)
         }), SSRTestStruct(title: "RxSwift", subTitle: nil, closure: { [weak self] in
             self?.navigationController?.show(SSRRxSwiftViewController(), sender: nil)

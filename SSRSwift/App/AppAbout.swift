@@ -32,6 +32,9 @@ public struct App {
     public static var appStoreURL: URL {
         return URL(string: "your URL")!
     }
+    public static var channel: String{
+        return App.bundleIdentifier.contains("appstore") ? "appstore" : "development"
+    }
     public static var appVersionAndBuild: String {
         let version = appVersion, build = appBuild
         return version == build ? "v\(version)" : "v\(version)(\(build))"
@@ -98,4 +101,11 @@ public struct App {
         }
         return code
     }
+    static let isSimulator: Bool = {
+        var isSim = false
+        #if arch(i386) || arch(x86_64)
+        isSim = true
+        #endif
+        return isSim
+    }()
 }
