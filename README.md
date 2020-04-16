@@ -2,7 +2,7 @@
 
 关于Swift的知识总结
 
-- [Swift keywords](https://github.com/mistdon/SSRSwift/blob/master/Docs/)
+- [Swift keywords](https://github.com/mistdon/SSRSwift/blob/master/Docs/SwiftKeyword.md)
 
 - [WKWebView的使用和封装](https://github.com/mistdon/SSRSwift/blob/master/SSRSwift/WebView/WebREADME.md)
 
