@@ -22,10 +22,12 @@ class SSRRootTableViewController: UITableViewController {
         choicesArray = [SSRTestStruct(title: "Network", subTitle: nil, closure: { [weak self] in
             self?.navigationController?.show(SSRHTTPViewController(), sender: nil)
         }), SSRTestStruct(title: "WKWebView", subTitle: "combine", closure: { [weak self] in
-            let webVC = SSRWebViewController(url: "https://m.huamengxiaoshuo.com")
+            let webVC = SSRWebViewController(url: URL(string: "https://m.huamengxiaoshuo.com"))
             self?.navigationController?.show(webVC, sender: nil)
-        }), SSRTestStruct(title: "Web: shendong.store", subTitle: nil, closure: { [weak self] in
-            let webVC = SSRWebViewController(url: "http://shendong.store")
+        }), SSRTestStruct(title: "Web: Local", subTitle: nil, closure: { [weak self] in
+            let path = Bundle.main.path(forResource: "index", ofType: "html")
+            let url = URL(fileURLWithPath: path!)
+            let webVC = SSRWebViewController(url: url)
             self?.navigationController?.show(webVC, sender: nil)
         }), SSRTestStruct(title: "RxSwift", subTitle: nil, closure: { [weak self] in
             self?.navigationController?.show(SSRRxSwiftViewController(), sender: nil)

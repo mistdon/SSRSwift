@@ -16,10 +16,10 @@ class SSRWebViewController: BaseViewController {
     weak var wkWebView: WKWebView?
     private var progressView: UIProgressView?
     private let disposeBag = DisposeBag()
-    open var urlString: String?
-    convenience init(url: String?) {
+    open var url: URL?
+    convenience init(url: URL?) {
         self.init()
-        self.urlString = url
+        self.url = url
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +27,11 @@ class SSRWebViewController: BaseViewController {
         loadWebView()
         createUI()
         bindActions()
-        guard let str = urlString, let url = URL(string: str) else{
+        
+        guard let _url = url else{
             return
         }
-        loadUrl(url: url)
+        loadUrl(url: _url)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
