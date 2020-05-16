@@ -27,7 +27,7 @@ class SSRWebViewController: BaseViewController {
         loadWebView()
         createUI()
         bindActions()
-        
+        urlProtocol()
         guard let _url = url else{
             return
         }
@@ -146,19 +146,15 @@ extension SSRWebViewController: WKNavigationDelegate{
         decisionHandler(.allow)
     }
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        
     }
     func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        
     }
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        
     }
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         Toast(text: "Load Failed, retry again!", type: 1).show()
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        
     }
 //    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
 //        
@@ -169,23 +165,20 @@ extension SSRWebViewController: WKNavigationDelegate{
         webView.reload()
     }
 }
-//MARK:  WKUIDelegate
+// MARK:  WKUIDelegate
 extension SSRWebViewController: WKUIDelegate{
 //    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
 //
 //    }
     func webViewDidClose(_ webView: WKWebView) {
-        
     }
     // 响应JS中的 alert() 方法
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         completionHandler()
     }
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        
     }
     func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        
     }
 //    func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
 //        return false
@@ -194,7 +187,6 @@ extension SSRWebViewController: WKUIDelegate{
 //        return self
 //    }
     func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController) {
-        
     }
 }
 extension SSRWebViewController: WKScriptMessageHandler{
@@ -229,4 +221,3 @@ extension SSRWebViewController{
         return cookiesString
     }
 }
-

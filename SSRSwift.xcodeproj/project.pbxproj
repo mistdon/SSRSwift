@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,6 @@
 		3B59EB8222892C5800D93243 /* Memo.md in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB8122892C5800D93243 /* Memo.md */; };
 		3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EB8422894F0E00D93243 /* SwiftKeyword.md */; };
 		3B5AA00B23BB29BA0040B538 /* SSRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA00A23BB29BA0040B538 /* SSRUser.swift */; };
-		3B5AA00E23BB2C210040B538 /* HandyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AA00D23BB2C210040B538 /* HandyJSON */; };
 		3B5AA01223BB2F370040B538 /* SSRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01123BB2F370040B538 /* SSRLoginViewController.swift */; };
 		3B5AA01423BB30A70040B538 /* SSRUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AA01323BB30A70040B538 /* SSRUserDefaults.swift */; };
 		3B5AA01723BB36060040B538 /* String.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B5AA01523BB36060040B538 /* String.md */; };
@@ -71,6 +70,14 @@
 		A2BE221722ACAE9C0096217F /* SSRAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221622ACAE9C0096217F /* SSRAPI.swift */; };
 		A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221A22ACEE210096217F /* GithubRepository.swift */; };
 		A2BE223222AFCCEE0096217F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE223122AFCCEE0096217F /* BaseViewController.swift */; };
+		A2C5467D246ED321005DB2BE /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5467C246ED321005DB2BE /* BaseTableView.swift */; };
+		A2C5467F246ED33E005DB2BE /* UIControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5467E246ED33E005DB2BE /* UIControl+Extension.swift */; };
+		A2DD9BA924693CFD00E913CB /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD9BA824693CFD00E913CB /* ThreadViewController.swift */; };
+		A2DD9BAC246A419E00E913CB /* ImageShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD9BAB246A419E00E913CB /* ImageShowViewController.swift */; };
+		A2DD9BAE246A42D200E913CB /* vcmodel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2DD9BAD246A42D200E913CB /* vcmodel.jpg */; };
+		A2E92B5F245721F800882848 /* SSRWebViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E92B5E245721F800882848 /* SSRWebViewControllerExtension.swift */; };
+		A2E92B6124572C6F00882848 /* replace.html in Resources */ = {isa = PBXBuildFile; fileRef = A2E92B6024572C6F00882848 /* replace.html */; };
+		A2F3111922C75F4C0031D784 /* PhotoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3111822C75F4C0031D784 /* PhotoViewer.swift */; };
 		B3DDF81651451705350A5812 /* Pods_SSRSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756092EFC720042CED29EC8 /* Pods_SSRSwift.framework */; };
 		F6918D685DA9CB0C4AD14FD5 /* Pods_SSRSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -167,6 +174,14 @@
 		A2BE221622ACAE9C0096217F /* SSRAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRAPI.swift; sourceTree = "<group>"; };
 		A2BE221A22ACEE210096217F /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
 		A2BE223122AFCCEE0096217F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A2C5467C246ED321005DB2BE /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		A2C5467E246ED33E005DB2BE /* UIControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extension.swift"; sourceTree = "<group>"; };
+		A2DD9BA824693CFD00E913CB /* ThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		A2DD9BAB246A419E00E913CB /* ImageShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowViewController.swift; sourceTree = "<group>"; };
+		A2DD9BAD246A42D200E913CB /* vcmodel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vcmodel.jpg; sourceTree = "<group>"; };
+		A2E92B5E245721F800882848 /* SSRWebViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRWebViewControllerExtension.swift; sourceTree = "<group>"; };
+		A2E92B6024572C6F00882848 /* replace.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = replace.html; sourceTree = "<group>"; };
+		A2F3111822C75F4C0031D784 /* PhotoViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewer.swift; sourceTree = "<group>"; };
 		B47E46477C22C3D59F6310E2 /* Pods-SSRSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF0509B5C1DB1B679BB6FA34 /* Pods-SSRSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E86A9AE7FE65A5CF6B5562EB /* Pods_SSRSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSRSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3DDF81651451705350A5812 /* Pods_SSRSwift.framework in Frameworks */,
-				3B5AA00E23BB2C210040B538 /* HandyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,8 +339,10 @@
 			children = (
 				3B7CCBE52283D872007FEE9C /* SSRWebViewController.swift */,
 				3BD5EC4923B610F200CDC11E /* SSRWebViewTestViewController.swift */,
+				A2E92B5E245721F800882848 /* SSRWebViewControllerExtension.swift */,
 				3BF3E27D229CDB1400BDE5C9 /* WebREADME.md */,
 				3B7CCBE72284076D007FEE9C /* index.html */,
+				A2E92B6024572C6F00882848 /* replace.html */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -357,6 +373,8 @@
 		3B7E2DA122781EA2006AAE68 /* SSRSwift */ = {
 			isa = PBXGroup;
 			children = (
+				A2DD9BAA246A418800E913CB /* Image */,
+				A2DD9BA724693CE800E913CB /* Thread */,
 				3BC075FD23BF3E7800C6A2FE /* SSRRouter */,
 				3B5AA00F23BB2F1B0040B538 /* classes */,
 				3BD5EC4223B608C100CDC11E /* App */,
@@ -364,6 +382,7 @@
 				3BB7343E22C5C0AF0081B8AB /* Theme */,
 				3B71923622B8FDB70035CEE4 /* sources */,
 				3B71921C22B8E1F90035CEE4 /* UI */,
+				A2F3111722C75F250031D784 /* Components */,
 				3B32FA0922A54A9700FCAE61 /* DesignPattern */,
 				3BC983952294F48800387BB9 /* Extension */,
 				3BF81C3922854B2F000B40EE /* Protocol */,
@@ -374,12 +393,14 @@
 				3B00B6AF229E7078003AA07A /* AppConstant.swift */,
 				3B7E2DA422781EA2006AAE68 /* ViewController.swift */,
 				A2BE223122AFCCEE0096217F /* BaseViewController.swift */,
+				A2C5467C246ED321005DB2BE /* BaseTableView.swift */,
 				3B5AD2EF227EE26000F04BFB /* SSRRootTableViewController.swift */,
 				3BE9C91A22AF9E0900FC4F68 /* TabBarController.swift */,
 				3BE9C91822AF9D3100FC4F68 /* MineViewController.swift */,
 				3B71921A22B8DA490035CEE4 /* CustomNaviBarController.swift */,
 				3B7E2DA922781EA4006AAE68 /* Assets.xcassets */,
 				3B7E2DAB22781EA4006AAE68 /* LaunchScreen.storyboard */,
+				A2DD9BAD246A42D200E913CB /* vcmodel.jpg */,
 				3B7E2DAE22781EA4006AAE68 /* Info.plist */,
 			);
 			path = SSRSwift;
@@ -429,6 +450,7 @@
 				3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */,
 				3B71921F22B8E5220035CEE4 /* UIImage+Extension.swift */,
 				3BD5EC4B23B614F300CDC11E /* Appdelegate+Extension.swift */,
+				A2C5467E246ED33E005DB2BE /* UIControl+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -492,6 +514,30 @@
 			path = Github;
 			sourceTree = "<group>";
 		};
+		A2DD9BA724693CE800E913CB /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD9BA824693CFD00E913CB /* ThreadViewController.swift */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		A2DD9BAA246A418800E913CB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD9BAB246A419E00E913CB /* ImageShowViewController.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A2F3111722C75F250031D784 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3111822C75F4C0031D784 /* PhotoViewer.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C876D9880317E72C8EEF4711 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,7 +568,6 @@
 			);
 			name = SSRSwift;
 			packageProductDependencies = (
-				3B5AA00D23BB2C210040B538 /* HandyJSON */,
 			);
 			productName = SSRSwift;
 			productReference = 3B7E2D9F22781EA2006AAE68 /* SSRSwift.app */;
@@ -602,7 +647,6 @@
 			);
 			mainGroup = 3B7E2D9622781EA2006AAE68;
 			packageReferences = (
-				3B5AA00C23BB2C210040B538 /* XCRemoteSwiftPackageReference "HandyJSON" */,
 			);
 			productRefGroup = 3B7E2DA022781EA2006AAE68 /* Products */;
 			projectDirPath = "";
@@ -626,6 +670,7 @@
 				3BCF3943229E742E0073D61C /* urlSchemes.png in Resources */,
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
 				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
+				A2DD9BAE246A42D200E913CB /* vcmodel.jpg in Resources */,
 				3B7CCBE82284076E007FEE9C /* index.html in Resources */,
 				3B00B6A3229D1848003AA07A /* RxREADME.md in Resources */,
 				3BF3E27E229CDB1400BDE5C9 /* WebREADME.md in Resources */,
@@ -633,6 +678,7 @@
 				3B5AA01823BB36060040B538 /* PromisedSwift.md in Resources */,
 				3BEA7395228C0B7A00470FAD /* Structs和Classes的选择.md in Resources */,
 				3B5AA01723BB36060040B538 /* String.md in Resources */,
+				A2E92B6124572C6F00882848 /* replace.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,7 +728,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\n    echo \"🎉 SwiftLint is loaded successfully.\"\nelse\n   echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
 		};
 		46B82147A2AD00D1083967DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -707,47 +753,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
-				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSRSwift/Pods-SSRSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A6D8526683B41629873E7233 /* [CP] Check Pods Manifest.lock */ = {
@@ -789,6 +804,7 @@
 				A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */,
 				3B827A8F227F065100CADC52 /* SSRGithubFollower.swift in Sources */,
 				3B71922022B8E5220035CEE4 /* UIImage+Extension.swift in Sources */,
+				A2F3111922C75F4C0031D784 /* PhotoViewer.swift in Sources */,
 				A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */,
 				3BD5EC4823B60D5600CDC11E /* SSRRouterViewController.swift in Sources */,
 				3B6E7B4B22A9139A001A311E /* String+Extension.swift in Sources */,
@@ -798,6 +814,7 @@
 				3B5AA01423BB30A70040B538 /* SSRUserDefaults.swift in Sources */,
 				3B5AA02023BB402A0040B538 /* Toast.swift in Sources */,
 				A2BE221B22ACEE210096217F /* GithubRepository.swift in Sources */,
+				A2E92B5F245721F800882848 /* SSRWebViewControllerExtension.swift in Sources */,
 				A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */,
 				3B6E7B4722A91357001A311E /* UIView+Extension.swift in Sources */,
 				3BD5EC4C23B614F300CDC11E /* Appdelegate+Extension.swift in Sources */,
@@ -815,11 +832,15 @@
 				3B6E7B4922A9137C001A311E /* UIColor+Extension.swift in Sources */,
 				3B32FA0B22A54AD000FCAE61 /* Singleton.swift in Sources */,
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
+				A2DD9BA924693CFD00E913CB /* ThreadViewController.swift in Sources */,
 				3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */,
+				A2C5467D246ED321005DB2BE /* BaseTableView.swift in Sources */,
 				3B00B6B5229E710D003AA07A /* SSRRouter.swift in Sources */,
+				A2C5467F246ED33E005DB2BE /* UIControl+Extension.swift in Sources */,
 				3BD5EC4423B608FC00CDC11E /* AppAbout.swift in Sources */,
 				3B71921E22B8E2180035CEE4 /* Appearance.swift in Sources */,
 				3B7CCBCA2281820E007FEE9C /* SSRGithubFollowerCell.swift in Sources */,
+				A2DD9BAC246A419E00E913CB /* ImageShowViewController.swift in Sources */,
 				3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */,
 				A2BE221722ACAE9C0096217F /* SSRAPI.swift in Sources */,
 			);
@@ -1003,7 +1024,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shendong.SSRSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1027,7 +1048,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shendong.SSRSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1154,25 +1175,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3B5AA00C23BB2C210040B538 /* XCRemoteSwiftPackageReference "HandyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alibaba/HandyJSON";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3B5AA00D23BB2C210040B538 /* HandyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3B5AA00C23BB2C210040B538 /* XCRemoteSwiftPackageReference "HandyJSON" */;
-			productName = HandyJSON;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B7E2D9722781EA2006AAE68 /* Project object */;
 }

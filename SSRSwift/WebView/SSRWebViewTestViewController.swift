@@ -17,7 +17,6 @@ class SSRWebViewTestViewController: SSRWebViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // add consoleView
         self.view.addSubview(self.consoleView)
         self.consoleView.snp_makeConstraints { make in

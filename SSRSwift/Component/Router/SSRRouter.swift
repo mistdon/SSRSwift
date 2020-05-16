@@ -14,7 +14,6 @@ import UIKit
 // MARK: SSRRouterAction
 @objc public class SSRRouterAction: NSObject{
     @objc public class func routerAction(fromViewController: UIViewController, toViewController: UIViewController, type: SSRRouterActionType){
-        
     }
 }
 // MARK: SSRRouter

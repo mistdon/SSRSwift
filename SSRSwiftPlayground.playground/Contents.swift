@@ -22,7 +22,6 @@ let msg = SSRMessage(dict: messageDict)
 
 print(msg.message as Any)
 
-
 let name = ""
 if name.count == 0{
     print("You're anonymous")

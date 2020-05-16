@@ -27,7 +27,6 @@ class TabBarController: UITabBarController {
         customNavi.tabBarItem = UITabBarItem(title: "Navi", image: nil, selectedImage: nil)
         self.viewControllers = [homeNavi, mineNavi, customNavi]
         
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

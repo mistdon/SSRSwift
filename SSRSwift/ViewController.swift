@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class ViewController: UIViewController {
     let testApi = "https://api.github.com/users/mistdon/following"
     override func viewDidLoad() {
@@ -17,7 +16,5 @@ class ViewController: UIViewController {
         Alamofire.request(testApi).response { response in
             print(response)
         }
-        
-        
     }
 }

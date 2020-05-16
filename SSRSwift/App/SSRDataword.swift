@@ -9,9 +9,7 @@
 import Foundation
 
 class SSRDataword {
-    
     static let shared = SSRDataword()
-    
     private init() {
         commonInit()
     }

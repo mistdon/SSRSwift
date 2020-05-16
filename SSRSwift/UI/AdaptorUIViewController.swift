@@ -41,13 +41,11 @@ class AdaptorUIViewController: BaseViewController {
 //        }
         print(textView.textContainerInset)
     }
-    func calculateTextViewSize(){
-        
-    }
+    func calculateTextViewSize() {}
 }
-extension UIViewController: UITextViewDelegate{
+extension UIViewController: UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView) {
-        print(textView.text)
+        print(textView.text ?? "")
 //        let widthText: CGFloat = textView.width
 //        var heightText : CGFloat
 //        let sizeText = textView.sizeThatFits(CGSize(width: widthText, height: CGFloat.greatestFiniteMagnitude))
@@ -64,6 +62,5 @@ extension UIViewController: UITextViewDelegate{
         let size = CGSize(width: CGFloat.maximum(width, 50), height: CGFloat.maximum(height, 30))
         textView.width = size.width
         textView.height = size.height
-        
     }
 }

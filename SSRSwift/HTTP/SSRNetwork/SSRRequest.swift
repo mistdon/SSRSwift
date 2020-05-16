@@ -14,11 +14,9 @@ protocol SSRRequest {
     typealias SuccessHandler = (_ data: SSRResponse) -> Void
 
     typealias FailHandler = (_ error: NSError?) -> Void
-    
     func request(url: URLConvertible, method: Alamofire.HTTPMethod, success: @escaping SuccessHandler, fail: @escaping FailHandler) -> DataRequest?
 
     func request(url: URLConvertible, method: Alamofire.HTTPMethod, parameter: [String: AnyObject]?, success: @escaping SuccessHandler, fail: @escaping FailHandler) -> DataRequest?
-    
     func request(url: URLConvertible, method: Alamofire.HTTPMethod, parameter: [String: AnyObject]?, headers: [String: String]?, success: @escaping SuccessHandler, fail: @escaping FailHandler) -> DataRequest?
 }
 extension SSRRequest {

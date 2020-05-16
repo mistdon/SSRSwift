@@ -21,7 +21,7 @@ extension UIView{
     }
     public var y: CGFloat{
         get{
-            return self.frame.origin.y;
+            return self.frame.origin.y
         }
         set{
             var rect = self.frame
@@ -47,7 +47,7 @@ extension UIView{
     }
     public var width: CGFloat{
         get{
-            return self.frame.size.width;
+            return self.frame.size.width
         }
         set{
             var rect = self.frame

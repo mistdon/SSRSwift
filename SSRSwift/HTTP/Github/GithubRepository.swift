@@ -11,13 +11,11 @@ import HandyJSON
 import Alamofire
 
 class SSRGithubRepository: HandyJSON {
-
     var id : String?
     var name: String?
     var owner : SSRGithubFollower?
     required init() {
     }
-    
 }
 class SSRGithubRepositoryTotal: HandyJSON{
     var total_count : Int = 0

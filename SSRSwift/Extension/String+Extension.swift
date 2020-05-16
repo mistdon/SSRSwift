@@ -15,8 +15,8 @@ import UIKit
  - 如果同时定义" "、"\t\r\n" 、 "\u{00a0}" 、 "\u{2002}" 、 "\u{2003}"等的话，可以用下面的isBlank
  参考链接: https://useyourloaf.com/blog/empty-strings-in-swift/
  */
-extension String{
-    var isBlank: Bool{
+extension String {
+    var isBlank: Bool {
         return allSatisfy({$0.isWhitespace})
     }
     var isInt: Bool {

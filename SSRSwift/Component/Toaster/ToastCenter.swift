@@ -16,7 +16,6 @@ open class ToastCenter {
 
   public static let `default` = ToastCenter()
 
-
   // MARK: Initializing
 
   init() {
@@ -32,22 +31,16 @@ open class ToastCenter {
       object: nil
     )
   }
-
-
   // MARK: Adding Toasts
 
   open func add(_ toast: Toast) {
     self.queue.addOperation(toast)
   }
-
-
   // MARK: Cancelling Toasts
 
   open func cancelAll() {
     queue.cancelAllOperations()
   }
-
-
   // MARK: Notifications
 
   @objc dynamic func deviceOrientationDidChange() {

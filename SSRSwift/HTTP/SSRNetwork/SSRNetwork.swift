@@ -19,15 +19,12 @@ typealias SSRNetworkFailure = (_ error: NSError?) -> Void
 public var SSRNetworkDefaultTimeOut : TimeInterval = 60
 
 public class SSRNetwork{
-    
     static let shared = SSRNetwork()
 
     private var alamofireManager: Alamofire.SessionManager?
     /// temp session manager, used for change default timeout intervale
     private var tempSessionManager: Alamofire.SessionManager?
-    
     var customHeaders: [String: String] = ["Accept": "application/json"]
-    
     private init(){
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest   = SSRNetworkDefaultTimeOut
@@ -52,23 +49,23 @@ public class SSRNetwork{
                 return
             }
             switch dataResponse.result{
-                case .success:
-                    guard let datas : [String: AnyObject] = dataResponse.result.value as? [String: AnyObject] else{
-                        success(SSRResponse(code: 0, message: "Handle data by yourself", data: dataResponse.result.value), dataResponse)
-                        return
-                    }
-                    if let code = datas["code"]?.int8Value, let message = datas["message"] as? String{
-                        if code == 0 {
-                            let tempResponse = SSRResponse(code: Int(code), message: message, data: datas["data"] )
-                            success(tempResponse, dataResponse)
-                        }else{
-                            fail(NSError(domain: SSRNetworkDomain, code: Int(code), userInfo: [NSLocalizedDescriptionKey: message]))
-                        }
+            case .success:
+                guard let datas : [String: AnyObject] = dataResponse.result.value as? [String: AnyObject] else{
+                    success(SSRResponse(code: 0, message: "Handle data by yourself", data: dataResponse.result.value), dataResponse)
+                    return
+                }
+                if let code = datas["code"]?.int8Value, let message = datas["message"] as? String{
+                    if code == 0 {
+                        let tempResponse = SSRResponse(code: Int(code), message: message, data: datas["data"] )
+                        success(tempResponse, dataResponse)
                     }else{
-                        success(SSRResponse(code: 0, message: "Handle data by yourself", data: datas), dataResponse)
+                        fail(NSError(domain: SSRNetworkDomain, code: Int(code), userInfo: [NSLocalizedDescriptionKey: message]))
                     }
-                case .failure:
-                    fail(dataResponse.error as NSError?)
+                }else{
+                    success(SSRResponse(code: 0, message: "Handle data by yourself", data: datas), dataResponse)
+                }
+            case .failure:
+                fail(dataResponse.error as NSError?)
             }
         }) { (error) in
             fail(error as NSError?)
@@ -78,12 +75,12 @@ public class SSRNetwork{
     @discardableResult
     func requestOrigin(url: URLConvertible,
                        method: Alamofire.HTTPMethod,
-                        parameters: [String: AnyObject]?,
-                        encoding: ParameterEncoding = URLEncoding.default,
-                        headers: [String: String]?,
-                        timeoutInterval: TimeInterval = SSRNetworkDefaultTimeOut,
-                        success: @escaping SSSNetworkSuccess,
-                        fail: @escaping SSRNetworkFailure) -> DataRequest?{
+                       parameters: [String: AnyObject]?,
+                       encoding: ParameterEncoding = URLEncoding.default,
+                       headers: [String: String]?,
+                       timeoutInterval: TimeInterval = SSRNetworkDefaultTimeOut,
+                       success: @escaping SSSNetworkSuccess,
+                       fail: @escaping SSRNetworkFailure) -> DataRequest?{
         var resHeaders = self.customHeaders
         if let headers = headers, headers.count > 0{
             for dict in headers{

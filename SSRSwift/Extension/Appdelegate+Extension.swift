@@ -34,10 +34,11 @@ extension AppDelegate{
     }
     // 注册WKWbeVieww的ua
     func setupConfigurationWKWebView(){
-        wkWebView = WKWebView();
+        wkWebView = WKWebView()
         wkWebView?.evaluateJavaScript("navigator.userAgent") { [weak self](result, error) in
             let resultValue = result as? String
             guard let oldAgent = resultValue else{
+                print(error?.localizedDescription ?? "error")
                 return
             }
             let newAgent = oldAgent + "/SSRSwiftiOS/\(App.appShortVersion)/\(String(App.upgradeCode))/\(App.channel)" // 这里添加自定义的UA

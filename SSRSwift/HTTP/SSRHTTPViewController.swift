@@ -24,12 +24,9 @@ class SSRHTTPViewController: BaseViewController {
     let myButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     var followers = [SSRGithubFollower]()
     var repositories = [GithubRepository]()
-    
     var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         SSRNetwork.configur(timeoutInterval: 20)
 //        SSRNetwork.shared.customHeaders  = [
 //            "Accept": "applicaiton/json",
@@ -43,17 +40,14 @@ class SSRHTTPViewController: BaseViewController {
             make.edges.equalTo(self.view)
         }
         tableView.register(UINib(nibName: "SSRGithubFollowerCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        
         let button1 = UIBarButtonItem(title: "Reload", style: .done, target: nil, action: nil)
         button1.rx.tap.subscribe(onNext: { [weak self] in
             self?.requestFollowers()
         }).disposed(by: base_disposeBag)
-        
         let button2 = UIBarButtonItem(title: "YWMock", style: .done, target: nil, action: nil)
         button2.rx.tap.subscribe(onNext: { [weak self] in
             self?.requestYWMock()
         }).disposed(by: base_disposeBag)
-        
         let button3 = UIBarButtonItem(title: "Origin", style: .done, target: nil, action: nil)
         button3.rx.tap.subscribe(onNext: { [weak self] in
             self?.requestOrigin()
@@ -100,7 +94,6 @@ class SSRHTTPViewController: BaseViewController {
             self?.tableView.reloadData()
         }
     }
-    
     @objc func tappedButton(_ sender: UIButton?){
         // 1.
 //        SSRGithubFollower().requestMyFollowings(success: { (data) in

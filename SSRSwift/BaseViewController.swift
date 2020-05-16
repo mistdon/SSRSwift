@@ -29,13 +29,13 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
-        if let navi = self.navigationController, navi.viewControllers.count > 1{
+        if let navi = self.navigationController, navi.viewControllers.count > 1 {
             setLeftBackButton { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
         }
     }
-    fileprivate func loadNavigationBar(){
+    fileprivate func loadNavigationBar() {
         guard self.navigationItem.leftBarButtonItem != nil else {
             return
         }
@@ -48,14 +48,14 @@ class BaseViewController: UIViewController {
                 if navigationController.viewControllers.count > 1{
                     navigationController.popViewController(animated: true)
                 }
-            }else{
+            } else {
                 self?.dismiss(animated: true, completion: nil)
             }
         }).disposed(by: base_disposeBag)
         let closeItem = UIBarButtonItem.init(customView: closeButton)
         self.navigationItem.leftBarButtonItems = [createLeftNegativeSpacerItem(), closeItem]
     }
-    fileprivate func setLeftBackButton(closure: @escaping () -> Void){
+    fileprivate func setLeftBackButton(closure: @escaping () -> Void) {
         let closeButton = UIButton.init(type: .custom)
         closeButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         closeButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -66,12 +66,12 @@ class BaseViewController: UIViewController {
         let closeItem = UIBarButtonItem.init(customView: closeButton)
         self.navigationItem.leftBarButtonItems = [createLeftNegativeSpacerItem(), closeItem]
     }
-    fileprivate func createLeftNegativeSpacerItem() -> UIBarButtonItem{
+    fileprivate func createLeftNegativeSpacerItem() -> UIBarButtonItem {
         let spacerItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacerItem.width = -80
         return spacerItem
     }
-    fileprivate func createRightNegativeSpacerItem() -> UIBarButtonItem{
+    fileprivate func createRightNegativeSpacerItem() -> UIBarButtonItem {
         let spacerItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacerItem.width = 40
         return spacerItem

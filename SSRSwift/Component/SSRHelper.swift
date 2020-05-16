@@ -14,4 +14,3 @@ func VLog<T>(_ message: T, file: String = #file, funcName: String = #function, l
         print("file:\(fileName), funcname:\(funcName), line:\(line), message:\(message)")
     #endif
 }
-

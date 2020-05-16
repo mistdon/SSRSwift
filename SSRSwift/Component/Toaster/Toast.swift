@@ -65,12 +65,9 @@ open class Toast: Operation {
       self.didChangeValue(forKey: "isFinished")
     }
   }
-
-
   // MARK: UI
 
   @objc public var view: ToastView = ToastView()
-
 
   // MARK: Initializing
 
@@ -99,7 +96,6 @@ open class Toast: Operation {
         self.textColor = textColor
         self.backgroundColor = backgroundColor
     }
-    
     /// Toast   
     ///
     /// - Parameters:
@@ -128,7 +124,6 @@ open class Toast: Operation {
         self.textColor = .black
         self.text = greentext
         self.backgroundColor = UIColor(hex6: "#75FFC4")
-        
     }
   // MARK: Showing
 

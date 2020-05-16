@@ -11,7 +11,7 @@ target 'SSRSwift' do
   pod 'SwiftyJSON'
   # JSON to Model
   pod 'ObjectMapper', '~> 3.4'
-  pod 'HandyJSON', '~> 5.0.0'
+  pod 'HandyJSON'
   # 网络请求
   pod 'Alamofire'
   # 图片加载
@@ -26,12 +26,14 @@ target 'SSRSwift' do
   pod 'RTRootNavigationController'
   # 工具类
   pod 'FLEX', '~> 2.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
-  # 注意，这里FLEX不要升级到3.0.0，里面使用了部分的私有API，会影响送审
-  pod 'SwiftLint', :configurations => ['Debug']
+  
+  pod 'SwiftLint', :configurations => ['Debug'] # 注意，配置为只在DEBUG下编译
   pod 'FDFullscreenPopGesture'
   pod 'SVGKit' # 加载SVG的图片
   pod 'Toaster'
   pod 'SwiftTheme'
+  pod 'SwiftLint'
+  pod 'SwiftWalle', :git => "https://github.com/mistdon/SwiftWalle.git"
 #  pod 'ProgressHUD'
   # 测试
   target 'SSRSwiftTests' do
@@ -53,7 +55,7 @@ post_install do |installer|
             config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
             config.build_settings['RUN_CLANG_STATIC_ANALYZER'] = 'NO'
             config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'NO'
-            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['SWIFT_VERSION'] = '5.0'
         end
     end
 end

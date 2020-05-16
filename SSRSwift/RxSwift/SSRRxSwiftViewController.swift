@@ -16,7 +16,6 @@ class SSRRxSwiftViewController: BaseViewController {
     var lastName  = UITextField()
     var button    = UIButton()
     let disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view!.backgroundColor = .gray
@@ -32,7 +31,6 @@ class SSRRxSwiftViewController: BaseViewController {
         view.addSubview(firstName)
         view.addSubview(lastName)
         view.addSubview(button)
-        
         let firstnameValid = firstName.rx.text.orEmpty.map{$0.count > 5}
         .share(replay: 1)
         let lastnameValid  = lastName.rx.text.orEmpty.map{$0.count > 5}.share(replay: 1)
@@ -40,6 +38,5 @@ class SSRRxSwiftViewController: BaseViewController {
     }
     deinit {
         print("deinit")
-        
     }
 }

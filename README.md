@@ -11,10 +11,10 @@
 
 - Swift中GCD的使用，有一篇详尽的教程[Swift GCD](https://github.com/pmtao/DispatchQueueTest), 里面有html版和PDF版，很有帮助
 
-2、常用第三方库的使用和DEMO [SwiftLint](https://github.com/realm/SwiftLint)
-
+2、常用第三方库的使用和DEMO 
+   // TODO
 3、Swift知识小集
-
+   // TODO
 4、查看Swift的[源码](https://github.com/apple/swift)，比如Collection的isEmpty(), 源代码在[这里](https://github.com/apple/swift/blob/master/stdlib/public/core/Collection.swift#L1080-L1083)
 
 5、 参考链接
@@ -22,10 +22,13 @@
 - [如何阅读 Swift 标准库中的源码](https://swift.gg/2016/12/30/how-to-read-the-swift-standard-libray-source/)
 
 
-设计模式
+### 设计模式
 
-- [单例模式](![](./DesignPattern/Singleton.swift))
+- 单例模式
 
+### 效率提升
+
+- [SwiftLint的配置和使用](https://github.com/mistdon/SSRSwift/blob/master/Docs/SwiftLint.md)
    
 🎉🎉🎉🎉
 

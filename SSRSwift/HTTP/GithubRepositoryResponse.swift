@@ -23,7 +23,6 @@ class GithubRepository: Mappable{
     var name : String?
     var owner : GithubRepositoryOwner?
     required init?(map: Map) {
-        
     }
     func mapping(map: Map) {
         id <- map["id"]
@@ -35,7 +34,6 @@ class GithubRepository: Mappable{
 class GithubRepositoryOwner: Mappable {
     var login : String?
     required init?(map: Map) {
-        
     }
     func mapping(map: Map) {
         login <- map["login"]

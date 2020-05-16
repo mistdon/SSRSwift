@@ -1,6 +1,8 @@
 # WKWebView
 
 WKWebView是在`iOS8`之后推出的新的WebView内核，用来取代之前的UIWebView(在2020后，包含UIWebView的包将被Apple拒绝)
+> 苹果要求2020年12月份之后不再接收包含UIWebView的二进制包。
+
 
 ### 配置
 1. 虽然苹果建议WebView的请求都使用https，但保留了http的权限。如果需要加载HTTP请求，在info.plist中添加
@@ -14,6 +16,14 @@ WKWebView是在`iOS8`之后推出的新的WebView内核，用来取代之前的U
 
 ### 和JS的交互
 
+
+### 跨域的问题
+
+### Cookie
+
+### 如何优化加载
+
+### 防劫持注入
 
 ### 如何优化？
 

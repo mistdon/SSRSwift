@@ -5,7 +5,7 @@
 //  Created by shendong on 2019/5/5.
 //  Copyright © 2019年 shendong. All rights reserved.
 //
-
+// swiftlint:disable all
 import UIKit
 import RxSwift
 
@@ -22,7 +22,9 @@ class SSRRootTableViewController: UITableViewController {
         choicesArray = [SSRTestStruct(title: "Network", subTitle: nil, closure: { [weak self] in
             self?.navigationController?.show(SSRHTTPViewController(), sender: nil)
         }), SSRTestStruct(title: "WKWebView", subTitle: "combine", closure: { [weak self] in
-            let webVC = SSRWebViewController(url: URL(string: "https://m.huamengxiaoshuo.com"))
+            let url = "https://shendong.store"
+//            url = "https://m.huamengxiaoshuo.com"
+            let webVC = SSRWebViewController(url: URL(string: url))
             self?.navigationController?.show(webVC, sender: nil)
         }), SSRTestStruct(title: "Web: Local", subTitle: nil, closure: { [weak self] in
             let path = Bundle.main.path(forResource: "index", ofType: "html")
@@ -35,10 +37,18 @@ class SSRRootTableViewController: UITableViewController {
             self?.navigationController?.show(SSRRouterViewController(), sender: nil)
         }), SSRTestStruct(title: "Adapor", subTitle: nil, closure: { [weak self] in
             self?.navigationController?.show(AdaptorUIViewController(), sender: nil)
-        })]
+        }), SSRTestStruct(title: "MultiThread", subTitle: nil, closure: { [weak self] in
+            self?.navigationController?.show(ThreadViewController(), sender: nil)
+        }), SSRTestStruct(title: "ImageShow", subTitle: nil, closure: {
+            self.navigationController?.show(ImageShowViewController(), sender: nil)
+        })];
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         tableView.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

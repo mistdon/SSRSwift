@@ -9,7 +9,6 @@
 import UIKit
 
 class SSRLoginViewController: BaseViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title =  "Login"
@@ -39,11 +38,10 @@ class SSRLoginViewController: BaseViewController {
             make.width.height.equalTo(100)
             make.center.equalTo(self!.view)
         }
-        
         let logOutButton = UIButton(type: .custom)
         logOutButton.backgroundColor = UIColor(hex6: "#62CCB0")
         logOutButton.setTitle("LogOut", for: .normal)
-        logOutButton.rx.tap.subscribe(onNext: { [weak self] in
+        logOutButton.rx.tap.subscribe(onNext: {
             SSRUserManager.shared.logOut()
             Toast(text: "Logout Success").show()
             UIApplication.shared.openURL(URL(string: "https://app.huamengxiaoshuo.com/vnovel/test/")!)

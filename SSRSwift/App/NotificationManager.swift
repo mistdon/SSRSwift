@@ -15,5 +15,4 @@ extension Notification.Name{
     static let didLogin  = Notification.Name("didLogin")
     /// 退出登录
     static let didLogOut = Notification.Name("didLogOut")
-    
 }

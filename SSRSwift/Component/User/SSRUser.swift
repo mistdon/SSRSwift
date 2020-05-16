@@ -11,22 +11,15 @@ import HandyJSON
 import PromiseKit
 
 struct SSRUser: HandyJSON {
-    
     var userId: String?
-    
     var userKey: String?
-    
     var name: String?
-    
     var avator: String?
 }
 
 class SSRUserManager: NSObject {
-    
     static let shared = SSRUserManager()
-    
     var currentUser: SSRUser = SSRUser()
-    
     private override init(){
         super.init()
         commonInit()

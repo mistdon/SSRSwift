@@ -30,16 +30,26 @@ PODS:
   - SnapKit (4.2.0)
   - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
+  - SwifterSwift/Dispatch (5.1.0)
+  - SwifterSwift/Foundation (5.1.0)
+  - SwifterSwift/SwiftStdlib (5.1.0)
+  - SwifterSwift/UIKit (5.1.0)
   - SwiftLint (0.32.0)
   - SwiftTheme (0.4.4)
+  - SwiftWalle (0.1.0):
+    - SwifterSwift/Dispatch
+    - SwifterSwift/Foundation
+    - SwifterSwift/SwiftStdlib
+    - SwifterSwift/UIKit
   - SwiftyJSON (4.2.0)
+  - Toaster (2.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - FDFullscreenPopGesture
   - FLEX (~> 2.0)
-  - HandyJSON (~> 5.0.0)
+  - HandyJSON
   - ObjectMapper (~> 3.4)
   - PromiseKit
   - RTRootNavigationController
@@ -50,10 +60,12 @@ DEPENDENCIES:
   - SVGKit
   - SwiftLint
   - SwiftTheme
+  - SwiftWalle (from `https://github.com/mistdon/SwiftWalle.git`)
   - SwiftyJSON
+  - Toaster
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - CocoaLumberjack
@@ -71,6 +83,18 @@ SPEC REPOS:
     - SwiftLint
     - SwiftTheme
     - SwiftyJSON
+  trunk:
+    - SwifterSwift
+    - Toaster
+
+EXTERNAL SOURCES:
+  SwiftWalle:
+    :git: https://github.com/mistdon/SwiftWalle.git
+
+CHECKOUT OPTIONS:
+  SwiftWalle:
+    :commit: d1a9ce502196e7b10c3fb10efe9e5705ccf40c98
+    :git: https://github.com/mistdon/SwiftWalle.git
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -87,10 +111,13 @@ SPEC CHECKSUMS:
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
+  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftTheme: a381f983da92153908b7a9eeb961b18b6d94d614
+  SwiftWalle: 603a8215f38db229704ecc8290ab8911d05c63a7
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: b04244521f64b2ef9fe02eef00a6120bf2ad122a
+PODFILE CHECKSUM: e47aab2c75572583a35840ee1ceeb74d06160998
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1

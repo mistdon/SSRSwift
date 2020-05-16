@@ -53,7 +53,6 @@ open class ToastView: UIView {
     self.font = UIFont.boldSystemFont(ofSize: 14)
     self.numberOfLines = 0
     self.textAlignment = .center
-    
     return self
   }()
   private let imageView: UIImageView = {
@@ -97,14 +96,12 @@ open class ToastView: UIView {
       width: textLabelSize.width,
       height: textLabelSize.height
     )
-    
     self.backgroundView.frame = CGRect(
       x: 0,
       y: 0,
       width: self.textLabel.frame.size.width + self.textInsets.left + self.textInsets.right + imageViewWidth + self.imageView.frame.origin.x,
       height: self.textLabel.frame.size.height + self.textInsets.top + self.textInsets.bottom
     )
-    
     var x: CGFloat
     var y: CGFloat
     var width: CGFloat

@@ -23,11 +23,8 @@ import UIKit
     方法1: 协议只在Swift中使用，可以在extenison中实现默认实现，表示为这个value或者func是optional的
  
 */
-
-
 protocol SSRViewControllBaseProtocol {
     func setBaseViewControllerConfiguration()
-   
 }
 //extension UIViewController: SSRViewControllBaseProtocol{
 //    func setBaseViewControllerConfiguration() {
@@ -36,7 +33,6 @@ protocol SSRViewControllBaseProtocol {
 //}
 
 extension SSRViewControllBaseProtocol where Self: UIViewController{
-    
 }
 
 // 参考链接：https://medium.com/@ant_one/how-to-have-optional-methods-in-protocol-in-pure-swift-without-using-objc-53151cddf4ce
