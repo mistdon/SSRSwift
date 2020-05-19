@@ -13,7 +13,6 @@
 		3B00B6B5229E710D003AA07A /* SSRRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00B6B4229E710D003AA07A /* SSRRouter.swift */; };
 		3B00B6B7229E715F003AA07A /* RouterREADME.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B00B6B6229E715F003AA07A /* RouterREADME.md */; };
 		3B2C8B5B22B12A2C000474B5 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */; };
-		3B32FA0B22A54AD000FCAE61 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32FA0A22A54AD000FCAE61 /* Singleton.swift */; };
 		3B59EB80228928E900D93243 /* SSRNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB7F228928E900D93243 /* SSRNetwork.swift */; };
 		3B59EB8222892C5800D93243 /* Memo.md in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EB8122892C5800D93243 /* Memo.md */; };
 		3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EB8422894F0E00D93243 /* SwiftKeyword.md */; };
@@ -64,6 +63,8 @@
 		3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3722854535000B40EE /* SSRRxSwiftViewController.swift */; };
 		3BF81C3D22854ED5000B40EE /* SSRViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */; };
 		A1F4B6CA983ED97879FF10AF /* Pods_SSRSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFECEEF199E184447689383 /* Pods_SSRSwiftUITests.framework */; };
+		A23597DB247362BB0029820F /* DesignPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23597DA247362BB0029820F /* DesignPattern.swift */; };
+		A23597DD247365990029820F /* DesignPattern.md in Resources */ = {isa = PBXBuildFile; fileRef = A23597DC247365990029820F /* DesignPattern.md */; };
 		A23E9F13228AE3C300A8AB8C /* GithubRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */; };
 		A2BE21F922ABB6620096217F /* SSRDataword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE21F822ABB6620096217F /* SSRDataword.swift */; };
 		A2BE221422ACAC490096217F /* SSRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE221322ACAC490096217F /* SSRResponse.swift */; };
@@ -109,7 +110,6 @@
 		3B00B6B4229E710D003AA07A /* SSRRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRRouter.swift; sourceTree = "<group>"; };
 		3B00B6B6229E715F003AA07A /* RouterREADME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RouterREADME.md; sourceTree = "<group>"; };
 		3B2C8B5A22B12A2C000474B5 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		3B32FA0A22A54AD000FCAE61 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3B59EB7C228913E500D93243 /* iOS代码规范.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "iOS代码规范.md"; sourceTree = "<group>"; };
 		3B59EB7F228928E900D93243 /* SSRNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRNetwork.swift; sourceTree = "<group>"; };
 		3B59EB8122892C5800D93243 /* Memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Memo.md; sourceTree = "<group>"; };
@@ -168,6 +168,8 @@
 		3BF81C3C22854ED5000B40EE /* SSRViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRViewControllerProtocol.swift; sourceTree = "<group>"; };
 		5DE7D3678DCB18D268C67FAA /* Pods-SSRSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftTests/Pods-SSRSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E7ABA1D7AD1D6DF3FA2EAC9 /* Pods-SSRSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSRSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSRSwiftUITests/Pods-SSRSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A23597DA247362BB0029820F /* DesignPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignPattern.swift; sourceTree = "<group>"; };
+		A23597DC247365990029820F /* DesignPattern.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DesignPattern.md; sourceTree = "<group>"; };
 		A23E9F12228AE3C300A8AB8C /* GithubRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryResponse.swift; sourceTree = "<group>"; };
 		A2BE21F822ABB6620096217F /* SSRDataword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRDataword.swift; sourceTree = "<group>"; };
 		A2BE221322ACAC490096217F /* SSRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRResponse.swift; sourceTree = "<group>"; };
@@ -230,7 +232,8 @@
 		3B32FA0922A54A9700FCAE61 /* DesignPattern */ = {
 			isa = PBXGroup;
 			children = (
-				3B32FA0A22A54AD000FCAE61 /* Singleton.swift */,
+				A23597DC247365990029820F /* DesignPattern.md */,
+				A23597DA247362BB0029820F /* DesignPattern.swift */,
 			);
 			path = DesignPattern;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				3B7CCBCB2281820E007FEE9C /* SSRGithubFollowerCell.xib in Resources */,
 				3B59EB8522894F0E00D93243 /* SwiftKeyword.md in Resources */,
 				A2DD9BAE246A42D200E913CB /* vcmodel.jpg in Resources */,
+				A23597DD247365990029820F /* DesignPattern.md in Resources */,
 				3B7CCBE82284076E007FEE9C /* index.html in Resources */,
 				3B00B6A3229D1848003AA07A /* RxREADME.md in Resources */,
 				3BF3E27E229CDB1400BDE5C9 /* WebREADME.md in Resources */,
@@ -830,7 +834,6 @@
 				3B5AA00B23BB29BA0040B538 /* SSRUser.swift in Sources */,
 				3B5AA01F23BB402A0040B538 /* ToastView.swift in Sources */,
 				3B6E7B4922A9137C001A311E /* UIColor+Extension.swift in Sources */,
-				3B32FA0B22A54AD000FCAE61 /* Singleton.swift in Sources */,
 				3B5AD2EE227EE1DB00F04BFB /* SSRHTTPViewController.swift in Sources */,
 				A2DD9BA924693CFD00E913CB /* ThreadViewController.swift in Sources */,
 				3B7E2DA322781EA2006AAE68 /* AppDelegate.swift in Sources */,
@@ -843,6 +846,7 @@
 				A2DD9BAC246A419E00E913CB /* ImageShowViewController.swift in Sources */,
 				3BF81C3822854535000B40EE /* SSRRxSwiftViewController.swift in Sources */,
 				A2BE221722ACAE9C0096217F /* SSRAPI.swift in Sources */,
+				A23597DB247362BB0029820F /* DesignPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

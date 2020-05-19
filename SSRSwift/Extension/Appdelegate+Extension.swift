@@ -29,7 +29,7 @@ extension AppDelegate{
          #endif
          */
         #if DEBUG
-            Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection10.bundle")?.load()
+            Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
         #endif
     }
     // 注册WKWbeVieww的ua
