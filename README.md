@@ -2,6 +2,8 @@
 
 - [Swift keywords](https://github.com/mistdon/SSRSwift/blob/master/Docs/SwiftKeyword.md)
 
+- [Swift Extenison](https://github.com/mistdon/SSRSwift/blob/master/Docs/SwiftExension.md)
+
 - [WKWebView的使用和封装](https://github.com/mistdon/SSRSwift/blob/master/SSRSwift/WebView/WebREADME.md)
 
 - Swift中GCD的使用，有一篇详尽的教程[Swift GCD](https://github.com/pmtao/DispatchQueueTest), 里面有html版和PDF版，很有帮助
